@@ -1,176 +1,2269 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+<!doctype html>
+<html class="no-js" lang="zxx">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      <title>Duka Market - Clean, Minimal E-commerce HTML5 Template </title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- Place favicon.ico in the root directory -->
+      <link rel="shortcut icon" type="image/x-icon" href="{{asset('frontend/assets/img/favicon.png')}}">
+      <!-- CSS here -->
+      <link rel="stylesheet" href="{{asset('frontend/assets/css/preloader.css')}}">
+      <link rel="stylesheet" href="{{asset('frontend/assets/css/bootstrap.css')}}">
+      <link rel="stylesheet" href="{{asset('frontend/assets/css/meanmenu.css')}}">
+      <link rel="stylesheet" href="{{asset('frontend/assets/css/animate.css')}}">
+      <link rel="stylesheet" href="{{asset('frontend/assets/css/owl-carousel.css')}}">
+      <link rel="stylesheet" href="{{asset('frontend/assets/css/swiper-bundle.css')}}">
+      <link rel="stylesheet" href="{{asset('frontend/assets/css/backtotop.css')}}">
+      <link rel="stylesheet" href="{{asset('frontend/assets/css/magnific-popup.css')}}">
+      <link rel="stylesheet" href="{{asset('frontend/assets/css/nice-select.css')}}">
+      <link rel="stylesheet" href="{{asset('frontend/assets/flaticon/flaticon.css')}}">
+      <link rel="stylesheet" href="{{asset('frontend/assets/css/font-awesome-pro.css')}}">
+      <link rel="stylesheet" href="{{asset('frontend/assets/css/default.css')}}">
+      <link rel="stylesheet" href="{{asset('frontend/assets/css/style.css')}}">
+   </head>
+   <body>
+      <!--[if lte IE 9]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+      <![endif]-->
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
-        <!-- Styles / Scripts -->
-        @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
-            @vite(['resources/css/app.css', 'resources/js/app.js'])
-        @else
-            <style>
-                /* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,:before,:after{--tw-border-spacing-x: 0;--tw-border-spacing-y: 0;--tw-translate-x: 0;--tw-translate-y: 0;--tw-rotate: 0;--tw-skew-x: 0;--tw-skew-y: 0;--tw-scale-x: 1;--tw-scale-y: 1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness: proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width: 0px;--tw-ring-offset-color: #fff;--tw-ring-color: rgb(59 130 246 / .5);--tw-ring-offset-shadow: 0 0 #0000;--tw-ring-shadow: 0 0 #0000;--tw-shadow: 0 0 #0000;--tw-shadow-colored: 0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x: 0;--tw-border-spacing-y: 0;--tw-translate-x: 0;--tw-translate-y: 0;--tw-rotate: 0;--tw-skew-x: 0;--tw-skew-y: 0;--tw-scale-x: 1;--tw-scale-y: 1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness: proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width: 0px;--tw-ring-offset-color: #fff;--tw-ring-color: rgb(59 130 246 / .5);--tw-ring-offset-shadow: 0 0 #0000;--tw-ring-shadow: 0 0 #0000;--tw-shadow: 0 0 #0000;--tw-shadow-colored: 0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }*,:before,:after{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}:before,:after{--tw-content: ""}html,:host{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;-o-tab-size:4;tab-size:4;font-family:Figtree,ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,samp,pre{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dl,dd,h1,h2,h3,h4,h5,h6,hr,figure,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}ol,ul,menu{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{opacity:1;color:#9ca3af}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}button,[role=button]{cursor:pointer}:disabled{cursor:default}img,svg,video,canvas,audio,iframe,embed,object{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.absolute{position:absolute}.relative{position:relative}.-bottom-16{bottom:-4rem}.-left-16{left:-4rem}.-left-20{left:-5rem}.top-0{top:0}.z-0{z-index:0}.\!row-span-1{grid-row:span 1 / span 1!important}.-mx-3{margin-left:-.75rem;margin-right:-.75rem}.-ml-px{margin-left:-1px}.ml-3{margin-left:.75rem}.mt-4{margin-top:1rem}.mt-6{margin-top:1.5rem}.flex{display:flex}.inline-flex{display:inline-flex}.table{display:table}.grid{display:grid}.\!hidden{display:none!important}.hidden{display:none}.aspect-video{aspect-ratio:16 / 9}.size-12{width:3rem;height:3rem}.size-5{width:1.25rem;height:1.25rem}.size-6{width:1.5rem;height:1.5rem}.h-12{height:3rem}.h-40{height:10rem}.h-5{height:1.25rem}.h-full{height:100%}.min-h-screen{min-height:100vh}.w-5{width:1.25rem}.w-\[calc\(100\%_\+_8rem\)\]{width:calc(100% + 8rem)}.w-auto{width:auto}.w-full{width:100%}.max-w-2xl{max-width:42rem}.max-w-\[877px\]{max-width:877px}.flex-1{flex:1 1 0%}.shrink-0{flex-shrink:0}.transform{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.cursor-default{cursor:default}.resize{resize:both}.grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.\!flex-row{flex-direction:row!important}.flex-col{flex-direction:column}.items-start{align-items:flex-start}.items-center{align-items:center}.items-stretch{align-items:stretch}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.justify-items-center{justify-items:center}.gap-2{gap:.5rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.self-center{align-self:center}.overflow-hidden{overflow:hidden}.rounded-\[10px\]{border-radius:10px}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:.5rem}.rounded-md{border-radius:.375rem}.rounded-sm{border-radius:.125rem}.rounded-l-md{border-top-left-radius:.375rem;border-bottom-left-radius:.375rem}.rounded-r-md{border-top-right-radius:.375rem;border-bottom-right-radius:.375rem}.border{border-width:1px}.border-gray-300{--tw-border-opacity: 1;border-color:rgb(209 213 219 / var(--tw-border-opacity, 1))}.bg-\[\#FF2D20\]\/10{background-color:#ff2d201a}.bg-gray-50{--tw-bg-opacity: 1;background-color:rgb(249 250 251 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity: 1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-gradient-to-b{background-image:linear-gradient(to bottom,var(--tw-gradient-stops))}.from-transparent{--tw-gradient-from: transparent var(--tw-gradient-from-position);--tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);--tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)}.via-white{--tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);--tw-gradient-stops: var(--tw-gradient-from), #fff var(--tw-gradient-via-position), var(--tw-gradient-to)}.to-white{--tw-gradient-to: #fff var(--tw-gradient-to-position)}.to-zinc-900{--tw-gradient-to: #18181b var(--tw-gradient-to-position)}.stroke-\[\#FF2D20\]{stroke:#ff2d20}.object-cover{-o-object-fit:cover;object-fit:cover}.object-top{-o-object-position:top;object-position:top}.p-6{padding:1.5rem}.px-2{padding-left:.5rem;padding-right:.5rem}.px-3{padding-left:.75rem;padding-right:.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-10{padding-top:2.5rem;padding-bottom:2.5rem}.py-16{padding-top:4rem;padding-bottom:4rem}.py-2{padding-top:.5rem;padding-bottom:.5rem}.pt-3{padding-top:.75rem}.text-center{text-align:center}.font-sans{font-family:Figtree,ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji"}.text-sm{font-size:.875rem;line-height:1.25rem}.text-sm\/relaxed{font-size:.875rem;line-height:1.625}.text-xl{font-size:1.25rem;line-height:1.75rem}.font-medium{font-weight:500}.font-semibold{font-weight:600}.leading-5{line-height:1.25rem}.text-black{--tw-text-opacity: 1;color:rgb(0 0 0 / var(--tw-text-opacity, 1))}.text-black\/50{color:#00000080}.text-gray-500{--tw-text-opacity: 1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-gray-700{--tw-text-opacity: 1;color:rgb(55 65 81 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity: 1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.underline{text-decoration-line:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.shadow-\[0px_14px_34px_0px_rgba\(0\,0\,0\,0\.08\)\]{--tw-shadow: 0px 14px 34px 0px rgba(0,0,0,.08);--tw-shadow-colored: 0px 14px 34px 0px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000),var(--tw-ring-shadow, 0 0 #0000),var(--tw-shadow)}.shadow-sm{--tw-shadow: 0 1px 2px 0 rgb(0 0 0 / .05);--tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000),var(--tw-ring-shadow, 0 0 #0000),var(--tw-shadow)}.ring-1{--tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow, 0 0 #0000)}.ring-black{--tw-ring-opacity: 1;--tw-ring-color: rgb(0 0 0 / var(--tw-ring-opacity, 1))}.ring-gray-300{--tw-ring-opacity: 1;--tw-ring-color: rgb(209 213 219 / var(--tw-ring-opacity, 1))}.ring-transparent{--tw-ring-color: transparent}.ring-white{--tw-ring-opacity: 1;--tw-ring-color: rgb(255 255 255 / var(--tw-ring-opacity, 1))}.ring-white\/\[0\.05\]{--tw-ring-color: rgb(255 255 255 / .05)}.drop-shadow-\[0px_4px_34px_rgba\(0\,0\,0\,0\.06\)\]{--tw-drop-shadow: drop-shadow(0px 4px 34px rgba(0,0,0,.06));filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.drop-shadow-\[0px_4px_34px_rgba\(0\,0\,0\,0\.25\)\]{--tw-drop-shadow: drop-shadow(0px 4px 34px rgba(0,0,0,.25));filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.filter{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.transition{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,-webkit-backdrop-filter;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter,-webkit-backdrop-filter;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.duration-150{transition-duration:.15s}.duration-300{transition-duration:.3s}.ease-in-out{transition-timing-function:cubic-bezier(.4,0,.2,1)}.selection\:bg-\[\#FF2D20\] *::-moz-selection{--tw-bg-opacity: 1;background-color:rgb(255 45 32 / var(--tw-bg-opacity, 1))}.selection\:bg-\[\#FF2D20\] *::selection{--tw-bg-opacity: 1;background-color:rgb(255 45 32 / var(--tw-bg-opacity, 1))}.selection\:text-white *::-moz-selection{--tw-text-opacity: 1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.selection\:text-white *::selection{--tw-text-opacity: 1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.selection\:bg-\[\#FF2D20\]::-moz-selection{--tw-bg-opacity: 1;background-color:rgb(255 45 32 / var(--tw-bg-opacity, 1))}.selection\:bg-\[\#FF2D20\]::selection{--tw-bg-opacity: 1;background-color:rgb(255 45 32 / var(--tw-bg-opacity, 1))}.selection\:text-white::-moz-selection{--tw-text-opacity: 1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.selection\:text-white::selection{--tw-text-opacity: 1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.hover\:text-black:hover{--tw-text-opacity: 1;color:rgb(0 0 0 / var(--tw-text-opacity, 1))}.hover\:text-black\/70:hover{color:#000000b3}.hover\:text-gray-400:hover{--tw-text-opacity: 1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.hover\:text-gray-500:hover{--tw-text-opacity: 1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.hover\:ring-black\/20:hover{--tw-ring-color: rgb(0 0 0 / .2)}.focus\:z-10:focus{z-index:10}.focus\:border-blue-300:focus{--tw-border-opacity: 1;border-color:rgb(147 197 253 / var(--tw-border-opacity, 1))}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.focus\:ring:focus{--tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow, 0 0 #0000)}.focus-visible\:ring-1:focus-visible{--tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow, 0 0 #0000)}.focus-visible\:ring-\[\#FF2D20\]:focus-visible{--tw-ring-opacity: 1;--tw-ring-color: rgb(255 45 32 / var(--tw-ring-opacity, 1))}.active\:bg-gray-100:active{--tw-bg-opacity: 1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.active\:text-gray-500:active{--tw-text-opacity: 1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.active\:text-gray-700:active{--tw-text-opacity: 1;color:rgb(55 65 81 / var(--tw-text-opacity, 1))}@media (min-width: 640px){.sm\:flex{display:flex}.sm\:hidden{display:none}.sm\:size-16{width:4rem;height:4rem}.sm\:size-6{width:1.5rem;height:1.5rem}.sm\:flex-1{flex:1 1 0%}.sm\:items-center{align-items:center}.sm\:justify-between{justify-content:space-between}.sm\:pt-5{padding-top:1.25rem}}@media (min-width: 768px){.md\:row-span-3{grid-row:span 3 / span 3}}@media (min-width: 1024px){.lg\:col-start-2{grid-column-start:2}.lg\:h-16{height:4rem}.lg\:max-w-7xl{max-width:80rem}.lg\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.lg\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.lg\:flex-col{flex-direction:column}.lg\:items-end{align-items:flex-end}.lg\:justify-center{justify-content:center}.lg\:gap-8{gap:2rem}.lg\:p-10{padding:2.5rem}.lg\:pb-10{padding-bottom:2.5rem}.lg\:pt-0{padding-top:0}.lg\:text-\[\#FF2D20\]{--tw-text-opacity: 1;color:rgb(255 45 32 / var(--tw-text-opacity, 1))}}.rtl\:flex-row-reverse:where([dir=rtl],[dir=rtl] *){flex-direction:row-reverse}@media (prefers-color-scheme: dark){.dark\:block{display:block}.dark\:hidden{display:none}.dark\:border-gray-600{--tw-border-opacity: 1;border-color:rgb(75 85 99 / var(--tw-border-opacity, 1))}.dark\:bg-black{--tw-bg-opacity: 1;background-color:rgb(0 0 0 / var(--tw-bg-opacity, 1))}.dark\:bg-gray-800{--tw-bg-opacity: 1;background-color:rgb(31 41 55 / var(--tw-bg-opacity, 1))}.dark\:bg-zinc-900{--tw-bg-opacity: 1;background-color:rgb(24 24 27 / var(--tw-bg-opacity, 1))}.dark\:via-zinc-900{--tw-gradient-to: rgb(24 24 27 / 0) var(--tw-gradient-to-position);--tw-gradient-stops: var(--tw-gradient-from), #18181b var(--tw-gradient-via-position), var(--tw-gradient-to)}.dark\:to-zinc-900{--tw-gradient-to: #18181b var(--tw-gradient-to-position)}.dark\:text-gray-300{--tw-text-opacity: 1;color:rgb(209 213 219 / var(--tw-text-opacity, 1))}.dark\:text-gray-400{--tw-text-opacity: 1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.dark\:text-gray-600{--tw-text-opacity: 1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.dark\:text-white{--tw-text-opacity: 1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.dark\:text-white\/50{color:#ffffff80}.dark\:text-white\/70{color:#ffffffb3}.dark\:ring-zinc-800{--tw-ring-opacity: 1;--tw-ring-color: rgb(39 39 42 / var(--tw-ring-opacity, 1))}.dark\:hover\:text-gray-300:hover{--tw-text-opacity: 1;color:rgb(209 213 219 / var(--tw-text-opacity, 1))}.dark\:hover\:text-white:hover{--tw-text-opacity: 1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.dark\:hover\:text-white\/70:hover{color:#ffffffb3}.dark\:hover\:text-white\/80:hover{color:#fffc}.dark\:hover\:ring-zinc-700:hover{--tw-ring-opacity: 1;--tw-ring-color: rgb(63 63 70 / var(--tw-ring-opacity, 1))}.dark\:focus\:border-blue-700:focus{--tw-border-opacity: 1;border-color:rgb(29 78 216 / var(--tw-border-opacity, 1))}.dark\:focus\:border-blue-800:focus{--tw-border-opacity: 1;border-color:rgb(30 64 175 / var(--tw-border-opacity, 1))}.dark\:focus-visible\:ring-\[\#FF2D20\]:focus-visible{--tw-ring-opacity: 1;--tw-ring-color: rgb(255 45 32 / var(--tw-ring-opacity, 1))}.dark\:focus-visible\:ring-white:focus-visible{--tw-ring-opacity: 1;--tw-ring-color: rgb(255 255 255 / var(--tw-ring-opacity, 1))}.dark\:active\:bg-gray-700:active{--tw-bg-opacity: 1;background-color:rgb(55 65 81 / var(--tw-bg-opacity, 1))}.dark\:active\:text-gray-300:active{--tw-text-opacity: 1;color:rgb(209 213 219 / var(--tw-text-opacity, 1))}}
-            </style>
-        @endif
-    </head>
-    <body class="font-sans antialiased dark:bg-black dark:text-white/50">
-        <div class="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
-            <img id="background" class="absolute -left-20 top-0 max-w-[877px]" src="https://laravel.com/assets/img/welcome/background.svg" alt="Laravel background" />
-            <div class="relative min-h-screen flex flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white">
-                <div class="relative w-full max-w-2xl px-6 lg:max-w-7xl">
-                    <header class="grid grid-cols-2 items-center gap-2 py-10 lg:grid-cols-3">
-                        <div class="flex lg:justify-center lg:col-start-2">
-                            <svg class="h-12 w-auto text-white lg:h-16 lg:text-[#FF2D20]" viewBox="0 0 62 65" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M61.8548 14.6253C61.8778 14.7102 61.8895 14.7978 61.8897 14.8858V28.5615C61.8898 28.737 61.8434 28.9095 61.7554 29.0614C61.6675 29.2132 61.5409 29.3392 61.3887 29.4265L49.9104 36.0351V49.1337C49.9104 49.4902 49.7209 49.8192 49.4118 49.9987L25.4519 63.7916C25.3971 63.8227 25.3372 63.8427 25.2774 63.8639C25.255 63.8714 25.2338 63.8851 25.2101 63.8913C25.0426 63.9354 24.8666 63.9354 24.6991 63.8913C24.6716 63.8838 24.6467 63.8689 24.6205 63.8589C24.5657 63.8389 24.5084 63.8215 24.456 63.7916L0.501061 49.9987C0.348882 49.9113 0.222437 49.7853 0.134469 49.6334C0.0465019 49.4816 0.000120578 49.3092 0 49.1337L0 8.10652C0 8.01678 0.0124642 7.92953 0.0348998 7.84477C0.0423783 7.8161 0.0598282 7.78993 0.0697995 7.76126C0.0884958 7.70891 0.105946 7.65531 0.133367 7.6067C0.152063 7.5743 0.179485 7.54812 0.20192 7.51821C0.230588 7.47832 0.256763 7.43719 0.290416 7.40229C0.319084 7.37362 0.356476 7.35243 0.388883 7.32751C0.425029 7.29759 0.457436 7.26518 0.498568 7.2415L12.4779 0.345059C12.6296 0.257786 12.8015 0.211853 12.9765 0.211853C13.1515 0.211853 13.3234 0.257786 13.475 0.345059L25.4531 7.2415H25.4556C25.4955 7.26643 25.5292 7.29759 25.5653 7.32626C25.5977 7.35119 25.6339 7.37362 25.6625 7.40104C25.6974 7.43719 25.7224 7.47832 25.7523 7.51821C25.7735 7.54812 25.8021 7.5743 25.8196 7.6067C25.8483 7.65656 25.8645 7.70891 25.8844 7.76126C25.8944 7.78993 25.9118 7.8161 25.9193 7.84602C25.9423 7.93096 25.954 8.01853 25.9542 8.10652V33.7317L35.9355 27.9844V14.8846C35.9355 14.7973 35.948 14.7088 35.9704 14.6253C35.9792 14.5954 35.9954 14.5692 36.0053 14.5405C36.0253 14.4882 36.0427 14.4346 36.0702 14.386C36.0888 14.3536 36.1163 14.3274 36.1375 14.2975C36.1674 14.2576 36.1923 14.2165 36.2272 14.1816C36.2559 14.1529 36.292 14.1317 36.3244 14.1068C36.3618 14.0769 36.3942 14.0445 36.4341 14.0208L48.4147 7.12434C48.5663 7.03694 48.7383 6.99094 48.9133 6.99094C49.0883 6.99094 49.2602 7.03694 49.4118 7.12434L61.3899 14.0208C61.4323 14.0457 61.4647 14.0769 61.5021 14.1055C61.5333 14.1305 61.5694 14.1529 61.5981 14.1803C61.633 14.2165 61.6579 14.2576 61.6878 14.2975C61.7103 14.3274 61.7377 14.3536 61.7551 14.386C61.7838 14.4346 61.8 14.4882 61.8199 14.5405C61.8312 14.5692 61.8474 14.5954 61.8548 14.6253ZM59.893 27.9844V16.6121L55.7013 19.0252L49.9104 22.3593V33.7317L59.8942 27.9844H59.893ZM47.9149 48.5566V37.1768L42.2187 40.4299L25.953 49.7133V61.2003L47.9149 48.5566ZM1.99677 9.83281V48.5566L23.9562 61.199V49.7145L12.4841 43.2219L12.4804 43.2194L12.4754 43.2169C12.4368 43.1945 12.4044 43.1621 12.3682 43.1347C12.3371 43.1097 12.3009 43.0898 12.2735 43.0624L12.271 43.0586C12.2386 43.0275 12.2162 42.9888 12.1887 42.9539C12.1638 42.9203 12.1339 42.8916 12.114 42.8567L12.1127 42.853C12.0903 42.8156 12.0766 42.7707 12.0604 42.7283C12.0442 42.6909 12.023 42.656 12.013 42.6161C12.0005 42.5688 11.998 42.5177 11.9931 42.4691C11.9881 42.4317 11.9781 42.3943 11.9781 42.3569V15.5801L6.18848 12.2446L1.99677 9.83281ZM12.9777 2.36177L2.99764 8.10652L12.9752 13.8513L22.9541 8.10527L12.9752 2.36177H12.9777ZM18.1678 38.2138L23.9574 34.8809V9.83281L19.7657 12.2459L13.9749 15.5801V40.6281L18.1678 38.2138ZM48.9133 9.14105L38.9344 14.8858L48.9133 20.6305L58.8909 14.8846L48.9133 9.14105ZM47.9149 22.3593L42.124 19.0252L37.9323 16.6121V27.9844L43.7219 31.3174L47.9149 33.7317V22.3593ZM24.9533 47.987L39.59 39.631L46.9065 35.4555L36.9352 29.7145L25.4544 36.3242L14.9907 42.3482L24.9533 47.987Z" fill="currentColor"/></svg>
-                        </div>
-                        @if (Route::has('login'))
-                            <nav class="-mx-3 flex flex-1 justify-end">
-                                @auth
-                                    <a
-                                        href="{{ url('/dashboard') }}"
-                                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
-                                    >
-                                        Dashboard
-                                    </a>
-                                @else
-                                    <a
-                                        href="{{ route('login') }}"
-                                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
-                                    >
-                                        Log in
-                                    </a>
-
-                                    @if (Route::has('register'))
-                                        <a
-                                            href="{{ route('register') }}"
-                                            class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
-                                        >
-                                            Register
-                                        </a>
-                                    @endif
-                                @endauth
-                            </nav>
-                        @endif
-                    </header>
-
-                    <main class="mt-6">
-                        <div class="grid gap-6 lg:grid-cols-2 lg:gap-8">
-                            <a
-                                href="https://laravel.com/docs"
-                                id="docs-card"
-                                class="flex flex-col items-start gap-6 overflow-hidden rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20] md:row-span-3 lg:p-10 lg:pb-10 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]"
-                            >
-                                <div id="screenshot-container" class="relative flex w-full flex-1 items-stretch">
-                                    <img
-                                        src="https://laravel.com/assets/img/welcome/docs-light.svg"
-                                        alt="Laravel documentation screenshot"
-                                        class="aspect-video h-full w-full flex-1 rounded-[10px] object-top object-cover drop-shadow-[0px_4px_34px_rgba(0,0,0,0.06)] dark:hidden"
-                                        onerror="
-                                            document.getElementById('screenshot-container').classList.add('!hidden');
-                                            document.getElementById('docs-card').classList.add('!row-span-1');
-                                            document.getElementById('docs-card-content').classList.add('!flex-row');
-                                            document.getElementById('background').classList.add('!hidden');
-                                        "
-                                    />
-                                    <img
-                                        src="https://laravel.com/assets/img/welcome/docs-dark.svg"
-                                        alt="Laravel documentation screenshot"
-                                        class="hidden aspect-video h-full w-full flex-1 rounded-[10px] object-top object-cover drop-shadow-[0px_4px_34px_rgba(0,0,0,0.25)] dark:block"
-                                    />
-                                    <div
-                                        class="absolute -bottom-16 -left-16 h-40 w-[calc(100%_+_8rem)] bg-gradient-to-b from-transparent via-white to-white dark:via-zinc-900 dark:to-zinc-900"
-                                    ></div>
-                                </div>
-
-                                <div class="relative flex items-center gap-6 lg:items-end">
-                                    <div id="docs-card-content" class="flex items-start gap-6 lg:flex-col">
-                                        <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
-                                            <svg class="size-5 sm:size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path fill="#FF2D20" d="M23 4a1 1 0 0 0-1.447-.894L12.224 7.77a.5.5 0 0 1-.448 0L2.447 3.106A1 1 0 0 0 1 4v13.382a1.99 1.99 0 0 0 1.105 1.79l9.448 4.728c.14.065.293.1.447.1.154-.005.306-.04.447-.105l9.453-4.724a1.99 1.99 0 0 0 1.1-1.789V4ZM3 6.023a.25.25 0 0 1 .362-.223l7.5 3.75a.251.251 0 0 1 .138.223v11.2a.25.25 0 0 1-.362.224l-7.5-3.75a.25.25 0 0 1-.138-.22V6.023Zm18 11.2a.25.25 0 0 1-.138.224l-7.5 3.75a.249.249 0 0 1-.329-.099.249.249 0 0 1-.033-.12V9.772a.251.251 0 0 1 .138-.224l7.5-3.75a.25.25 0 0 1 .362.224v11.2Z"/><path fill="#FF2D20" d="m3.55 1.893 8 4.048a1.008 1.008 0 0 0 .9 0l8-4.048a1 1 0 0 0-.9-1.785l-7.322 3.706a.506.506 0 0 1-.452 0L4.454.108a1 1 0 0 0-.9 1.785H3.55Z"/></svg>
-                                        </div>
-
-                                        <div class="pt-3 sm:pt-5 lg:pt-0">
-                                            <h2 class="text-xl font-semibold text-black dark:text-white">Documentation</h2>
-
-                                            <p class="mt-4 text-sm/relaxed">
-                                                Laravel has wonderful documentation covering every aspect of the framework. Whether you are a newcomer or have prior experience with Laravel, we recommend reading our documentation from beginning to end.
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <svg class="size-6 shrink-0 stroke-[#FF2D20]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
-                                </div>
-                            </a>
-
-                            <a
-                                href="https://laracasts.com"
-                                class="flex items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20] lg:pb-10 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]"
-                            >
-                                <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
-                                    <svg class="size-5 sm:size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><g fill="#FF2D20"><path d="M24 8.25a.5.5 0 0 0-.5-.5H.5a.5.5 0 0 0-.5.5v12a2.5 2.5 0 0 0 2.5 2.5h19a2.5 2.5 0 0 0 2.5-2.5v-12Zm-7.765 5.868a1.221 1.221 0 0 1 0 2.264l-6.626 2.776A1.153 1.153 0 0 1 8 18.123v-5.746a1.151 1.151 0 0 1 1.609-1.035l6.626 2.776ZM19.564 1.677a.25.25 0 0 0-.177-.427H15.6a.106.106 0 0 0-.072.03l-4.54 4.543a.25.25 0 0 0 .177.427h3.783c.027 0 .054-.01.073-.03l4.543-4.543ZM22.071 1.318a.047.047 0 0 0-.045.013l-4.492 4.492a.249.249 0 0 0 .038.385.25.25 0 0 0 .14.042h5.784a.5.5 0 0 0 .5-.5v-2a2.5 2.5 0 0 0-1.925-2.432ZM13.014 1.677a.25.25 0 0 0-.178-.427H9.101a.106.106 0 0 0-.073.03l-4.54 4.543a.25.25 0 0 0 .177.427H8.4a.106.106 0 0 0 .073-.03l4.54-4.543ZM6.513 1.677a.25.25 0 0 0-.177-.427H2.5A2.5 2.5 0 0 0 0 3.75v2a.5.5 0 0 0 .5.5h1.4a.106.106 0 0 0 .073-.03l4.54-4.543Z"/></g></svg>
-                                </div>
-
-                                <div class="pt-3 sm:pt-5">
-                                    <h2 class="text-xl font-semibold text-black dark:text-white">Laracasts</h2>
-
-                                    <p class="mt-4 text-sm/relaxed">
-                                        Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
-                                    </p>
-                                </div>
-
-                                <svg class="size-6 shrink-0 self-center stroke-[#FF2D20]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
-                            </a>
-
-                            <a
-                                href="https://laravel-news.com"
-                                class="flex items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20] lg:pb-10 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]"
-                            >
-                                <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
-                                    <svg class="size-5 sm:size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><g fill="#FF2D20"><path d="M8.75 4.5H5.5c-.69 0-1.25.56-1.25 1.25v4.75c0 .69.56 1.25 1.25 1.25h3.25c.69 0 1.25-.56 1.25-1.25V5.75c0-.69-.56-1.25-1.25-1.25Z"/><path d="M24 10a3 3 0 0 0-3-3h-2V2.5a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2V20a3.5 3.5 0 0 0 3.5 3.5h17A3.5 3.5 0 0 0 24 20V10ZM3.5 21.5A1.5 1.5 0 0 1 2 20V3a.5.5 0 0 1 .5-.5h14a.5.5 0 0 1 .5.5v17c0 .295.037.588.11.874a.5.5 0 0 1-.484.625L3.5 21.5ZM22 20a1.5 1.5 0 1 1-3 0V9.5a.5.5 0 0 1 .5-.5H21a1 1 0 0 1 1 1v10Z"/><path d="M12.751 6.047h2a.75.75 0 0 1 .75.75v.5a.75.75 0 0 1-.75.75h-2A.75.75 0 0 1 12 7.3v-.5a.75.75 0 0 1 .751-.753ZM12.751 10.047h2a.75.75 0 0 1 .75.75v.5a.75.75 0 0 1-.75.75h-2A.75.75 0 0 1 12 11.3v-.5a.75.75 0 0 1 .751-.753ZM4.751 14.047h10a.75.75 0 0 1 .75.75v.5a.75.75 0 0 1-.75.75h-10A.75.75 0 0 1 4 15.3v-.5a.75.75 0 0 1 .751-.753ZM4.75 18.047h7.5a.75.75 0 0 1 .75.75v.5a.75.75 0 0 1-.75.75h-7.5A.75.75 0 0 1 4 19.3v-.5a.75.75 0 0 1 .75-.753Z"/></g></svg>
-                                </div>
-
-                                <div class="pt-3 sm:pt-5">
-                                    <h2 class="text-xl font-semibold text-black dark:text-white">Laravel News</h2>
-
-                                    <p class="mt-4 text-sm/relaxed">
-                                        Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
-                                    </p>
-                                </div>
-
-                                <svg class="size-6 shrink-0 self-center stroke-[#FF2D20]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
-                            </a>
-
-                            <div class="flex items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20] lg:pb-10 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]">
-                                <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
-                                    <svg class="size-5 sm:size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                        <g fill="#FF2D20">
-                                            <path
-                                                d="M16.597 12.635a.247.247 0 0 0-.08-.237 2.234 2.234 0 0 1-.769-1.68c.001-.195.03-.39.084-.578a.25.25 0 0 0-.09-.267 8.8 8.8 0 0 0-4.826-1.66.25.25 0 0 0-.268.181 2.5 2.5 0 0 1-2.4 1.824.045.045 0 0 0-.045.037 12.255 12.255 0 0 0-.093 3.86.251.251 0 0 0 .208.214c2.22.366 4.367 1.08 6.362 2.118a.252.252 0 0 0 .32-.079 10.09 10.09 0 0 0 1.597-3.733ZM13.616 17.968a.25.25 0 0 0-.063-.407A19.697 19.697 0 0 0 8.91 15.98a.25.25 0 0 0-.287.325c.151.455.334.898.548 1.328.437.827.981 1.594 1.619 2.28a.249.249 0 0 0 .32.044 29.13 29.13 0 0 0 2.506-1.99ZM6.303 14.105a.25.25 0 0 0 .265-.274 13.048 13.048 0 0 1 .205-4.045.062.062 0 0 0-.022-.07 2.5 2.5 0 0 1-.777-.982.25.25 0 0 0-.271-.149 11 11 0 0 0-5.6 2.815.255.255 0 0 0-.075.163c-.008.135-.02.27-.02.406.002.8.084 1.598.246 2.381a.25.25 0 0 0 .303.193 19.924 19.924 0 0 1 5.746-.438ZM9.228 20.914a.25.25 0 0 0 .1-.393 11.53 11.53 0 0 1-1.5-2.22 12.238 12.238 0 0 1-.91-2.465.248.248 0 0 0-.22-.187 18.876 18.876 0 0 0-5.69.33.249.249 0 0 0-.179.336c.838 2.142 2.272 4 4.132 5.353a.254.254 0 0 0 .15.048c1.41-.01 2.807-.282 4.117-.802ZM18.93 12.957l-.005-.008a.25.25 0 0 0-.268-.082 2.21 2.21 0 0 1-.41.081.25.25 0 0 0-.217.2c-.582 2.66-2.127 5.35-5.75 7.843a.248.248 0 0 0-.09.299.25.25 0 0 0 .065.091 28.703 28.703 0 0 0 2.662 2.12.246.246 0 0 0 .209.037c2.579-.701 4.85-2.242 6.456-4.378a.25.25 0 0 0 .048-.189 13.51 13.51 0 0 0-2.7-6.014ZM5.702 7.058a.254.254 0 0 0 .2-.165A2.488 2.488 0 0 1 7.98 5.245a.093.093 0 0 0 .078-.062 19.734 19.734 0 0 1 3.055-4.74.25.25 0 0 0-.21-.41 12.009 12.009 0 0 0-10.4 8.558.25.25 0 0 0 .373.281 12.912 12.912 0 0 1 4.826-1.814ZM10.773 22.052a.25.25 0 0 0-.28-.046c-.758.356-1.55.635-2.365.833a.25.25 0 0 0-.022.48c1.252.43 2.568.65 3.893.65.1 0 .2 0 .3-.008a.25.25 0 0 0 .147-.444c-.526-.424-1.1-.917-1.673-1.465ZM18.744 8.436a.249.249 0 0 0 .15.228 2.246 2.246 0 0 1 1.352 2.054c0 .337-.08.67-.23.972a.25.25 0 0 0 .042.28l.007.009a15.016 15.016 0 0 1 2.52 4.6.25.25 0 0 0 .37.132.25.25 0 0 0 .096-.114c.623-1.464.944-3.039.945-4.63a12.005 12.005 0 0 0-5.78-10.258.25.25 0 0 0-.373.274c.547 2.109.85 4.274.901 6.453ZM9.61 5.38a.25.25 0 0 0 .08.31c.34.24.616.561.8.935a.25.25 0 0 0 .3.127.631.631 0 0 1 .206-.034c2.054.078 4.036.772 5.69 1.991a.251.251 0 0 0 .267.024c.046-.024.093-.047.141-.067a.25.25 0 0 0 .151-.23A29.98 29.98 0 0 0 15.957.764a.25.25 0 0 0-.16-.164 11.924 11.924 0 0 0-2.21-.518.252.252 0 0 0-.215.076A22.456 22.456 0 0 0 9.61 5.38Z"
-                                            />
-                                        </g>
-                                    </svg>
-                                </div>
-
-                                <div class="pt-3 sm:pt-5">
-                                    <h2 class="text-xl font-semibold text-black dark:text-white">Vibrant Ecosystem</h2>
-
-                                    <p class="mt-4 text-sm/relaxed">
-                                        Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white dark:focus-visible:ring-[#FF2D20]">Forge</a>, <a href="https://vapor.laravel.com" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Vapor</a>, <a href="https://nova.laravel.com" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Nova</a>, <a href="https://envoyer.io" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Envoyer</a>, and <a href="https://herd.laravel.com" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Herd</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Echo</a>, <a href="https://laravel.com/docs/horizon" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Telescope</a>, and more.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </main>
-
-                    <footer class="py-16 text-center text-sm text-black dark:text-white/70">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
-                    </footer>
+    <!-- preloader start -->
+    <div id="loading">
+        <div id="loading-center">
+            <div id="loading-center-absolute">
+                <svg viewBox="0 0 58 58" id="mustard" class="product">
+                <g>
+                <path style="fill:#ED7161;" d="M39.869,58H18.131C16.954,58,16,57.046,16,55.869V12.621C16,11.726,16.726,11,17.621,11h22.757
+                    C41.274,11,42,11.726,42,12.621v43.248C42,57.046,41.046,58,39.869,58z" />
+                <polygon style="fill:#D13834;" points="35,11 23,11 27.615,0 30.385,0 	" />
+                <rect x="16" y="16" style="fill:#D75A4A;" width="26" height="2" />
+                <rect x="20" y="11" style="fill:#D75A4A;" width="2" height="6" />
+                <rect x="25" y="11" style="fill:#D75A4A;" width="2" height="6" />
+                <rect x="30" y="11" style="fill:#D75A4A;" width="2" height="6" />
+                <rect x="36" y="11" style="fill:#D75A4A;" width="2" height="6" />
+                <circle style="fill:#D13834;" cx="29" cy="36" r="10" />
+                </g>
+                </svg>
+                <svg viewBox="0 0 49.818 49.818" id="meat" class="product">
+                    <g>
+                    <path style="fill:#994530;" d="M0.953,38.891c0,0,3.184,6.921,11.405,9.64c1.827,0.604,3.751,0.751,5.667,0.922
+                        c7.866,0.703,26.714-0.971,31.066-18.976c1.367-5.656,0.76-11.612-1.429-17.003C44.51,5.711,37.447-4.233,22.831,2.427
+                        c-8.328,3.795-7.696,10.279-5.913,14.787c2.157,5.456-2.243,11.081-8.06,10.316C1.669,26.584-1.825,30.904,0.953,38.891z" />
+                    <g>
+                        <path style="fill:#D75A4A;" d="M4.69,37.18c0.402,0.785,3.058,5.552,9.111,7.554c1.335,0.441,2.863,0.577,4.482,0.72l0.282,0.025
+                            c0.818,0.073,1.698,0.11,2.617,0.11c18.18,0,22.854-11.218,24.02-16.041c1.134-4.693,0.706-9.703-1.235-14.488
+                            C41.049,7.874,36.856,4.229,31.506,4.229c-2.21,0-4.683,0.615-7.349,1.83c-2.992,1.364-6.676,3.921-4.13,10.36
+                            c1.284,3.25,0.912,6.746-1.023,9.591c-2.17,3.191-6.002,4.901-9.895,4.39c-0.493-0.065-0.966-0.099-1.404-0.099
+                            c-1.077,0-2.502,0.198-3.173,1.143C3.765,32.524,3.823,34.609,4.69,37.18z" />
+                        <path style="fill:#C64940;" d="M21.184,46.589c-0.948,0-1.858-0.038-2.706-0.114l-0.283-0.025
+                            c-1.674-0.147-3.257-0.287-4.706-0.767c-6.376-2.108-9.188-7.073-9.688-8.047l-0.058-0.137c-0.984-2.917-0.993-5.273-0.026-6.635
+                            c0.912-1.285,2.89-1.807,5.524-1.456c3.537,0.466,6.959-1.054,8.936-3.961c1.746-2.565,2.082-5.723,0.921-8.661
+                            c-3.189-8.065,2.707-10.754,4.645-11.638c9.68-4.407,16.81-1.155,21.152,9.535c2.021,4.981,2.464,10.202,1.28,15.099
+                            C44.953,34.836,40.073,46.589,21.184,46.589z M5.613,36.787c0.401,0.758,2.936,5.155,8.503,6.997
+                            c1.229,0.406,2.699,0.536,4.256,0.673l0.284,0.025c0.788,0.07,1.639,0.106,2.527,0.106c17.469,0,21.938-10.683,23.048-15.276
+                            c1.084-4.487,0.672-9.286-1.19-13.877C40.29,8.663,36.409,5.229,31.506,5.229c-2.067,0-4.4,0.585-6.934,1.74
+                            c-3.02,1.376-5.81,3.532-3.615,9.083c1.408,3.563,0.998,7.398-1.126,10.521c-2.404,3.534-6.563,5.386-10.852,4.818
+                            c-1.793-0.236-3.197,0.019-3.632,0.632C4.912,32.636,4.756,34.207,5.613,36.787z" />
+                    </g>
+                    <g>
+                        <circle style="fill:#E6E6E6;" cx="32.455" cy="12.779" r="4" />
+                        <path style="fill:#7A3726;" d="M32.455,17.779c-2.757,0-5-2.243-5-5s2.243-5,5-5s5,2.243,5,5S35.212,17.779,32.455,17.779z
+                            M32.455,9.779c-1.654,0-3,1.346-3,3s1.346,3,3,3s3-1.346,3-3S34.109,9.779,32.455,9.779z" />
+                    </g>
+                    <path style="fill:#C64940;" d="M25.617,45.684l-1.941-0.479c0.435-1.761-1.063-3.216-3.446-4.859
+                        c-2.875-1.984-4.817-5.117-5.327-8.595c-0.186-1.266-0.425-2.285-0.428-2.295l1.922-0.548c0.01,0.028,1.09,3.104,3.978,4.314
+                        c2.094,0.877,4.667,0.598,7.648-0.832c11.578-5.554,17.102-2.646,17.332-2.52l-0.967,1.752c-0.04-0.021-4.97-2.48-15.5,2.57
+                        c-3.53,1.694-6.662,1.984-9.312,0.863c-0.801-0.339-1.49-0.779-2.078-1.265c0.769,1.974,2.11,3.695,3.867,4.907
+                        C23.149,39.931,26.472,42.222,25.617,45.684z" />
+                    <path style="fill:#C64940;" d="M27.074,27.586c-5.37,0-7.605-3.694-7.633-3.74l1.727-1.01l-0.863,0.505l0.859-0.511
+                        c0.108,0.179,2.714,4.335,9.738,2.105c1.54-0.794,12.038-6.002,15.619-2.289l-1.439,1.389c-1.979-2.052-9.229,0.576-13.332,2.714
+                        l-0.154,0.064C29.892,27.364,28.389,27.586,27.074,27.586z" />
+                    </g>
+                </svg>
+                <svg viewBox="0 0 49 49" id="soda" class="product">
+                    <g>
+                    <path style="fill:#E22F37;" d="M9.5,27V5.918c0-1.362,0.829-2.587,2.094-3.093l0,0C12.642,2.406,13.5,1.14,13.5,0.011L13.5,0v0
+                        l11,0l11,0v0v0.011c0,1.129,0.858,2.395,1.906,2.814l0,0c1.265,0.506,2.094,1.73,2.094,3.093V27v-5v21.082
+                        c0,1.362-0.829,2.587-2.094,3.093h0c-1.048,0.419-1.906,1.686-1.906,2.814V49l0,0h-11h-11l0,0l0-0.011
+                        c0-1.129-0.858-2.395-1.906-2.814h0c-1.265-0.506-2.094-1.73-2.094-3.093V22" />
+                    <path style="fill:#F75B57;" d="M18.5,7h-5c-0.553,0-1-0.447-1-1s0.447-1,1-1h5c0.553,0,1,0.447,1,1S19.053,7,18.5,7z" />
+                    <path style="fill:#F75B57;" d="M35.5,7h-13c-0.553,0-1-0.447-1-1s0.447-1,1-1h13c0.553,0,1,0.447,1,1S36.053,7,35.5,7z" />
+                    <path style="fill:#994530;" d="M18.5,45h-5c-0.553,0-1-0.447-1-1s0.447-1,1-1h5c0.553,0,1,0.447,1,1S19.053,45,18.5,45z" />
+                    <path style="fill:#994530;" d="M35.5,45h-13c-0.553,0-1-0.447-1-1s0.447-1,1-1h13c0.553,0,1,0.447,1,1S36.053,45,35.5,45z" />
+                    <polygon style="fill:#E6E6E6;" points="39.5,32 9.5,42 9.5,20 39.5,10 	" />
+                    <polygon style="fill:#F9D70B;" points="39.5,28 9.5,38 9.5,24 39.5,14 	" />
+                    </g>
+                </svg>
+                <div class="cart-container">
+                    <svg viewBox="0 0 512 512" id="cart">
+                    <circle cx="376.8" cy="440" r="55" />
+                    <circle cx="192" cy="440" r="55" />
+                    <polygon points="128,0 0.8,0 0.8,32 104.8,32 136.8,124.8 170.4,124.8 " />
+                    <polygon style="fill:#ED7161;" points="250.4,49.6 224,124.8 411.2,124.8 " />
+                    <polygon style="fill:#ee5a46;" points="411.2,124.8 224,124.8 170.4,124.8 136.8,124.8 68,124.8 141.6,361.6 427.2,361.6
+                    511.2,124.8 " />
+                    <g>
+                        <rect x="166.4" y="185.6" style="fill:#FFFFFF;" width="255.2" height="16" />
+                        <rect x="166.4" y="237.6" style="fill:#FFFFFF;" width="166.4" height="16" />
+                    </g>
+                    </svg>
                 </div>
             </div>
         </div>
-    </body>
+    </div>
+    <!-- preloader end -->
+
+      <!-- back to top start -->
+      <div class="progress-wrap">
+         <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+         </svg>
+      </div>
+      <!-- back to top end -->
+
+    <!-- header-start -->
+     <header class="header d-blue-bg">
+        <div class="header-top">
+            <div class="container 0">
+                <div class="header-inner">
+                    <div class="row align-items-center">
+                        <div class="col-xl-6 col-lg-7">
+                            <div class="header-inner-start">
+                                <div class="header__currency border-right">
+                                    <div class="s-name">
+                                        <span>Language: </span>
+                                    </div>
+                                    <select>
+                                        <option>English</option>
+                                        <option>Deutsch</option>
+                                        <option>Français</option>
+                                        <option>Espanol</option>
+                                    </select>
+                                </div>
+                                <div class="header__lang border-right">
+                                    <div class="s-name">
+                                        <span>Currency: </span>
+                                    </div>
+                                    <select>
+                                        <option> USD</option>
+                                        <option>EUR</option>
+                                        <option>INR</option>
+                                        <option>BDT</option>
+                                        <option>BGD</option>
+                                    </select>
+                                </div>
+                                <div class="support d-none d-sm-block">
+                                    <p>Need Help? <a href="tel:+001123456789">+001 123 456 789</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-5 d-none d-lg-block">
+                            <div class="header-inner-end text-md-end">
+                                <div class="ovic-menu-wrapper ovic-menu-wrapper-2">
+                                    <ul>
+                                        <li><a href="about.html">About Us</a></li>
+                                        <li><a href="contact.html">Order Tracking</a></li>
+                                        <li><a href="contact.html">Contact Us</a></li>
+                                        <li><a href="faq.html">FAQs</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-mid">
+            <div class="container">
+                <div class="heade-mid-inner">
+                    <div class="row align-items-center">
+                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
+                            <div class="header__info header__info-2">
+                                <div class="logo logo-3">
+                                    <a href="index.html" class="logo-image"><img src="{{asset('frontend/assets/img/logo/suguba.jpg')}}" alt=""></a>
+                                </div>
+                                <div class="side-menu mr-20">
+                                    <button type="button" class="side-menu-btn offcanvas-toggle-btn"><i class="fas fa-bars"></i></button>
+                                  </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 col-lg-4 d-none d-lg-block">
+                            <div class="header__search">
+                                <form action="#">
+                                    <div class="header__search-box">
+                                        <input class="search-input search-input-2" type="text" placeholder="I'm shopping for...">
+                                        <button class="button button-2 button-3" type="submit"><i class="far fa-search"></i></button>
+                                    </div>
+                                    <div class="header__search-cat">
+                                        <select>
+                                            <option>All Categories</option>
+                                            <option>Best Seller Products</option>
+                                            <option>Top 10 Offers</option>
+                                            <option>New Arrivals</option>
+                                            <option>Phones &amp; Tablets</option>
+                                            <option>Electronics &amp; Digital</option>
+                                            <option>Fashion &amp; Clothings</option>
+                                            <option>Jewelry &amp; Watches</option>
+                                            <option>Health &amp; Beauty</option>
+                                            <option>Sound &amp; Speakers</option>
+                                            <option>TV &amp; Audio</option>
+                                            <option>Computers</option>
+                                        </select>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-5 col-md-8 col-sm-8">
+                            <div class="header-action">
+                                <div class="block-userlink">
+                                    <a class="icon-link icon-link-2" href="{{ route('login') }}">
+                                    <i class="flaticon-user"></i>
+                                    <span class="text">
+                                    <span class="sub">Login </span>
+                                    My Account </span>
+                                    </a>
+                                </div>
+                                <div class="block-wishlist action">
+                                    <a class="icon-link icon-link-2" href="wishlist.html">
+                                    <i class="flaticon-heart"></i>
+                                    <span class="count count-2">0</span>
+                                    <span class="text">
+                                    <span class="sub">Favorite</span>
+                                    My Wishlist </span>
+                                    </a>
+                                </div>
+                                <div class="block-cart action">
+                                    <a class="icon-link icon-link-2" href="cart.html">
+                                    <i class="flaticon-shopping-bag"></i>
+                                    <span class="count count-2">1</span>
+                                    <span class="text">
+                                    <span class="sub">Your Cart:</span>
+                                    $00.00 </span>
+                                    </a>
+                                    <div class="cart">
+                                        <div class="cart__mini">
+                                            <ul>
+                                                <li>
+                                                  <div class="cart__title">
+                                                    <h4>Your Cart</h4>
+                                                    <span>(1 Item in Cart)</span>
+                                                  </div>
+                                                </li>
+                                                <li>
+                                                  <div class="cart__item d-flex justify-content-between align-items-center">
+                                                    <div class="cart__inner d-flex">
+                                                      <div class="cart__thumb">
+                                                        <a href="product-details.html">
+                                                          <img src="{{asset('frontend/assets/img/cart/20.jpg')}}" alt="">
+                                                        </a>
+                                                      </div>
+                                                      <div class="cart__details">
+                                                        <h6><a href="product-details.html"> Samsung C49J89: £875, Debenhams Plus  </a></h6>
+                                                        <div class="cart__price">
+                                                          <span>$255.00</span>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="cart__del">
+                                                        <a href="#"><i class="fal fa-times"></i></a>
+                                                    </div>
+                                                  </div>
+                                                </li>
+                                                <li>
+                                                  <div class="cart__sub d-flex justify-content-between align-items-center">
+                                                    <h6>Subtotal</h6>
+                                                    <span class="cart__sub-total">$255.00</span>
+                                                  </div>
+                                                </li>
+                                                <li>
+                                                    <a href="cart.html" class="wc-cart mb-10">View cart</a>
+                                                    <a href="checkout.html" class="wc-checkout">Checkout</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header__bottom d-none d-lg-block">
+            <div class="container">
+                <div class="box-items-inner pt-10 pb-10">
+                    <div class="box-item">
+                        <a href="shop.html">
+                            <i class="fal fa-desktop"></i>
+                        Laptop <br> & Computer
+                        </a>
+                    </div>
+                    <div class="box-item">
+                        <a href="shop.html">
+                            <i class="fal fa-mobile"></i>
+                        Tablets <br> & Mobile Phones
+                        </a>
+                    </div>
+                    <div class="box-item">
+                        <a href="shop.html">
+                            <i class="fal fa-router"></i>
+                        Digitals <br> & Electronics
+                        </a>
+                    </div>
+                    <div class="box-item">
+                        <a href="shop.html">
+                            <i class="fal fa-webcam"></i>
+                        Camera <br> & Accesories
+                        </a>
+                    </div>
+                    <div class="box-item">
+                        <a href="shop.html">
+                            <i class="fal fa-bed-alt"></i>
+                        Decor <br> & Furniture
+                        </a>
+                    </div>
+                    <div class="box-item">
+                        <a href="shop.html">
+                            <i class="fal fa-tshirt"></i>
+                        Fashion <br> & Clotheing
+                        </a>
+                    </div>
+                    <div class="box-item d-lg-none">
+                        <a href="shop.html">
+                            <i class="fal fa-hat-chef"></i>
+                        Garden <br> & Home Kitchen
+                        </a>
+                    </div>
+                    <div class="box-item d-lg-none d-xl-block">
+                        <a href="shop.html">
+                            <i class="fal fa-speaker"></i>
+                        Audio <br> & Headphones
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </header>
+     <!-- header-end -->
+
+    <!-- //side-menu -->
+    <div class="main-menu">
+        <nav id="mobile-menu-2">
+            <ul>
+                <li>
+                    <a href="index.html" class="active">Home <i class="far fa-angle-down"></i></a>
+                    <ul class="megamenu-1">
+                        <li><a href="index.html">Home Pages</a>
+                            <ul class="mega-item">
+                                <li><a href="index.html">Home One</a></li>
+                                <li><a href="index-2.html">Home Two</a></li>
+                                <li><a href="index-3.html" class="active">Home Three</a></li>
+                                <li><a href="product-details.html">Shop 3 Column</a></li>
+                                <li><a href="product-details.html">Shop 4 Column</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="shop.html">Product Pages</a>
+                            <ul class="mega-item">
+                                <li><a href="product-details.html">Product Details</a></li>
+                                <li><a href="product-details.html">Product V2</a></li>
+                                <li><a href="product-details.html">Product V3</a></li>
+                                <li><a href="product-details.html">Varriable Product</a></li>
+                                <li><a href="product-details.html">External Product</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="shop.html">Other Pages</a>
+                            <ul class="mega-item">
+                                <li><a href="product-details.html">wishlist</a></li>
+                                <li><a href="product-details.html">Shopping Cart</a></li>
+                                <li><a href="product-details.html">Checkout</a></li>
+                                <li><a href="product-details.html">Login</a></li>
+                                <li><a href="product-details.html">Register</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="shop.html">Phone &amp; Tablets</a>
+                            <ul class="mega-item">
+                                <li><a href="product-details.html">Catagory 1</a></li>
+                                <li><a href="product-details.html">Catagory 2</a></li>
+                                <li><a href="product-details.html">Catagory 3</a></li>
+                                <li><a href="product-details.html">Catagory 4</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="shop.html">Phone &amp; Tablets</a>
+                            <ul class="mega-item">
+                                <li><a href="product-details.html">Catagory 1</a></li>
+                                <li><a href="product-details.html">Catagory 2</a></li>
+                                <li><a href="product-details.html">Catagory 3</a></li>
+                                <li><a href="product-details.html">Catagory 4</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="shop.html">Shop <i class="far fa-angle-down"></i></a>
+                    <ul class="submenu">
+                        <li><a href="shop.html">shop</a></li>
+                        <li><a href="shop-details.html">Shop Details</a></li>
+                    </ul>
+                </li>
+                <li><a href="blog.html">Blog <i class="far fa-angle-down"></i></a>
+                    <ul class="submenu">
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="blog-details.html">Blog Details</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="about.html">Pages <i class="far fa-angle-down"></i></a>
+                    <ul class="submenu">
+                        <li><a href="my-account.html">My Account</a></li>
+                        <li><a href="product-details.html">Product Details</a></li>
+                        <li><a href="faq.html">FAQs pages</a></li>
+                        <li><a href="cart.html">Cart</a></li>
+                        <li><a href="wishlist.html">Wishlist</a></li>
+                        <li><a href="checkout.html">Checkout</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="404.html">404 Error</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- offcanvas area start -->
+    <div class="offcanvas__area">
+        <div class="offcanvas__wrapper">
+        <div class="offcanvas__close">
+            <button class="offcanvas__close-btn" id="offcanvas__close-btn">
+                <i class="fal fa-times"></i>
+            </button>
+        </div>
+        <div class="offcanvas__content">
+            <div class="offcanvas__logo mb-40">
+                <a href="index.html">
+                <img src="{{asset('frontend/assets/img/logo/logo-white.png')}}" alt="logo">
+                </a>
+            </div>
+            <div class="offcanvas__search mb-25">
+                <form action="#">
+                    <input type="text" placeholder="What are you searching for?">
+                    <button type="submit" ><i class="far fa-search"></i></button>
+                </form>
+            </div>
+            <div class="sidebar__img mb-20">
+                <div class="row gx-2">
+                   <div class="col-4">
+                      <div class="sidebar__single-img hover-effect w-img mb-10">
+                         <a class="popup-image" href="{{asset('frontend/assets/img/gallery/gal-1.jpg')}}">
+                            <img src="{{asset('frontend/assets/img/gallery/gal-1.jpg')}}" alt="">
+                         </a>
+                      </div>
+                   </div>
+                   <div class="col-4">
+                      <div class="sidebar__single-img hover-effect w-img mb-10">
+                         <a class="popup-image" href="{{asset('frontend/assets/img/gallery/gal-2.jpg')}}">
+                            <img src="{{asset('frontend/assets/img/gallery/gal-2.jpg')}}" alt="">
+                         </a>
+                      </div>
+                   </div>
+                   <div class="col-4">
+                      <div class="sidebar__single-img hover-effect w-img mb-10">
+                         <a class="popup-image" href="{{asset('frontend/assets/img/gallery/gal-3.jpg')}}">
+                            <img src="{{asset('frontend/assets/img/gallery/gal-3.jpg')}}" alt="">
+                         </a>
+                      </div>
+                   </div>
+                   <div class="col-4">
+                      <div class="sidebar__single-img hover-effect w-img mb-10">
+                         <a class="popup-image" href="{{asset('frontend/assets/img/gallery/gal-4.jpg')}}">
+                            <img src="{{asset('frontend/assets/img/gallery/gal-4.jpg')}}" alt="">
+                         </a>
+                      </div>
+                   </div>
+                   <div class="col-4">
+                      <div class="sidebar__single-img hover-effect w-img mb-10">
+                         <a class="popup-image" href="{{asset('frontend/assets/img/gallery/gal-5.jpg')}}">
+                            <img src="{{asset('frontend/assets/img/gallery/gal-5.jpg')}}" alt="">
+                         </a>
+                      </div>
+                   </div>
+                   <div class="col-4">
+                      <div class="sidebar__single-img hover-effect w-img mb-10">
+                         <a class="popup-image" href="{{asset('frontend/assets/img/gallery/gal-6.jpg')}}">
+                            <img src="{{asset('frontend/assets/img/gallery/gal-6.jpg')}}" alt="">
+                         </a>
+                      </div>
+                   </div>
+                </div>
+             </div>
+            <div class="mobile-menu-2"></div>
+            <div class="offcanvas__action">
+            </div>
+        </div>
+        </div>
+    </div>
+    <!-- offcanvas area end -->
+    <div class="body-overlay"></div>
+    <!-- offcanvas area end -->
+
+    <main>
+
+        <!-- slider-area-start -->
+        <div class="slider-area light-bg-s pt-60">
+            <div class="container 0">
+                <div class="row">
+                    <div class="col-xl-6">
+                        <div class="swiper-container slider__active pb-30">
+                            <div class="slider-wrapper swiper-wrapper">
+                                <div class="single-slider swiper-slide b-radius-2 slider-height-3 d-flex align-items-center" data-background="{{asset('frontend/assets/img/slider/03-slide-1.jpg')}}">
+                                    <div class="slider-content slider-content-2">
+                                        <div class="slider-top-btn mb-20" data-animation="fadeInLeft" data-delay="1.5s" style="animation-delay: 1.5s;">
+                                            <a href="shop.html" class="st-btn b-radius">HOT DEALS</a>
+                                        </div>
+                                        <h2 data-animation="fadeInLeft" data-delay="1.7s" class="pt-15 slider-title pb-5">BIG SALE <br> TOP HEADPHONE</h2>
+                                        <p class="pr-20 slider_text" data-animation="fadeInLeft" data-delay="1.9s">Best Sport Edition 2022</p>
+                                        <div class="slider-bottom-btn mt-65">
+                                            <a data-animation="fadeInUp" data-delay="1.15s" href="shop.html" class="st-btn-border b-radius-2">Discover now</a>
+                                        </div>
+                                    </div>
+                                </div><!-- /single-slider -->
+                                <div class="single-slider swiper-slide b-radius-2 slider-height-3 d-flex align-items-center" data-background="{{asset('frontend/assets/img/slider/03-slide-2.jpg')}}">
+                                    <div class="slider-content slider-content-2">
+                                        <div class="slider-top-btn mb-20" data-animation="fadeInLeft" data-delay="1.5s" style="animation-delay: 1.5s;">
+                                            <a href="shop.html" class="st-btn b-radius">HOT DEALS</a>
+                                        </div>
+                                        <h2 data-animation="fadeInLeft" data-delay="1.5s" class="pt-15 slider-title pb-5">GEAR 360<br> WiRELESS LARBUDS</h2>
+                                        <p class="pr-20 slider_text" data-animation="fadeInLeft" data-delay="1.7s">Top Quality Earbuds & Accessories</p>
+                                        <div class="slider-bottom-btn mt-65">
+                                            <a data-animation="fadeInUp" data-delay="1.9s" href="shop.html" class="st-btn-border b-radius-2">Discover now</a>
+                                        </div>
+                                    </div>
+                                </div><!-- /single-slider -->
+                                <div class="single-slider b-radius-2 swiper-slide slider-height-3 d-flex align-items-center" data-background="{{asset('frontend/assets/img/slider/03-slide-3.jpg')}}">
+                                    <div class="slider-content slider-content-2">
+                                        <div class="slider-top-btn mb-20" data-animation="fadeInLeft" data-delay="1.5s" style="animation-delay: 1.5s;">
+                                            <a href="shop.html" class="st-btn b-radius">HOT DEALS</a>
+                                        </div>
+                                        <h2 data-animation="fadeInLeft" data-delay="1.5s" class="pt-15 slider-title pb-5">LIMITED<br>
+                                        WEEK DEALS</h2>
+                                        <p class="pr-20 slider_text" data-animation="fadeInLeft" data-delay="1.8s">Discount 20% On Products
+                                        </p>
+                                        <div class="slider-bottom-btn mt-65">
+                                            <a data-animation="fadeInUp" data-delay="1.10s" href="shop.html" class="st-btn-border b-radius-2">Discover now</a>
+                                        </div>
+                                    </div>
+                                </div><!-- /single-slider -->
+                                <div class="main-slider-paginations"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-6">
+                                <div class="row">
+                                    <div class="col-xl-12 col-lg-12 col-sm-6">
+                                        <div class="banner__item p-relative w-img mb-30">
+                                            <div class="banner__img banner__img-2 b-radius-2">
+                                                <a href="product-details.html"><img src="{{asset('frontend/assets/img/banner/banner-17.jpg')}}" alt=""></a>
+                                            </div>
+                                            <div class="banner__content">
+                                                <h6><a href="product-details.html">New Style <br> Bluetooh Speaker</a></h6>
+                                                <p class="banner-p mt-30">Free Shipping 20km</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-12 col-lg-12 col-sm-6">
+                                        <div class="banner__item p-relative w-img mb-30">
+                                            <div class="banner__img banner__img-2 b-radius-2">
+                                                <a href="product-details.html"><img src="{{asset('frontend/assets/img/banner/banner-18.jpg')}}" alt=""></a>
+                                            </div>
+                                            <div class="banner__content">
+                                                <h6><a href="product-details.html">Limited <br> Top Camera</a></h6>
+                                                <p class="banner-p mt-30">Free Shipping 20km</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6">
+                                <div class="banner__item p-relative w-img mb-30">
+                                    <div class="banner__img banner__img-3  b-radius-2">
+                                        <a href="product-details.html"><img src="{{asset('frontend/assets/img/banner/banner-19.jpg')}}" alt=""></a>
+                                    </div>
+                                    <div class="banner__content banner__content-3">
+                                        <div class="banner-df-btn mb-15">
+                                            <a href="#" class="st-btn b-radius">HOT DEALS</a>
+                                        </div>
+                                        <p>Xbox Wireless</p>
+                                        <h6 class="df-title"><a href="product-details.html">Sale Up To 50% Off</a></h6>
+                                        <div class="bottom-btn">
+                                            <a href="shop.html" class="st-btn-border-2 b-radius">Discover now</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- slider-area-end -->
+
+        <!-- top-dels-start -->
+        <section class="top-dels light-bg-s pt-30">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="section__head d-flex justify-content-between mb-30">
+                            <div class="section__title section__title-2">
+                                <h5 class="st-titile-d st-titile-d-2">Top Deals Of The Day</h5>
+                            </div>
+                            <div class="offer-time">
+                                <span class="offer-title d-none d-sm-block">Hurry Up! Offer ends in:</span>
+                                <div class="countdown">
+                                    <div class="countdown-inner b-radius-2" data-countdown="" data-date="Mar 02 2022 20:20:22">
+                                        <ul class="text-center">
+                                            <li><span data-days="">30</span> Days</li>
+                                            <li><span data-hours="">9</span> Hours</li>
+                                            <li><span data-minutes="">37</span> Mins</li>
+                                            <li><span data-seconds="">38</span> Secs</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row-cols-xxl-5 row-cols-xl-3 row-cols-lg-3 row-cols-md-2 row-cols-sm-2 row-cols-1">
+                    <div class="col">
+                        <div class="product__item product__item-2 b-radius-2 mb-20">
+                            <div class="product__thumb fix">
+                                <div class="product-image w-img">
+                                    <a href="product-details.html">
+                                        <img src="{{asset('frontend/assets/img/product/tp-1.jpg')}}" alt="product">
+                                    </a>
+                                </div>
+                                <div class="product__offer">
+                                <span class="discount">-15%</span>
+                                </div>
+                                <div class="product-action product-action-2">
+                                    <a href="#" class="icon-box icon-box-1" data-bs-toggle="modal" data-bs-target="#productModalId">
+                                        <i class="fal fa-eye"></i>
+                                        <i class="fal fa-eye"></i>
+                                    </a>
+                                    <a href="#" class="icon-box icon-box-1">
+                                        <i class="fal fa-heart"></i>
+                                        <i class="fal fa-heart"></i>
+                                    </a>
+                                    <a href="#" class="icon-box icon-box-1">
+                                        <i class="fal fa-layer-group"></i>
+                                        <i class="fal fa-layer-group"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="product__content product__content-3">
+                                <h6><a href="product-details.html">Epple iPad Pro 10.5-inch Cellular 64G</a></h6>
+                                <div class="rating mb-5 mt-10">
+                                    <ul>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                    </ul>
+                                    <span>(01 review)</span>
+                                </div>
+                                <div class="price mb-20">
+                                    <span>$105-$110</span>
+                                </div>
+                                <div class="progress mb-5">
+                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 20%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <div class="progress-rate">
+                                    <span>Sold:315/1225</span>
+                                </div>
+                            </div>
+                            <div class="product__add-cart text-center">
+                                <button type="button" class="cart-btn-3 product-modal-sidebar-open-btn d-flex align-items-center justify-content-center w-100">
+                                Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="product__item product__item-2 b-radius-2 mb-20">
+                            <div class="product__thumb fix">
+                                <div class="product-image w-img">
+                                    <a href="product-details.html">
+                                        <img src="{{asset('frontend/assets/img/product/tp-2.jpg')}}" alt="product">
+                                    </a>
+                                </div>
+                                <div class="product-action product-action-2">
+                                    <a href="#" class="icon-box icon-box-1" data-bs-toggle="modal" data-bs-target="#productModalId">
+                                        <i class="fal fa-eye"></i>
+                                        <i class="fal fa-eye"></i>
+                                    </a>
+                                    <a href="#" class="icon-box icon-box-1">
+                                        <i class="fal fa-heart"></i>
+                                        <i class="fal fa-heart"></i>
+                                    </a>
+                                    <a href="#" class="icon-box icon-box-1">
+                                        <i class="fal fa-layer-group"></i>
+                                        <i class="fal fa-layer-group"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="product__content product__content-3">
+                                <h6><a href="product-details.html">Men Size Yellow Basketball Jerseys</a></h6>
+                                <div class="rating mb-5 mt-10">
+                                    <ul>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                    </ul>
+                                    <span>(01 review)</span>
+                                </div>
+                                <div class="price mb-20">
+                                    <span>$105-$150</span>
+                                </div><div class="progress mb-5">
+                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 20%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <div class="progress-rate">
+                                    <span>Sold:315/1225</span>
+                                </div>
+                            </div>
+                            <div class="product__add-cart text-center">
+                                <button type="button" class="cart-btn-3 product-modal-sidebar-open-btn d-flex align-items-center justify-content-center w-100">
+                                Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="product__item product__item-2 b-radius-2 mb-20">
+                            <div class="product__thumb fix">
+                                <div class="product-image w-img">
+                                    <a href="product-details.html">
+                                        <img src="{{asset('frontend/assets/img/product/tp-3.jpg')}}" alt="product">
+                                    </a>
+                                </div>
+                                <div class="product__offer">
+                                <span class="discount">-9%</span>
+                                </div>
+                                <div class="product-action product-action-2">
+                                    <a href="#" class="icon-box icon-box-1" data-bs-toggle="modal" data-bs-target="#productModalId">
+                                        <i class="fal fa-eye"></i>
+                                        <i class="fal fa-eye"></i>
+                                    </a>
+                                    <a href="#" class="icon-box icon-box-1">
+                                        <i class="fal fa-heart"></i>
+                                        <i class="fal fa-heart"></i>
+                                    </a>
+                                    <a href="#" class="icon-box icon-box-1">
+                                        <i class="fal fa-layer-group"></i>
+                                        <i class="fal fa-layer-group"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="product__content product__content-3">
+                                <h6><a href="product-details.html">Xbox Wireless Game Controller Pink</a></h6>
+                                <div class="rating mb-5 mt-10">
+                                    <ul>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                    </ul>
+                                    <span>(01 review)</span>
+                                </div>
+                                <div class="price mb-20">
+                                    <span>$200-$280</span>
+                                </div>
+                                <div class="progress mb-5">
+                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 20%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <div class="progress-rate">
+                                    <span>Sold:315/1225</span>
+                                </div>
+                            </div>
+                            <div class="product__add-cart text-center">
+                                <button type="button" class="cart-btn-3 product-modal-sidebar-open-btn d-flex align-items-center justify-content-center w-100">
+                                Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="product__item product__item-2 b-radius-2 mb-20">
+                            <div class="product__thumb fix">
+                                <div class="product-image w-img">
+                                    <a href="product-details.html">
+                                        <img src="{{asset('frontend/assets/img/product/tp-7.jpg')}}" alt="product">
+                                    </a>
+                                </div>
+                                <div class="product-action product-action-2">
+                                    <a href="#" class="icon-box icon-box-1" data-bs-toggle="modal" data-bs-target="#productModalId">
+                                        <i class="fal fa-eye"></i>
+                                        <i class="fal fa-eye"></i>
+                                    </a>
+                                    <a href="#" class="icon-box icon-box-1">
+                                        <i class="fal fa-heart"></i>
+                                        <i class="fal fa-heart"></i>
+                                    </a>
+                                    <a href="#" class="icon-box icon-box-1">
+                                        <i class="fal fa-layer-group"></i>
+                                        <i class="fal fa-layer-group"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="product__content product__content-3">
+                                <h6><a href="product-details.html">APPO R11s 64GB Dual 20MP Cameras</a></h6>
+                                <div class="rating mb-5 mt-10">
+                                    <ul>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                    </ul>
+                                    <span>(01 review)</span>
+                                </div>
+                                <div class="price mb-20">
+                                    <span>$150.00-$270.00</span>
+                                </div>
+                                <div class="progress mb-5">
+                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 20%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <div class="progress-rate">
+                                    <span>Sold:315/1225</span>
+                                </div>
+                            </div>
+                            <div class="product__add-cart text-center">
+                                <button type="button" class="cart-btn-3 product-modal-sidebar-open-btn d-flex align-items-center justify-content-center w-100">
+                                Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="product__item product__item-2 b-radius-2 mb-20">
+                            <div class="product__thumb fix">
+                                <div class="product-image w-img">
+                                    <a href="product-details.html">
+                                        <img src="{{asset('frontend/assets/img/product/tp-10.jpg')}}" alt="product">
+                                    </a>
+                                </div>
+                                <div class="product-action product__content-3">
+                                    <a href="#" class="icon-box icon-box-1" data-bs-toggle="modal" data-bs-target="#productModalId">
+                                        <i class="fal fa-eye"></i>
+                                        <i class="fal fa-eye"></i>
+                                    </a>
+                                    <a href="#" class="icon-box icon-box-1">
+                                        <i class="fal fa-heart"></i>
+                                        <i class="fal fa-heart"></i>
+                                    </a>
+                                    <a href="#" class="icon-box icon-box-1">
+                                        <i class="fal fa-layer-group"></i>
+                                        <i class="fal fa-layer-group"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="product__content product__content-3">
+                                <h6><a href="product-details.html">G951s Pink Stereo Gaming Headset</a></h6>
+                                <div class="rating mb-5 mt-10">
+                                    <ul>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                    </ul>
+                                    <span>(01 review)</span>
+                                </div>
+                                <div class="price mb-20">
+                                    <span>$120.00-$210.00</span>
+                                </div>
+                                <div class="progress mb-5">
+                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 20%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <div class="progress-rate">
+                                    <span>Sold:315/1225</span>
+                                </div>
+                            </div>
+                            <div class="product__add-cart text-center">
+                                <button type="button" class="cart-btn-3 product-modal-sidebar-open-btn d-flex align-items-center justify-content-center w-100">
+                                Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- top-dels-end -->
+
+        <!-- featured-start -->
+        <section class="featured light-bg-s pt-50 pb-40">
+            <div class="container 0">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="section__head d-flex justify-content-between mb-30">
+                            <div class="section__title section__title-2">
+                                <h5 class="st-titile">Top Featured Products</h5>
+                            </div>
+                            <div class="button-wrap button-wrap-2">
+                                <a href="product.html">See All Product <i class="fal fa-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-6 col-lg-12">
+                        <div class="single-features-item single-features-item-d b-radius-2 mb-20">
+                            <div class="row  g-0 align-items-center">
+                                <div class="col-md-6">
+                                    <div class="features-thum">
+                                        <div class="features-product-image w-img">
+                                            <a href="product-details.html"><img src="{{asset('frontend/assets/img/features-product/fpsm-2.jpg')}}" alt=""></a>
+                                        </div>
+                                        <div class="product-action product-action-2">
+                                            <a href="#" class="icon-box icon-box-1" data-bs-toggle="modal" data-bs-target="#productModalId">
+                                                <i class="fal fa-eye"></i>
+                                                <i class="fal fa-eye"></i>
+                                            </a>
+                                            <a href="#" class="icon-box icon-box-1">
+                                                <i class="fal fa-layer-group"></i>
+                                                <i class="fal fa-layer-group"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="product__content product__content-d product__content-d-2">
+                                        <h6><a href="product-details.html">Samsang Galaxy A70 128GB Dual-SIM</a></h6>
+                                        <div class="rating mb-5">
+                                            <ul class="rating-d">
+                                                <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                            </ul>
+                                            <span>(01 review)</span>
+                                        </div>
+                                        <div class="price d-price mb-10">
+                                            <span>$307.00 <del>$110</del></span>
+                                        </div>
+                                        <div class="features-des mb-25">
+                                            <ul>
+                                                <li><a href="product-details.html"><i class="fas fa-circle"></i> Bass and Stereo Sound.</a></li>
+                                                <li><a href="product-details.html"><i class="fas fa-circle"></i> Display with 3088 x 1440 pixels resolution.</a></li>
+                                                <li><a href="product-details.html"><i class="fas fa-circle"></i> Memory, Storage &amp; SIM: 12GB RAM, 256GB.</a></li>
+                                                <li><a href="product-details.html"><i class="fas fa-circle"></i> Androi v10.0 Operating system.</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="cart-option">
+                                            <a href="cart.html" class="cart-btn-4 w-100 mr-10">Add to Cart</a>
+                                            <a href="cart.html" class="transperant-btn-2"><i class="fal fa-heart"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-12">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="single-features-item b-radius-2 mb-20">
+                                    <div class="row  g-0 align-items-center">
+                                        <div class="col-6">
+                                            <div class="features-thum">
+                                                <div class="features-product-image w-img">
+                                                    <a href="product-details.html"><img src="{{asset('frontend/assets/img/features-product/fp-1.jpg')}}" alt=""></a>
+                                                </div>
+                                                <div class="product__offer">
+                                                    <span class="discount">-15%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="product__content product__content-d product__content-d-2">
+                                                <h6><a href="product-details.html">Epple Watch SE Gold Aluminum</a></h6>
+                                                <div class="rating mb-5">
+                                                    <ul>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                    </ul>
+                                                    <span>(01 review)</span>
+                                                </div>
+                                                <div class="price d-price">
+                                                    <span>$307.00 <del>$110</del></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="single-features-item b-radius-2 mb-20">
+                                    <div class="row  g-0 align-items-center">
+                                        <div class="col-6">
+                                            <div class="features-thum">
+                                                <div class="features-product-image w-img">
+                                                    <a href="product-details.html"><img src="{{asset('frontend/assets/img/features-product/fp-2.jpg')}}" alt=""></a>
+                                                </div>
+                                                <div class="product__offer">
+                                                    <span class="discount">-5%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="product__content product__content-d product__content-d-2">
+                                                <h6><a href="product-details.html">G951s Pink Stereo Gaming Headset</a></h6>
+                                                <div class="rating mb-5">
+                                                    <ul>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                    </ul>
+                                                    <span>(01 review)</span>
+                                                </div>
+                                                <div class="price d-price">
+                                                    <span>$210.00 <del>$110</del></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="single-features-item b-radius-2 mb-20">
+                                    <div class="row  g-0 align-items-center">
+                                        <div class="col-6">
+                                            <div class="features-thum">
+                                                <div class="features-product-image w-img">
+                                                    <a href="product-details.html"><img src="{{asset('frontend/assets/img/features-product/fp-3.jpg')}}" alt=""></a>
+                                                </div>
+                                                <div class="product__offer">
+                                                    <span class="discount">-25%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="product__content product__content-d product__content-d-2">
+                                                <h6><a href="product-details.html">Solo3 Wireless On-Ear Headphones</a></h6>
+                                                <div class="rating mb-5">
+                                                    <ul>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                    </ul>
+                                                    <span>(01 review)</span>
+                                                </div>
+                                                <div class="price">
+                                                    <span>$160.00 <del>$110</del></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="single-features-item b-radius-2 mb-20">
+                                    <div class="row  g-0 align-items-center">
+                                        <div class="col-6">
+                                            <div class="features-thum">
+                                                <div class="features-product-image w-img">
+                                                    <a href="product-details.html"><img src="{{asset('frontend/assets/img/features-product/fp-6.jpg')}}" alt=""></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="product__content product__content-d product__content-d-2">
+                                                <h6><a href="product-details.html">Men’s Short-Sleeve Pocket Oxford Shirt</a></h6>
+                                                <div class="rating mb-5">
+                                                    <ul>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                    </ul>
+                                                    <span>(01 review)</span>
+                                                </div>
+                                                <div class="price">
+                                                    <span>$280.00 <del>$110</del></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- featured-end -->
+
+        <!-- banner__area-start -->
+        <section class="banner__area light-bg-s pb-10">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="banner__item p-relative w-img mb-30">
+                            <div class="banner__img b-radius-2">
+                                <a href="product-details.html"><img src="{{asset('frontend/assets/img/banner/banner-1.jpg')}}" alt=""></a>
+                            </div>
+                            <div class="banner__content">
+                                <h6><a href="product-details.html">Intelligent <br> New Touch Control</a></h6>
+                                <p>Discount  20% On Products</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="banner__item p-relative mb-30 w-img">
+                            <div class="banner__img b-radius-2">
+                                <a href="product-details.html"><img src="{{asset('frontend/assets/img/banner/banner-2.jpg')}}" alt=""></a>
+                            </div>
+                            <div class="banner__content">
+                                <h6><a href="product-details.html">On-sale <br> Best Prices</a></h6>
+                                <p>Limited Time: Online Only!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="banner__item p-relative mb-30 w-img">
+                            <div class="banner__img b-radius-2">
+                                <a href="product-details.html"><img src="{{asset('frontend/assets/img/banner/banner-3.jpg')}}" alt=""></a>
+                            </div>
+                            <div class="banner__content">
+                                <h6><a href="product-details.html">Hot Sale <br> Super Laptops 2022 </a></h6>
+                                <p>Free Shipping All Order</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- banner__area-end -->
+
+        <!-- trending-product-area-start -->
+        <section class="trending-product-area light-bg-s pt-20 pb-15">
+            <div class="container 0">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="section__head d-flex justify-content-between mb-30">
+                            <div class="section__title section__title-2">
+                                <h5 class="st-titile">Hot Trending Products</h5>
+                            </div>
+                            <div class="button-wrap button-wrap-2">
+                                <a href="product.html">See All Product <i class="fal fa-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-2">
+                        <div class="product__item product__item-2 b-radius-2 mb-20">
+                            <div class="product__thumb fix">
+                                <div class="product-image w-img">
+                                    <a href="product-details.html">
+                                        <img src="{{asset('frontend/assets/img/product/tp-1.jpg')}}" alt="product">
+                                    </a>
+                                </div>
+                                <div class="product__offer">
+                                <span class="discount">-15%</span>
+                                </div>
+                                <div class="product-action product-action-2">
+                                    <a href="#" class="icon-box icon-box-1" data-bs-toggle="modal" data-bs-target="#productModalId">
+                                        <i class="fal fa-eye"></i>
+                                        <i class="fal fa-eye"></i>
+                                    </a>
+                                    <a href="#" class="icon-box icon-box-1">
+                                        <i class="fal fa-heart"></i>
+                                        <i class="fal fa-heart"></i>
+                                    </a>
+                                    <a href="#" class="icon-box icon-box-1">
+                                        <i class="fal fa-layer-group"></i>
+                                        <i class="fal fa-layer-group"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="product__content product__content-2">
+                                <h6><a href="product-details.html">Epple iPad Pro 10.5-inch Cellular 64G</a></h6>
+                                <div class="rating mb-5 mt-10">
+                                    <ul>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                    </ul>
+                                    <span>(01 review)</span>
+                                </div>
+                                <div class="price">
+                                    <span>$105-$110</span>
+                                </div>
+                            </div>
+                            <div class="product__add-cart text-center">
+                                <button type="button" class="cart-btn-3 product-modal-sidebar-open-btn d-flex align-items-center justify-content-center w-100">
+                                Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-2">
+                        <div class="product__item product__item-2 b-radius-2 mb-20">
+                            <div class="product__thumb fix">
+                                <div class="product-image w-img">
+                                    <a href="product-details.html">
+                                        <img src="{{asset('frontend/assets/img/product/tp-2.jpg')}}" alt="product">
+                                    </a>
+                                </div>
+                                <div class="product-action product-action-2">
+                                    <a href="#" class="icon-box icon-box-1" data-bs-toggle="modal" data-bs-target="#productModalId">
+                                        <i class="fal fa-eye"></i>
+                                        <i class="fal fa-eye"></i>
+                                    </a>
+                                    <a href="#" class="icon-box icon-box-1">
+                                        <i class="fal fa-heart"></i>
+                                        <i class="fal fa-heart"></i>
+                                    </a>
+                                    <a href="#" class="icon-box icon-box-1">
+                                        <i class="fal fa-layer-group"></i>
+                                        <i class="fal fa-layer-group"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="product__content product__content-2">
+                                <h6><a href="product-details.html">Men Size Yellow Basketball Jerseys</a></h6>
+                                <div class="rating mb-5 mt-10">
+                                    <ul>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                    </ul>
+                                    <span>(01 review)</span>
+                                </div>
+                                <div class="price">
+                                    <span>$105-$150</span>
+                                </div>
+                            </div>
+                            <div class="product__add-cart text-center">
+                                <button type="button" class="cart-btn-3 product-modal-sidebar-open-btn d-flex align-items-center justify-content-center w-100">
+                                Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-2">
+                        <div class="product__item product__item-2 b-radius-2 mb-20">
+                            <div class="product__thumb fix">
+                                <div class="product-image w-img">
+                                    <a href="product-details.html">
+                                        <img src="{{asset('frontend/assets/img/product/tp-3.jpg')}}" alt="product">
+                                    </a>
+                                </div>
+                                <div class="product__offer">
+                                <span class="discount">-9%</span>
+                                </div>
+                                <div class="product-action product-action-2">
+                                    <a href="#" class="icon-box icon-box-1" data-bs-toggle="modal" data-bs-target="#productModalId">
+                                        <i class="fal fa-eye"></i>
+                                        <i class="fal fa-eye"></i>
+                                    </a>
+                                    <a href="#" class="icon-box icon-box-1">
+                                        <i class="fal fa-heart"></i>
+                                        <i class="fal fa-heart"></i>
+                                    </a>
+                                    <a href="#" class="icon-box icon-box-1">
+                                        <i class="fal fa-layer-group"></i>
+                                        <i class="fal fa-layer-group"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="product__content product__content-2">
+                                <h6><a href="product-details.html">Xbox Wireless Game Controller Pink</a></h6>
+                                <div class="rating mb-5 mt-10">
+                                    <ul>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                    </ul>
+                                    <span>(01 review)</span>
+                                </div>
+                                <div class="price">
+                                    <span>$200-$280</span>
+                                </div>
+                            </div>
+                            <div class="product__add-cart text-center">
+                                <button type="button" class="cart-btn-3 product-modal-sidebar-open-btn d-flex align-items-center justify-content-center w-100">
+                                Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-2">
+                        <div class="product__item product__item-2 b-radius-2 mb-20">
+                            <div class="product__thumb fix">
+                                <div class="product-image w-img">
+                                    <a href="product-details.html">
+                                        <img src="{{asset('frontend/assets/img/product/tp-7.jpg')}}" alt="product">
+                                    </a>
+                                </div>
+                                <div class="product-action product-action-2">
+                                    <a href="#" class="icon-box icon-box-1" data-bs-toggle="modal" data-bs-target="#productModalId">
+                                        <i class="fal fa-eye"></i>
+                                        <i class="fal fa-eye"></i>
+                                    </a>
+                                    <a href="#" class="icon-box icon-box-1">
+                                        <i class="fal fa-heart"></i>
+                                        <i class="fal fa-heart"></i>
+                                    </a>
+                                    <a href="#" class="icon-box icon-box-1">
+                                        <i class="fal fa-layer-group"></i>
+                                        <i class="fal fa-layer-group"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="product__content product__content-2">
+                                <h6><a href="product-details.html">APPO R11s 64GB Dual 20MP Cameras</a></h6>
+                                <div class="rating mb-5 mt-10">
+                                    <ul>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                    </ul>
+                                    <span>(01 review)</span>
+                                </div>
+                                <div class="price">
+                                    <span>$150.00-$270.00</span>
+                                </div>
+                            </div>
+                            <div class="product__add-cart text-center">
+                                <button type="button" class="cart-btn-3 product-modal-sidebar-open-btn d-flex align-items-center justify-content-center w-100">
+                                Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-2">
+                        <div class="product__item product__item-2 b-radius-2 mb-20">
+                            <div class="product__thumb fix">
+                                <div class="product-image w-img">
+                                    <a href="product-details.html">
+                                        <img src="{{asset('frontend/assets/img/product/tp-10.jpg')}}" alt="product">
+                                    </a>
+                                </div>
+                                <div class="product-action product-action-2">
+                                    <a href="#" class="icon-box icon-box-1" data-bs-toggle="modal" data-bs-target="#productModalId">
+                                        <i class="fal fa-eye"></i>
+                                        <i class="fal fa-eye"></i>
+                                    </a>
+                                    <a href="#" class="icon-box icon-box-1">
+                                        <i class="fal fa-heart"></i>
+                                        <i class="fal fa-heart"></i>
+                                    </a>
+                                    <a href="#" class="icon-box icon-box-1">
+                                        <i class="fal fa-layer-group"></i>
+                                        <i class="fal fa-layer-group"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="product__content product__content-2">
+                                <h6><a href="product-details.html">G951s Pink Stereo Gaming Headset</a></h6>
+                                <div class="rating mb-5 mt-10">
+                                    <ul>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                    </ul>
+                                    <span>(01 review)</span>
+                                </div>
+                                <div class="price">
+                                    <span>$120.00-$210.00</span>
+                                </div>
+                            </div>
+                            <div class="product__add-cart text-center">
+                                <button type="button" class="cart-btn-3 product-modal-sidebar-open-btn d-flex align-items-center justify-content-center w-100">
+                                Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-2">
+                        <div class="product__item product__item-2 b-radius-2 mb-20">
+                            <div class="product__thumb fix">
+                                <div class="product-image w-img">
+                                    <a href="product-details.html">
+                                        <img src="{{asset('frontend/assets/img/product/tp-9.jpg')}}" alt="product">
+                                    </a>
+                                </div>
+                                <div class="product-action product-action-2">
+                                    <a href="#" class="icon-box icon-box-1" data-bs-toggle="modal" data-bs-target="#productModalId">
+                                        <i class="fal fa-eye"></i>
+                                        <i class="fal fa-eye"></i>
+                                    </a>
+                                    <a href="#" class="icon-box icon-box-1">
+                                        <i class="fal fa-heart"></i>
+                                        <i class="fal fa-heart"></i>
+                                    </a>
+                                    <a href="#" class="icon-box icon-box-1">
+                                        <i class="fal fa-layer-group"></i>
+                                        <i class="fal fa-layer-group"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="product__content product__content-2">
+                                <h6><a href="product-details.html">Epple iPhone 11 Pro Max 64GB Gold</a></h6>
+                                <div class="rating mb-5 mt-10">
+                                    <ul>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                    </ul>
+                                    <span>(01 review)</span>
+                                </div>
+                                <div class="price">
+                                    <span>$120.00-$140.00</span>
+                                </div>
+                            </div>
+                            <div class="product__add-cart text-center">
+                                <button type="button" class="cart-btn-3 product-modal-sidebar-open-btn d-flex align-items-center justify-content-center w-100">
+                                Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- trending-product-area-end -->
+
+        <!-- doubale-product-area-start -->
+        <div class="doubale-product-area light-bg-s pt-20 pb-40">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-6">
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="section__head d-flex justify-content-between mb-30">
+                                    <div class="section__title section__title-2">
+                                        <h5 class="st-titile">Hot Trending Products</h5>
+                                    </div>
+                                    <div class="button-wrap button-wrap-2">
+                                        <a href="product.html">See All <i class="fal fa-chevron-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="single-features-item b-radius-2 mb-20">
+                                    <div class="row  g-0 align-items-center">
+                                        <div class="col-4">
+                                            <div class="features-thum">
+                                                <div class="features-product-image w-img">
+                                                    <a href="product-details.html"><img src="{{asset('frontend/assets/img/features-product/fp-2.jpg')}}" alt=""></a>
+                                                </div>
+                                                <div class="product__offer">
+                                                    <span class="discount">-5%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="product__content product__content-d product__content-d-2">
+                                                <h6><a href="product-details.html">G951s Pink Stereo Gaming Headset</a></h6>
+                                                <div class="rating mb-5">
+                                                    <ul>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                    </ul>
+                                                    <span>(01 review)</span>
+                                                </div>
+                                                <div class="price d-price">
+                                                    <span>$210.00 <del>$110</del></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-12">
+                                <div class="single-features-item b-radius-2 mb-20">
+                                    <div class="row  g-0 align-items-center">
+                                        <div class="col-4">
+                                            <div class="features-thum">
+                                                <div class="features-product-image w-img">
+                                                    <a href="product-details.html"><img src="{{asset('frontend/assets/img/features-product/fp-3.jpg')}}" alt=""></a>
+                                                </div>
+                                                <div class="product__offer">
+                                                    <span class="discount">-25%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="product__content product__content-d product__content-d-2">
+                                                <h6><a href="product-details.html">Solo3 Wireless On-Ear Headphones</a></h6>
+                                                <div class="rating mb-5">
+                                                    <ul>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                    </ul>
+                                                    <span>(01 review)</span>
+                                                </div>
+                                                <div class="price">
+                                                    <span>$160.00 <del>$110</del></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-12">
+                                <div class="single-features-item b-radius-2 mb-20">
+                                    <div class="row  g-0 align-items-center">
+                                        <div class="col-4">
+                                            <div class="features-thum">
+                                                <div class="features-product-image w-img">
+                                                    <a href="product-details.html"><img src="{{asset('frontend/assets/img/features-product/fp-6.jpg')}}" alt=""></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="product__content product__content-d product__content-d-2">
+                                                <h6><a href="product-details.html">Men’s Short-Sleeve Pocket Oxford Shirt</a></h6>
+                                                <div class="rating mb-5">
+                                                    <ul>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                    </ul>
+                                                    <span>(01 review)</span>
+                                                </div>
+                                                <div class="price">
+                                                    <span>$280.00 <del>$110</del></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6">
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="section__head d-flex justify-content-between mb-30">
+                                    <div class="section__title section__title-2">
+                                        <h5 class="st-titile">On-sale Products</h5>
+                                    </div>
+                                    <div class="button-wrap button-wrap-2">
+                                        <a href="product.html">See All <i class="fal fa-chevron-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="single-features-item b-radius-2 mb-20">
+                                    <div class="row  g-0 align-items-center">
+                                        <div class="col-4">
+                                            <div class="features-thum">
+                                                <div class="features-product-image w-img">
+                                                    <a href="product-details.html"><img src="{{asset('frontend/assets/img/features-product/fp-7.jpg')}}" alt=""></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="product__content product__content-d product__content-d-2">
+                                                <h6><a href="product-details.html">OnePlus Nord N100 64GB, 4GB RAM</a></h6>
+                                                <div class="rating mb-5">
+                                                    <ul>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                    </ul>
+                                                    <span>(01 review)</span>
+                                                </div>
+                                                <div class="price d-price">
+                                                    <span>$245.00 <del>$110</del></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-12">
+                                <div class="single-features-item b-radius-2 mb-20">
+                                    <div class="row  g-0 align-items-center">
+                                        <div class="col-4">
+                                            <div class="features-thum">
+                                                <div class="features-product-image w-img">
+                                                    <a href="product-details.html"><img src="{{asset('frontend/assets/img/features-product/fp-8.jpg')}}" alt=""></a>
+                                                </div>
+                                                <div class="product__offer">
+                                                    <span class="discount">-25%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="product__content product__content-d product__content-d-2">
+                                                <h6><a href="product-details.html">Smartwatch with Heart Rate 256bpm</a></h6>
+                                                <div class="rating mb-5">
+                                                    <ul>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                    </ul>
+                                                    <span>(01 review)</span>
+                                                </div>
+                                                <div class="price">
+                                                    <span>$130.00 <del>$110</del></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-12">
+                                <div class="single-features-item b-radius-2 mb-20">
+                                    <div class="row  g-0 align-items-center">
+                                        <div class="col-4">
+                                            <div class="features-thum">
+                                                <div class="features-product-image w-img">
+                                                    <a href="product-details.html"><img src="{{asset('frontend/assets/img/features-product/fp-9.jpg')}}" alt=""></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="product__content product__content-d product__content-d-2">
+                                                <h6><a href="product-details.html">Samsang Galaxy A21S 4GB Ram, 128Gb</a></h6>
+                                                <div class="rating mb-5">
+                                                    <ul>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                    </ul>
+                                                    <span>(01 review)</span>
+                                                </div>
+                                                <div class="price">
+                                                    <span>$180.00 <del>$110</del></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6">
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="section__head d-flex justify-content-between mb-30">
+                                    <div class="section__title section__title-2">
+                                        <h5 class="st-titile">Top Rate Products</h5>
+                                    </div>
+                                    <div class="button-wrap button-wrap-2">
+                                        <a href="product.html">See All <i class="fal fa-chevron-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="single-features-item b-radius-2 mb-20">
+                                    <div class="row  g-0 align-items-center">
+                                        <div class="col-4">
+                                            <div class="features-thum">
+                                                <div class="features-product-image w-img">
+                                                    <a href="product-details.html"><img src="{{asset('frontend/assets/img/features-product/fp-10.jpg')}}" alt=""></a>
+                                                </div>
+                                                <div class="product__offer">
+                                                    <span class="discount">-5%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="product__content product__content-d product__content-d-2">
+                                                <h6><a href="product-details.html">Apple iPhone XR 64GB Red Dual-SIM</a></h6>
+                                                <div class="rating mb-5">
+                                                    <ul>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                    </ul>
+                                                    <span>(01 review)</span>
+                                                </div>
+                                                <div class="price d-price">
+                                                    <span>$165.00 <del>$110</del></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-12">
+                                <div class="single-features-item b-radius-2 mb-20">
+                                    <div class="row  g-0 align-items-center">
+                                        <div class="col-4">
+                                            <div class="features-thum">
+                                                <div class="features-product-image w-img">
+                                                    <a href="product-details.html"><img src="{{asset('frontend/assets/img/features-product/fp-11.jpg')}}" alt=""></a>
+                                                </div>
+                                                <div class="product__offer">
+                                                    <span class="discount">-25%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="product__content product__content-d product__content-d-2">
+                                                <h6><a href="product-details.html">MW65 Wireless Headphones Z1000</a></h6>
+                                                <div class="rating mb-5">
+                                                    <ul>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                    </ul>
+                                                    <span>(01 review)</span>
+                                                </div>
+                                                <div class="price">
+                                                    <span>$130.00 <del>$110</del></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-12">
+                                <div class="single-features-item b-radius-2 mb-20">
+                                    <div class="row  g-0 align-items-center">
+                                        <div class="col-4">
+                                            <div class="features-thum">
+                                                <div class="features-product-image w-img">
+                                                    <a href="product-details.html"><img src="{{asset('frontend/assets/img/features-product/fp-12.jpg')}}" alt=""></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="product__content product__content-d product__content-d-2">
+                                                <h6><a href="product-details.html">All-new Fire HD 10 Tablet 10.1″ Full HD</a></h6>
+                                                <div class="rating mb-5">
+                                                    <ul>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                                    </ul>
+                                                    <span>(01 review)</span>
+                                                </div>
+                                                <div class="price">
+                                                    <span>$140.00 <del>$110</del></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- doubale-product-area-end -->
+
+        <!-- moveing-text-area-start -->
+        <section class="moveing-text-area">
+            <div class="container">
+                <div class="ovic-running">
+                    <div class="wrap">
+                        <div class="inner">
+                            <p class="item">Free UK Delivery - Return Over $100.00 ( Excluding Homeware )   |   Free UK Collect From Store</p>
+                            <p class="item">Design Week / 15% Off the website / Code: AYOSALE-2020</p>
+                            <p class="item">Always iconic. Now organic. Introducing the $20 Organic Tee.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- moveing-text-area-end -->
+
+        <!-- blog-area-start -->
+        <div class="blog-area pt-55 pb-75">
+            <div class="container 0">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="section__head d-flex justify-content-between mb-30">
+                            <div class="section__title section__title-2">
+                                <h5 class="st-titile">From The Blog</h5>
+                            </div>
+                            <div class="button-wrap button-wrap-2">
+                                <a href="blog.html">See All Product <i class="fal fa-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-4">
+                        <div class="single-smblog mb-30">
+                            <div class="smblog-thum">
+                                <div class="blog-image blog-image-2 w-img">
+                                    <a href="blog-details.html"><img src="{{asset('frontend/assets/img/blog/sm-b-1.jpg')}}" alt=""></a>
+                                </div>
+                                <div class="blog-tag">
+                                    <a href="blog.html">Digital</a>
+                                </div>
+                            </div>
+                            <div class="smblog-content smblog-content-2">
+                                <h6><a href="blog-details.html">How mobile phones have changed people’s lives in the world</a></h6>
+                                <span class="author mb-10">posted by <a href="#">Adlop</a></span>
+                                <div class="smblog-foot pt-15">
+                                    <div class="post-readmore">
+                                        <a href="blog-details.html"> Read More <span class="icon"></span></a>
+                                    </div>
+                                    <div class="post-date">
+                                        <a href="blog-details.html">Jan 24, 2022</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-4">
+                        <div class="single-smblog mb-30">
+                            <div class="smblog-thum">
+                                <div class="blog-image blog-image-2 w-img">
+                                    <a href="blog-details.html"><img src="{{asset('frontend/assets/img/blog/sm-b-2.jpg')}}" alt=""></a>
+                                </div>
+                                <div class="blog-tag">
+                                    <a href="blog.html">New</a>
+                                </div>
+                            </div>
+                            <div class="smblog-content smblog-content-2">
+                                <h6><a href="blog-details.html">Top 5 Best Digital Cameras for 2021 You Should Buy</a></h6>
+                                <span class="author mb-10">posted by <a href="#">Angelia</a></span>
+                                <div class="smblog-foot pt-15">
+                                    <div class="post-readmore">
+                                        <a href="blog-details.html">Read More <span class="icon"></span></a>
+                                    </div>
+                                    <div class="post-date">
+                                        <a href="blog-details.html">Jan 24, 2022</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-4">
+                        <div class="single-smblog mb-30">
+                            <div class="smblog-thum">
+                                <div class="blog-image blog-image-2 w-img">
+                                    <a href="blog-details.html"><img src="{{asset('frontend/assets/img/blog/sm-b-3.jpg')}}" alt=""></a>
+                                </div>
+                                <div class="blog-tag">
+                                    <a href="blog.html">Update</a>
+                                </div>
+                            </div>
+                            <div class="smblog-content smblog-content-2">
+                                <h6><a href="blog-details.html">Capture the moment with 4 cameras on Oppo A92</a></h6>
+                                <span class="author mb-10">posted by <a href="#">Iqbal</a></span>
+                                <div class="smblog-foot pt-15">
+                                    <div class="post-readmore">
+                                        <a href="blog-details.html"> Read More <span class="icon"></span></a>
+                                    </div>
+                                    <div class="post-date">
+                                        <a href="blog-details.html">Jan 24, 2022</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-4">
+                        <div class="single-smblog mb-30">
+                            <div class="smblog-thum">
+                                <div class="blog-image blog-image-2 w-img">
+                                    <a href="blog-details.html"><img src="{{asset('frontend/assets/img/blog/sm-b-4.jpg')}}" alt=""></a>
+                                </div>
+                                <div class="blog-tag">
+                                    <a href="blog.html">Offer</a>
+                                </div>
+                            </div>
+                            <div class="smblog-content smblog-content-2">
+                                <h6><a href="blog-details.html">Use Headphones Properly Not To Damage Your Hearing</a></h6>
+                                <span class="author mb-10">posted by <a href="#">Jenny</a></span>
+                                <div class="smblog-foot pt-15">
+                                    <div class="post-readmore">
+                                        <a href="blog-details.html"> Read More <span class="icon"></span></a>
+                                    </div>
+                                    <div class="post-date">
+                                        <a href="blog-details.html">Jan 24, 2022</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- blog-area-end -->
+
+        <!-- brand-area-start -->
+        <section class="brand-area brand-area-d">
+            <div class="container">
+                <div class="brand-slider swiper-container pt-50 pb-45">
+                    <div class="swiper-wrapper">
+                        <div class="brand-item w-img swiper-slide">
+                            <a href="#"><img src="{{asset('frontend/assets/img/brand/brand-1.jpg')}}" alt="brand"></a>
+                        </div>
+                        <div class="brand-item w-img swiper-slide">
+                            <a href="#"><img src="{{asset('frontend/assets/img/brand/brand-2.jpg')}}" alt="brand"></a>
+                        </div>
+                        <div class="brand-item w-img swiper-slide">
+                            <a href="#"><img src="{{asset('frontend/assets/img/brand/brand-3.jpg')}}" alt="brand"></a>
+                        </div>
+                        <div class="brand-item w-img swiper-slide">
+                            <a href="#"><img src="{{asset('frontend/assets/img/brand/brand-4.jpg')}}" alt="brand"></a>
+                        </div>
+                        <div class="brand-item w-img swiper-slide">
+                            <a href="#"><img src="{{asset('frontend/assets/img/brand/brand-5.jpg')}}" alt="brand"></a>
+                        </div>
+                        <div class="brand-item w-img swiper-slide">
+                            <a href="#"><img src="{{asset('frontend/assets/img/brand/brand-6.jpg')}}" alt="brand"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- brand-area-end -->
+
+    <!-- shop modal start -->
+    <div class="modal fade" id="productModalId" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered product__modal" role="document">
+            <div class="modal-content">
+                <div class="product__modal-wrapper p-relative">
+                    <div class="product__modal-close p-absolute">
+                        <button data-bs-dismiss="modal"><i class="fal fa-times"></i></button>
+                    </div>
+                    <div class="product__modal-inner">
+                        <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="product__modal-box">
+                                <div class="tab-content" id="modalTabContent">
+                                    <div class="tab-pane fade show active" id="nav1" role="tabpanel" aria-labelledby="nav1-tab">
+                                        <div class="product__modal-img w-img">
+                                            <img src="{{asset('frontend/assets/img/quick-view/quick-view-1.jpg')}}" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="nav2" role="tabpanel" aria-labelledby="nav2-tab">
+                                        <div class="product__modal-img w-img">
+                                            <img src="{{asset('frontend/assets/img/quick-view/quick-view-2.jpg')}}" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="nav3" role="tabpanel" aria-labelledby="nav3-tab">
+                                        <div class="product__modal-img w-img">
+                                            <img src="{{asset('frontend/assets/img/quick-view/quick-view-3.jpg')}}" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="nav4" role="tabpanel" aria-labelledby="nav4-tab">
+                                        <div class="product__modal-img w-img">
+                                            <img src="{{asset('frontend/assets/img/quick-view/quick-view-4.jpg')}}" alt="">
+                                        </div>
+                                    </div>
+                                    </div>
+                                <ul class="nav nav-tabs" id="modalTab" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active" id="nav1-tab" data-bs-toggle="tab" data-bs-target="#nav1" type="button" role="tab" aria-controls="nav1" aria-selected="true">
+                                            <img src="{{asset('frontend/assets/img/quick-view/quick-nav-1.jpg')}}" alt="">
+                                        </button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="nav2-tab" data-bs-toggle="tab" data-bs-target="#nav2" type="button" role="tab" aria-controls="nav2" aria-selected="false">
+                                        <img src="{{asset('frontend/assets/img/quick-view/quick-nav-2.jpg')}}" alt="">
+                                        </button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="nav3-tab" data-bs-toggle="tab" data-bs-target="#nav3" type="button" role="tab" aria-controls="nav3" aria-selected="false">
+                                        <img src="{{asset('frontend/assets/img/quick-view/quick-nav-3.jpg')}}" alt="">
+                                        </button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="nav4-tab" data-bs-toggle="tab" data-bs-target="#nav4" type="button" role="tab" aria-controls="nav4" aria-selected="false">
+                                        <img src="{{asset('frontend/assets/img/quick-view/quick-nav-4.jpg')}}" alt="">
+                                        </button>
+                                    </li>
+                                    </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="product__modal-content">
+                                <h4><a href="product-details.html">Samsung C49J89: £875, Debenhams Plus</a></h4>
+                                <div class="product__review d-sm-flex">
+                                    <div class="rating rating__shop mb-10 mr-30">
+                                    <ul>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                    </ul>
+                                    </div>
+                                    <div class="product__add-review mb-15">
+                                    <span>01 review</span>
+                                    </div>
+                                </div>
+                                <div class="product__price">
+                                    <span>$109.00 – $307.00</span>
+                                </div>
+                                <div class="product__modal-des mt-20 mb-15">
+                                    <ul>
+                                        <li><a href="#"><i class="fas fa-circle"></i> Bass and Stereo Sound.</a></li>
+                                        <li><a href="#"><i class="fas fa-circle"></i> Display with 3088 x 1440 pixels resolution.</a></li>
+                                        <li><a href="#"><i class="fas fa-circle"></i> Memory, Storage & SIM: 12GB RAM, 256GB.</a></li>
+                                        <li><a href="#"><i class="fas fa-circle"></i> Androi v10.0 Operating system.</a></li>
+                                    </ul>
+                                </div>
+                                <div class="product__stock mb-20">
+                                    <span class="mr-10">Availability :</span>
+                                    <span>1795 in stock</span>
+                                </div>
+                                <div class="product__modal-form">
+                                    <form action="#">
+                                    <div class="pro-quan-area d-lg-flex align-items-center">
+                                        <div class="product-quantity mr-20 mb-25">
+                                            <div class="cart-plus-minus p-relative"><input type="text" value="1" /></div>
+                                        </div>
+                                        <div class="pro-cart-btn mb-25">
+                                            <button class="cart-btn" type="submit">Add to cart</button>
+                                        </div>
+                                    </div>
+                                    </form>
+                                </div>
+                                <div class="product__stock mb-30">
+                                    <ul>
+                                        <li><a href="#">
+                                            <span class="sku mr-10">SKU:</span>
+                                            <span>Samsung C49J89: £875, Debenhams Plus</span></a>
+                                        </li>
+                                        <li><a href="#">
+                                            <span class="cat mr-10">Categories:</span>
+                                            <span>iPhone, Tablets</span></a>
+                                        </li>
+                                        <li><a href="#">
+                                            <span class="tag mr-10">Tags:</span>
+                                            <span>Smartphone, Tablets</span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- shop modal end -->
+
+    </main>
+
+    <!-- footer-start -->
+    <footer>
+        <div class="fotter-area d-ddark-bg">
+            <div class="footer__top pt-60 pb-10">
+                <div class="container 0">
+                    <div class="row">
+                        <div class="col-xxl-3 col-xl-4 col-lg-5 col-md-8">
+                            <div class="footer__widget">
+                                <div class="footer__widget-title mb-20">
+                                    <h4>About The Store</h4>
+                                </div>
+                                <div class="footer__widget-content">
+                                    <p class="footer-text mb-25">Our mission statement is to provide the absolute best customer experience available in the Electronic industry without exception.</p>
+                                    <div class="footer__hotline d-flex align-items-center mb-10">
+                                        <div class="icon icon-2 mr-15">
+                                            <i class="fal fa-headset"></i>
+                                        </div>
+                                        <div class="text text-2">
+                                            <h4>Got Question? Call us 24/7!</h4>
+                                            <span><a href="tel:100-123-456-7890">(+100) 123 456 7890</a></span>
+                                        </div>
+                                    </div>
+                                    <div class="footer__info">
+                                        <ul>
+                                            <li>
+                                                <span>Add:  <a target="_blank" href="https://goo.gl/maps/c82DDZ8ALvL878Bv8">Walls Street 68, Mahattan, New York, USA</a></span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xxl-2 col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                            <div class="footer__widget footer-col-2">
+                                <div class="footer__widget-title">
+                                    <h4>My Account</h4>
+                                </div>
+                                <div class="footer__widget-content">
+                                    <div class="footer__link footer__link-2">
+                                        <ul>
+                                            <li><a href="contact.html">Product Support</a></li>
+                                            <li><a href="checkout.html">Checkout</a></li>
+                                            <li><a href="cart.html">Shopping Cart</a></li>
+                                            <li><a href="wishlist.html">Wishlist</a></li>
+                                            <li><a href="faq.html">Terms &amp; Conditions &amp;</a></li>
+                                            <li><a href="faq.html">Redeem Voucher</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xxl-2 col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                            <div class="footer__widget footer-col-2">
+                                <div class="footer__widget-title">
+                                    <h4>Customer Care</h4>
+                                </div>
+                                <div class="footer__widget-content">
+                                    <div class="footer__link footer__link-2">
+                                        <ul>
+                                            <li><a href="faq.html">New Customers</a></li>
+                                            <li><a href="faq.html">How to use Account</a></li>
+                                            <li><a href="faq.html">Placing an Order</a></li>
+                                            <li><a href="faq.html">Payment Methods</a></li>
+                                            <li><a href="faq.html">Delivery &amp; Dispatch</a></li>
+                                            <li><a href="faq.html">Problems with Order</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xxl-2 col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                            <div class="footer__widget footer-col-2">
+                                <div class="footer__widget-title">
+                                    <h4>Customer Service</h4>
+                                </div>
+                                <div class="footer__widget-content">
+                                    <div class="footer__link footer__link-2">
+                                        <ul>
+                                            <li><a href="faq.html">Help Center</a></li>
+                                            <li><a href="contact.html">Contact Us</a></li>
+                                            <li><a href="faq.html">Report Abuse</a></li>
+                                            <li><a href="faq.html">Submit a Dispute</a></li>
+                                            <li><a href="faq.html">Policies &amp; Rules</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-xl-4 col-lg-5 col-md-6">
+                            <div class="footer__widget">
+                                <div class="footer__widget-title mb-20">
+                                    <h4>Sign Up To Newsletter</h4>
+                                </div>
+                                <div class="footer__widget-content">
+                                    <p class="footer-text mb-25">Join 60.000+ subscribers and get a new discount coupon  on every Saturday.</p>
+                                    <div class="footer__newsletter-form">
+                                        <form action="#">
+                                            <input class="ft-newsl b-radius" type="email" placeholder="Enter your email ...">
+                                            <button class="ft-newsl-btn" type="submit">subscribe</button>
+                                        </form>
+                                        </div>
+                                    <p class="provide-text mt-20">By providing your email address, you agree to our <br> <a href="#">Privacy Policy</a> and <a href="#">Terms of Service</a> .</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom-2">
+                <div class="container 0">
+                    <div class="footer__bottom-content footer__bottom-content-2 pt-50 pb-50">
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="footer__links footer__links-d text-center mb-25">
+                                    <p>
+                                        <a href="about.html">About Us</a>
+                                        <a href="contact.html">Delivery & Return</a>
+                                        <a href="faq.html">Privacy Policy</a>
+                                        <a href="faq.html">Help</a>
+                                        <a href="faq.html">Order Tracking</a>
+                                        <a href="contact.html">Contact Us</a>
+                                        <a href="faq.html">FAQs </a>
+                                    </p>
+                                </div>
+                                <div class="payment-image text-center mb-25">
+                                    <a href="#"><img src="{{asset('frontend/assets/img/payment/payment.png')}}" alt=""></a>
+                                </div>
+                                <div class="copy-right-area copy-right-area-2 text-center">
+                                    <p>Copyright © <span>DukaMarket.</span> All Rights Reserved. Powered by <a href="#"><span class="main-color">Theme_Pure.</span></a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer-end -->
+
+      <!-- JS here -->
+      <script src="{{asset('frontend/assets/js/vendor/jquery.js')}}"></script>
+      <script src="{{asset('frontend/assets/js/vendor/waypoints.js')}}"></script>
+      <script src="{{asset('frontend/assets/js/bootstrap-bundle.js')}}"></script>
+      <script src="{{asset('frontend/assets/js/meanmenu.js')}}"></script>
+      <script src="{{asset('frontend/assets/js/swiper-bundle.js')}}"></script>
+      <script src="{{asset('frontend/assets/js/owl-carousel.js')}}"></script>
+      <script src="{{asset('frontend/assets/js/tweenmax.js')}}"></script>
+      <script src="{{asset('frontend/assets/js/magnific-popup.js')}}"></script>
+      <script src="{{asset('frontend/assets/js/parallax.js')}}"></script>
+      <script src="{{asset('frontend/assets/js/backtotop.js')}}"></script>
+      <script src="{{asset('frontend/assets/js/nice-select.js')}}"></script>
+      <script src="{{asset('frontend/assets/js/countdown.min.js')}}"></script>
+      <script src="{{asset('frontend/assets/js/counterup.js')}}"></script>
+      <script src="{{asset('frontend/assets/js/wow.js')}}"></script>
+      <script src="{{asset('frontend/assets/js/isotope-pkgd.js')}}"></script>
+      <script src="{{asset('frontend/assets/js/imagesloaded-pkgd.js')}}"></script>
+      <script src="{{asset('frontend/assets/js/ajax-form.js')}}"></script>
+      <script src="{{asset('frontend/assets/js/main.js')}}"></script>
+   </body>
 </html>

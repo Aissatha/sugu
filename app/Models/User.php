@@ -10,6 +10,8 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Jetstream\HasTeams;
 use Laravel\Sanctum\HasApiTokens;
+use Spatie\Permission\Traits\HasRoles; // Ajout de HasRoles
+
 
 class User extends Authenticatable
 {
@@ -27,6 +29,8 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+    use HasApiTokens, HasFactory, Notifiable, HasRoles; // Ajout de HasRoles
+
     protected $fillable = [
         'name',
         'email',
