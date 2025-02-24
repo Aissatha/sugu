@@ -3,7 +3,6 @@
 namespace App\Http\Responses;
 
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Fortify\Contracts\LoginResponse as FortifyLoginResponse;
 
@@ -11,7 +10,7 @@ class LoginResponse implements FortifyLoginResponse
 {
     public function toResponse($request)
     {
-        $user = Auth::user(); // S'assurer que c'est bien un utilisateur
+        $user = Auth::user();
 
         if (!$user) {
             return redirect()->route('login')->withErrors([

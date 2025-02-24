@@ -37,12 +37,12 @@ class FortifyServiceProvider extends ServiceProvider
         Fortify::updateUserPasswordsUsing(UpdateUserPassword::class);
         Fortify::resetUserPasswordsUsing(ResetUserPassword::class);
 
-        // Définition des redirections après connexion via la classe LoginResponse
+        // Authentification personnalisée : retourner l'utilisateur authentifié
         Fortify::authenticateUsing(function (Request $request) {
             $credentials = $request->only(Fortify::username(), 'password');
 
             if (Auth::attempt($credentials)) {
-                return app(FortifyLoginResponse::class);
+                return Auth::user();
             }
 
             return null;
