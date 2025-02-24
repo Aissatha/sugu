@@ -11,10 +11,19 @@ class LoginResponse implements FortifyLoginResponse
 {
     public function toResponse($request)
     {
-        $user = Auth::user();
+        $user = Auth::user(); // S'assurer que c'est bien un utilisateur
+
+        if (!$user) {
+            return redirect()->route('login')->withErrors([
+                'email' => 'Utilisateur non trouvé ou mot de passe incorrect.',
+            ]);
+        }
 
         if ($request->wantsJson()) {
-            return new JsonResponse(['message' => 'Connexion réussie', 'user' => $user], 200);
+            return new JsonResponse([
+                'message' => 'Connexion réussie',
+                'user' => $user
+            ], 200);
         }
 
         if ($user->hasRole('admin')) {
