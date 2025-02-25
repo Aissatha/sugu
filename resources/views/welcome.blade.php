@@ -4,7 +4,7 @@
    <head>
       <meta charset="utf-8">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
-      <title>Duka Market - Clean, Minimal E-commerce HTML5 Template </title>
+      <title>SUGUBA </title>
       <meta name="description" content="">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <!-- Place favicon.ico in the root directory -->
@@ -137,15 +137,15 @@
                                         <span>Language: </span>
                                     </div>
                                     <select>
-                                        <option>English</option>
-                                        <option>Deutsch</option>
+                                        <option>Anglais</option>
+                                        <option>Allemand</option>
                                         <option>Français</option>
-                                        <option>Espanol</option>
+                                        <option>Espagnol</option>
                                     </select>
                                 </div>
                                 <div class="header__lang border-right">
                                     <div class="s-name">
-                                        <span>Currency: </span>
+                                        <span>Devise: </span>
                                     </div>
                                     <select>
                                         <option> USD</option>
@@ -156,7 +156,7 @@
                                     </select>
                                 </div>
                                 <div class="support d-none d-sm-block">
-                                    <p>Need Help? <a href="tel:+001123456789">+001 123 456 789</a></p>
+                                    <p>Besoin d'aide? <a href="tel:+001123456789">+001 123 456 789</a></p>
                                 </div>
                             </div>
                         </div>
@@ -164,9 +164,9 @@
                             <div class="header-inner-end text-md-end">
                                 <div class="ovic-menu-wrapper ovic-menu-wrapper-2">
                                     <ul>
-                                        <li><a href="about.html">About Us</a></li>
-                                        <li><a href="contact.html">Order Tracking</a></li>
-                                        <li><a href="contact.html">Contact Us</a></li>
+                                        <li><a href="about.html">À propos de nous</a></li>
+                                        <li><a href="contact.html">Suivi de commandes</a></li>
+                                        <li><a href="contact.html">Contactez-nous</a></li>
                                         <li><a href="faq.html">FAQs</a></li>
                                     </ul>
                                 </div>
@@ -222,8 +222,8 @@
                                     <a class="icon-link icon-link-2" href="{{ route('login') }}">
                                     <i class="flaticon-user"></i>
                                     <span class="text">
-                                    <span class="sub">Login </span>
-                                    My Account </span>
+                                    <span class="sub">Connexion </span>
+                                    Mon compte</span>
                                     </a>
                                 </div>
                                 <div class="block-wishlist action">
@@ -231,8 +231,8 @@
                                     <i class="flaticon-heart"></i>
                                     <span class="count count-2">0</span>
                                     <span class="text">
-                                    <span class="sub">Favorite</span>
-                                    My Wishlist </span>
+                                    <span class="sub">Favoris</span>
+                                    Ma liste de souhaits </span>
                                     </a>
                                 </div>
                                 <div class="block-cart action">
@@ -240,7 +240,7 @@
                                     <i class="flaticon-shopping-bag"></i>
                                     <span class="count count-2">1</span>
                                     <span class="text">
-                                    <span class="sub">Your Cart:</span>
+                                    <span class="sub">Votre panier:</span>
                                     $00.00 </span>
                                     </a>
                                     <div class="cart">
@@ -354,79 +354,81 @@
         <nav id="mobile-menu-2">
             <ul>
                 <li>
-                    <a href="index.html" class="active">Home <i class="far fa-angle-down"></i></a>
-                    <ul class="megamenu-1">
-                        <li><a href="index.html">Home Pages</a>
-                            <ul class="mega-item">
-                                <li><a href="index.html">Home One</a></li>
-                                <li><a href="index-2.html">Home Two</a></li>
-                                <li><a href="index-3.html" class="active">Home Three</a></li>
-                                <li><a href="product-details.html">Shop 3 Column</a></li>
-                                <li><a href="product-details.html">Shop 4 Column</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="shop.html">Product Pages</a>
-                            <ul class="mega-item">
-                                <li><a href="product-details.html">Product Details</a></li>
-                                <li><a href="product-details.html">Product V2</a></li>
-                                <li><a href="product-details.html">Product V3</a></li>
-                                <li><a href="product-details.html">Varriable Product</a></li>
-                                <li><a href="product-details.html">External Product</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="shop.html">Other Pages</a>
-                            <ul class="mega-item">
-                                <li><a href="product-details.html">wishlist</a></li>
-                                <li><a href="product-details.html">Shopping Cart</a></li>
-                                <li><a href="product-details.html">Checkout</a></li>
-                                <li><a href="product-details.html">Login</a></li>
-                                <li><a href="product-details.html">Register</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="shop.html">Phone &amp; Tablets</a>
-                            <ul class="mega-item">
-                                <li><a href="product-details.html">Catagory 1</a></li>
-                                <li><a href="product-details.html">Catagory 2</a></li>
-                                <li><a href="product-details.html">Catagory 3</a></li>
-                                <li><a href="product-details.html">Catagory 4</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="shop.html">Phone &amp; Tablets</a>
-                            <ul class="mega-item">
-                                <li><a href="product-details.html">Catagory 1</a></li>
-                                <li><a href="product-details.html">Catagory 2</a></li>
-                                <li><a href="product-details.html">Catagory 3</a></li>
-                                <li><a href="product-details.html">Catagory 4</a></li>
-                            </ul>
-                        </li>
+    <a href="index.html" class="active">Accueil <i class="far fa-angle-down"></i></a>
+    <ul class="megamenu-1">
+        <li><a href="index.html">Pages d'accueil</a>
+            <ul class="mega-item">
+                <li><a href="index.html">Accueil 1</a></li>
+                <li><a href="index-2.html">Accueil 2</a></li>
+                <li><a href="index-3.html" class="active">Accueil 3</a></li>
+                <li><a href="product-details.html">Boutique - 3 colonnes</a></li>
+                <li><a href="product-details.html">Boutique - 4 colonnes</a></li>
+            </ul>
+        </li>
+        <li><a href="shop.html">Pages produits</a>
+            <ul class="mega-item">
+                <li><a href="product-details.html">Détails du produit</a></li>
+                <li><a href="product-details.html">Produit V2</a></li>
+                <li><a href="product-details.html">Produit V3</a></li>
+                <li><a href="product-details.html">Produit variable</a></li>
+                <li><a href="product-details.html">Produit externe</a></li>
+            </ul>
+        </li>
+        <li><a href="shop.html">Autres pages</a>
+            <ul class="mega-item">
+                <li><a href="product-details.html">Liste de souhaits</a></li>
+                <li><a href="product-details.html">Panier</a></li>
+                <li><a href="product-details.html">Paiement</a></li>
+                <li><a href="product-details.html">Connexion</a></li>
+                <li><a href="product-details.html">Inscription</a></li>
+            </ul>
+        </li>
+        <li><a href="shop.html">Téléphones & Tablettes</a>
+            <ul class="mega-item">
+                <li><a href="product-details.html">Smartphones</a></li>
+                <li><a href="product-details.html">Tablettes</a></li>
+                <li><a href="product-details.html">Accessoires</a></li>
+                <li><a href="product-details.html">Offres spéciales</a></li>
+            </ul>
+        </li>
+        <li><a href="shop.html">Ordinateurs & Accessoires</a>
+            <ul class="mega-item">
+                <li><a href="product-details.html">PC Portables</a></li>
+                <li><a href="product-details.html">PC de Bureau</a></li>
+                <li><a href="product-details.html">Périphériques</a></li>
+                <li><a href="product-details.html">Composants</a></li>
+            </ul>
+        </li>
+
                     </ul>
                 </li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="shop.html">Shop <i class="far fa-angle-down"></i></a>
+                <li><a href="about.html">À propos de SUGUBA</a></li>
+                <li><a href="shop.html">Boutique <i class="far fa-angle-down"></i></a>
                     <ul class="submenu">
-                        <li><a href="shop.html">shop</a></li>
-                        <li><a href="shop-details.html">Shop Details</a></li>
+                        <li><a href="shop.html">Tous les produits</a></li>
+                        <li><a href="shop-details.html">Détails du produit</a></li>
                     </ul>
                 </li>
                 <li><a href="blog.html">Blog <i class="far fa-angle-down"></i></a>
                     <ul class="submenu">
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="blog-details.html">Blog Details</a></li>
+                        <li><a href="blog.html">Articles</a></li>
+                        <li><a href="blog-details.html">Détails de l'article</a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="about.html">Pages <i class="far fa-angle-down"></i></a>
                     <ul class="submenu">
-                        <li><a href="my-account.html">My Account</a></li>
-                        <li><a href="product-details.html">Product Details</a></li>
-                        <li><a href="faq.html">FAQs pages</a></li>
-                        <li><a href="cart.html">Cart</a></li>
-                        <li><a href="wishlist.html">Wishlist</a></li>
-                        <li><a href="checkout.html">Checkout</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="404.html">404 Error</a></li>
+                        <li><a href="my-account.html">Mon compte</a></li>
+                        <li><a href="product-details.html">Détails du produit</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="cart.html">Mon panier</a></li>
+                        <li><a href="wishlist.html">Ma liste de souhaits</a></li>
+                        <li><a href="checkout.html">Paiement</a></li>
+                        <li><a href="contact.html">Nous contacter</a></li>
+                        <li><a href="404.html">Erreur 404</a></li>
                     </ul>
                 </li>
+
             </ul>
         </nav>
     </div>
@@ -511,51 +513,23 @@
 
         <!-- slider-area-start -->
         <div class="slider-area light-bg-s pt-60">
-            <div class="container 0">
-                <div class="row">
-                    <div class="col-xl-6">
-                        <div class="swiper-container slider__active pb-30">
-                            <div class="slider-wrapper swiper-wrapper">
-                                <div class="single-slider swiper-slide b-radius-2 slider-height-3 d-flex align-items-center" data-background="{{asset('frontend/assets/img/slider/03-slide-1.jpg')}}">
-                                    <div class="slider-content slider-content-2">
-                                        <div class="slider-top-btn mb-20" data-animation="fadeInLeft" data-delay="1.5s" style="animation-delay: 1.5s;">
-                                            <a href="shop.html" class="st-btn b-radius">HOT DEALS</a>
-                                        </div>
-                                        <h2 data-animation="fadeInLeft" data-delay="1.7s" class="pt-15 slider-title pb-5">BIG SALE <br> TOP HEADPHONE</h2>
-                                        <p class="pr-20 slider_text" data-animation="fadeInLeft" data-delay="1.9s">Best Sport Edition 2022</p>
-                                        <div class="slider-bottom-btn mt-65">
-                                            <a data-animation="fadeInUp" data-delay="1.15s" href="shop.html" class="st-btn-border b-radius-2">Discover now</a>
-                                        </div>
-                                    </div>
-                                </div><!-- /single-slider -->
-                                <div class="single-slider swiper-slide b-radius-2 slider-height-3 d-flex align-items-center" data-background="{{asset('frontend/assets/img/slider/03-slide-2.jpg')}}">
-                                    <div class="slider-content slider-content-2">
-                                        <div class="slider-top-btn mb-20" data-animation="fadeInLeft" data-delay="1.5s" style="animation-delay: 1.5s;">
-                                            <a href="shop.html" class="st-btn b-radius">HOT DEALS</a>
-                                        </div>
-                                        <h2 data-animation="fadeInLeft" data-delay="1.5s" class="pt-15 slider-title pb-5">GEAR 360<br> WiRELESS LARBUDS</h2>
-                                        <p class="pr-20 slider_text" data-animation="fadeInLeft" data-delay="1.7s">Top Quality Earbuds & Accessories</p>
-                                        <div class="slider-bottom-btn mt-65">
-                                            <a data-animation="fadeInUp" data-delay="1.9s" href="shop.html" class="st-btn-border b-radius-2">Discover now</a>
-                                        </div>
-                                    </div>
-                                </div><!-- /single-slider -->
-                                <div class="single-slider b-radius-2 swiper-slide slider-height-3 d-flex align-items-center" data-background="{{asset('frontend/assets/img/slider/03-slide-3.jpg')}}">
-                                    <div class="slider-content slider-content-2">
-                                        <div class="slider-top-btn mb-20" data-animation="fadeInLeft" data-delay="1.5s" style="animation-delay: 1.5s;">
-                                            <a href="shop.html" class="st-btn b-radius">HOT DEALS</a>
-                                        </div>
-                                        <h2 data-animation="fadeInLeft" data-delay="1.5s" class="pt-15 slider-title pb-5">LIMITED<br>
-                                        WEEK DEALS</h2>
-                                        <p class="pr-20 slider_text" data-animation="fadeInLeft" data-delay="1.8s">Discount 20% On Products
-                                        </p>
-                                        <div class="slider-bottom-btn mt-65">
-                                            <a data-animation="fadeInUp" data-delay="1.10s" href="shop.html" class="st-btn-border b-radius-2">Discover now</a>
-                                        </div>
-                                    </div>
-                                </div><!-- /single-slider -->
-                                <div class="main-slider-paginations"></div>
-                            </div>
+            <li><a href="shop.html">Téléphones & Tablettes</a>
+                <ul class="mega-item">
+                    <li><a href="product-details.html">Smartphones</a></li>
+                    <li><a href="product-details.html">Tablettes</a></li>
+                    <li><a href="product-details.html">Accessoires</a></li>
+                    <li><a href="product-details.html">Offres spéciales</a></li>
+                </ul>
+            </li>
+            <li><a href="shop.html">Ordinateurs & Accessoires</a>
+                <ul class="mega-item">
+                    <li><a href="product-details.html">PC Portables</a></li>
+                    <li><a href="product-details.html">PC de Bureau</a></li>
+                    <li><a href="product-details.html">Périphériques</a></li>
+                    <li><a href="product-details.html">Composants</a></li>
+                </ul>
+            </li>
+
                         </div>
                     </div>
                     <div class="col-xl-6">
@@ -568,8 +542,9 @@
                                                 <a href="product-details.html"><img src="{{asset('frontend/assets/img/banner/banner-17.jpg')}}" alt=""></a>
                                             </div>
                                             <div class="banner__content">
-                                                <h6><a href="product-details.html">New Style <br> Bluetooh Speaker</a></h6>
-                                                <p class="banner-p mt-30">Free Shipping 20km</p>
+                                                <h6><a href="product-details.html">Nouvelle Enceinte <br> Bluetooth Design</a></h6>
+                                                <p class="banner-p mt-30">Livraison gratuite jusqu'à 20 km</p>
+
                                             </div>
                                         </div>
                                     </div>
@@ -579,8 +554,9 @@
                                                 <a href="product-details.html"><img src="{{asset('frontend/assets/img/banner/banner-18.jpg')}}" alt=""></a>
                                             </div>
                                             <div class="banner__content">
-                                                <h6><a href="product-details.html">Limited <br> Top Camera</a></h6>
-                                                <p class="banner-p mt-30">Free Shipping 20km</p>
+                                                <h6><a href="product-details.html">Caméra Haut de Gamme <br> en Édition Limitée</a></h6>
+                                                <p class="banner-p mt-30">Livraison gratuite jusqu'à 20 km</p>
+
                                             </div>
                                         </div>
                                     </div>
@@ -593,12 +569,14 @@
                                     </div>
                                     <div class="banner__content banner__content-3">
                                         <div class="banner-df-btn mb-15">
-                                            <a href="#" class="st-btn b-radius">HOT DEALS</a>
+                                            <a href="#" class="st-btn b-radius">OFFRES EXCLUSIVES</a>
                                         </div>
-                                        <p>Xbox Wireless</p>
-                                        <h6 class="df-title"><a href="product-details.html">Sale Up To 50% Off</a></h6>
+                                        <p>Xbox Sans Fil</p>
+<h6 class="df-title"><a href="product-details.html">Promo Jusqu'à -50%</a></h6>
+
                                         <div class="bottom-btn">
-                                            <a href="shop.html" class="st-btn-border-2 b-radius">Discover now</a>
+                                            <a href="shop.html" class="st-btn-border-2 b-radius">Découvrir maintenant</a>
+
                                         </div>
                                     </div>
                                 </div>
@@ -617,15 +595,15 @@
                     <div class="col-xl-12">
                         <div class="section__head d-flex justify-content-between mb-30">
                             <div class="section__title section__title-2">
-                                <h5 class="st-titile-d st-titile-d-2">Top Deals Of The Day</h5>
+                                <h5 class="st-titile-d st-titile-d-2">Meilleures Offres du Jour</h5>
                             </div>
                             <div class="offer-time">
-                                <span class="offer-title d-none d-sm-block">Hurry Up! Offer ends in:</span>
+                                <span class="offer-title d-none d-sm-block">Dépêchez-vous ! L'offre se termine dans :</span>
                                 <div class="countdown">
                                     <div class="countdown-inner b-radius-2" data-countdown="" data-date="Mar 02 2022 20:20:22">
                                         <ul class="text-center">
-                                            <li><span data-days="">30</span> Days</li>
-                                            <li><span data-hours="">9</span> Hours</li>
+                                            <li><span data-days="">30</span> Jours</li>
+                                            <li><span data-hours="">9</span> Heures</li>
                                             <li><span data-minutes="">37</span> Mins</li>
                                             <li><span data-seconds="">38</span> Secs</li>
                                         </ul>
@@ -663,7 +641,7 @@
                                 </div>
                             </div>
                             <div class="product__content product__content-3">
-                                <h6><a href="product-details.html">Epple iPad Pro 10.5-inch Cellular 64G</a></h6>
+                                <h6><a href="product-details.html">Epple iPad Pro 10.5 pouces Cellular 64 Go</a></h6>
                                 <div class="rating mb-5 mt-10">
                                     <ul>
                                         <li><a href="#"><i class="fal fa-star"></i></a></li>
@@ -1821,9 +1799,10 @@
                 <div class="ovic-running">
                     <div class="wrap">
                         <div class="inner">
-                            <p class="item">Free UK Delivery - Return Over $100.00 ( Excluding Homeware )   |   Free UK Collect From Store</p>
-                            <p class="item">Design Week / 15% Off the website / Code: AYOSALE-2020</p>
-                            <p class="item">Always iconic. Now organic. Introducing the $20 Organic Tee.</p>
+                            <p class="item">Livraison gratuite en France - Retour offert dès 100€ d'achat (hors articles pour la maison) | Retrait gratuit en magasin</p>
+<p class="item">Semaine du Design / -15% sur tout le site / Code : AYOSALE-2020</p>
+<p class="item">Toujours iconique. Maintenant écologique. Découvrez le T-shirt Bio à 20€.</p>
+
                         </div>
                     </div>
                 </div>
@@ -1838,10 +1817,10 @@
                     <div class="col-xl-12">
                         <div class="section__head d-flex justify-content-between mb-30">
                             <div class="section__title section__title-2">
-                                <h5 class="st-titile">From The Blog</h5>
+                                <h5 class="st-titile">Du Blog</h5>
                             </div>
                             <div class="button-wrap button-wrap-2">
-                                <a href="blog.html">See All Product <i class="fal fa-chevron-right"></i></a>
+                                <a href="blog.html">Voir tous les produits <i class="fal fa-chevron-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -1858,8 +1837,9 @@
                                 </div>
                             </div>
                             <div class="smblog-content smblog-content-2">
-                                <h6><a href="blog-details.html">How mobile phones have changed people’s lives in the world</a></h6>
-                                <span class="author mb-10">posted by <a href="#">Adlop</a></span>
+                                <h6><a href="blog-details.html">Comment les téléphones mobiles ont changé la vie des gens dans le monde</a></h6>
+<span class="author mb-10">Publié par <a href="#">Adlop</a></span>
+
                                 <div class="smblog-foot pt-15">
                                     <div class="post-readmore">
                                         <a href="blog-details.html"> Read More <span class="icon"></span></a>
@@ -2057,10 +2037,11 @@
                                 </div>
                                 <div class="product__modal-des mt-20 mb-15">
                                     <ul>
-                                        <li><a href="#"><i class="fas fa-circle"></i> Bass and Stereo Sound.</a></li>
-                                        <li><a href="#"><i class="fas fa-circle"></i> Display with 3088 x 1440 pixels resolution.</a></li>
-                                        <li><a href="#"><i class="fas fa-circle"></i> Memory, Storage & SIM: 12GB RAM, 256GB.</a></li>
-                                        <li><a href="#"><i class="fas fa-circle"></i> Androi v10.0 Operating system.</a></li>
+                                        <li><a href="#"><i class="fas fa-circle"></i> Son stéréo et basses puissantes.</a></li>
+<li><a href="#"><i class="fas fa-circle"></i> Écran avec une résolution de 3088 x 1440 pixels.</a></li>
+<li><a href="#"><i class="fas fa-circle"></i> Mémoire, Stockage & SIM : 12 Go RAM, 256 Go.</a></li>
+<li><a href="#"><i class="fas fa-circle"></i> Système d'exploitation Android v10.0.</a></li>
+
                                     </ul>
                                 </div>
                                 <div class="product__stock mb-20">
@@ -2116,23 +2097,24 @@
                         <div class="col-xxl-3 col-xl-4 col-lg-5 col-md-8">
                             <div class="footer__widget">
                                 <div class="footer__widget-title mb-20">
-                                    <h4>About The Store</h4>
+                                    <h4>À propos de SUGUBA</h4>
                                 </div>
                                 <div class="footer__widget-content">
-                                    <p class="footer-text mb-25">Our mission statement is to provide the absolute best customer experience available in the Electronic industry without exception.</p>
+                                    <p class="footer-text mb-25">Notre mission est d'offrir la meilleure expérience client possible dans l'industrie du e-commerce, sans exception.</p>
                                     <div class="footer__hotline d-flex align-items-center mb-10">
                                         <div class="icon icon-2 mr-15">
                                             <i class="fal fa-headset"></i>
                                         </div>
                                         <div class="text text-2">
-                                            <h4>Got Question? Call us 24/7!</h4>
-                                            <span><a href="tel:100-123-456-7890">(+100) 123 456 7890</a></span>
+                                            <h4>Une question ? Appelez-nous 24h/24 et 7j/7 !</h4>
+                                            <span><a href="tel:100-123-456-7890" >(+100) 123 456 7890</a></span>
+
                                         </div>
                                     </div>
                                     <div class="footer__info">
                                         <ul>
                                             <li>
-                                                <span>Add:  <a target="_blank" href="https://goo.gl/maps/c82DDZ8ALvL878Bv8">Walls Street 68, Mahattan, New York, USA</a></span>
+                                                <span>Adresse : <a target="_blank" href="https://goo.gl/maps/c82DDZ8ALvL878Bv8">68 Wall Street, Manhattan, New York, USA</a></span>
                                             </li>
                                         </ul>
                                     </div>
@@ -2142,74 +2124,78 @@
                         <div class="col-xxl-2 col-xl-3 col-lg-3 col-md-4 col-sm-6">
                             <div class="footer__widget footer-col-2">
                                 <div class="footer__widget-title">
-                                    <h4>My Account</h4>
+                                    <h4>Mon Compte</h4>
                                 </div>
                                 <div class="footer__widget-content">
                                     <div class="footer__link footer__link-2">
                                         <ul>
-                                            <li><a href="contact.html">Product Support</a></li>
-                                            <li><a href="checkout.html">Checkout</a></li>
-                                            <li><a href="cart.html">Shopping Cart</a></li>
-                                            <li><a href="wishlist.html">Wishlist</a></li>
-                                            <li><a href="faq.html">Terms &amp; Conditions &amp;</a></li>
-                                            <li><a href="faq.html">Redeem Voucher</a></li>
+                                            <li><a href="contact.html">Support Produit</a></li>
+                                            <li><a href="checkout.html">Paiement</a></li>
+                                            <li><a href="cart.html">Panier</a></li>
+                                            <li><a href="wishlist.html">Liste de souhaits</a></li>
+                                            <li><a href="faq.html">Conditions générales</a></li>
+                                            <li><a href="faq.html">Utiliser un bon de réduction</a></li>
                                         </ul>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                         <div class="col-xxl-2 col-xl-3 col-lg-3 col-md-4 col-sm-6">
                             <div class="footer__widget footer-col-2">
                                 <div class="footer__widget-title">
-                                    <h4>Customer Care</h4>
+                                    <h4>Service Client</h4>
                                 </div>
                                 <div class="footer__widget-content">
                                     <div class="footer__link footer__link-2">
                                         <ul>
-                                            <li><a href="faq.html">New Customers</a></li>
-                                            <li><a href="faq.html">How to use Account</a></li>
-                                            <li><a href="faq.html">Placing an Order</a></li>
-                                            <li><a href="faq.html">Payment Methods</a></li>
-                                            <li><a href="faq.html">Delivery &amp; Dispatch</a></li>
-                                            <li><a href="faq.html">Problems with Order</a></li>
+                                            <li><a href="faq.html">Nouveaux Clients</a></li>
+                                            <li><a href="faq.html">Comment utiliser mon compte</a></li>
+                                            <li><a href="faq.html">Passer une commande</a></li>
+                                            <li><a href="faq.html">Moyens de paiement</a></li>
+                                            <li><a href="faq.html">Livraison & Expédition</a></li>
+                                            <li><a href="faq.html">Problèmes avec une commande</a></li>
                                         </ul>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                         <div class="col-xxl-2 col-xl-2 col-lg-3 col-md-4 col-sm-6">
                             <div class="footer__widget footer-col-2">
                                 <div class="footer__widget-title">
-                                    <h4>Customer Service</h4>
+                                    <h4>Service Client</h4>
                                 </div>
                                 <div class="footer__widget-content">
                                     <div class="footer__link footer__link-2">
                                         <ul>
-                                            <li><a href="faq.html">Help Center</a></li>
-                                            <li><a href="contact.html">Contact Us</a></li>
-                                            <li><a href="faq.html">Report Abuse</a></li>
-                                            <li><a href="faq.html">Submit a Dispute</a></li>
-                                            <li><a href="faq.html">Policies &amp; Rules</a></li>
+                                            <li><a href="faq.html">Centre d'Aide</a></li>
+                                            <li><a href="contact.html">Nous Contacter</a></li>
+                                            <li><a href="faq.html">Signaler un Abus</a></li>
+                                            <li><a href="faq.html">Soumettre un Litige</a></li>
+                                            <li><a href="faq.html">Politiques & Règlements</a></li>
                                         </ul>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                         <div class="col-xxl-3 col-xl-4 col-lg-5 col-md-6">
                             <div class="footer__widget">
                                 <div class="footer__widget-title mb-20">
-                                    <h4>Sign Up To Newsletter</h4>
+                                    <h4>Inscrivez-vous à la Newsletter</h4>
                                 </div>
                                 <div class="footer__widget-content">
-                                    <p class="footer-text mb-25">Join 60.000+ subscribers and get a new discount coupon  on every Saturday.</p>
+                                    <p class="footer-text mb-25">Rejoignez plus de 60 000 abonnés et recevez un nouveau coupon de réduction chaque samedi.</p>
                                     <div class="footer__newsletter-form">
                                         <form action="#">
-                                            <input class="ft-newsl b-radius" type="email" placeholder="Enter your email ...">
-                                            <button class="ft-newsl-btn" type="submit">subscribe</button>
+                                            <input class="ft-newsl b-radius" type="email" placeholder="Entrez votre email ...">
+                                            <button class="ft-newsl-btn" type="submit">S'abonner</button>
                                         </form>
-                                        </div>
-                                    <p class="provide-text mt-20">By providing your email address, you agree to our <br> <a href="#">Privacy Policy</a> and <a href="#">Terms of Service</a> .</p>
+                                    </div>
+                                    <p class="provide-text mt-20">En fournissant votre adresse e-mail, vous acceptez notre <br> <a href="#">Politique de confidentialité</a> et nos <a href="#">Conditions d'utilisation</a>.</p>
                                 </div>
+
                             </div>
                         </div>
                     </div>
@@ -2222,20 +2208,21 @@
                             <div class="col-xl-12">
                                 <div class="footer__links footer__links-d text-center mb-25">
                                     <p>
-                                        <a href="about.html">About Us</a>
-                                        <a href="contact.html">Delivery & Return</a>
-                                        <a href="faq.html">Privacy Policy</a>
-                                        <a href="faq.html">Help</a>
-                                        <a href="faq.html">Order Tracking</a>
-                                        <a href="contact.html">Contact Us</a>
-                                        <a href="faq.html">FAQs </a>
+                                        <a href="about.html">À Propos</a>
+                                        <a href="contact.html">Livraison & Retours</a>
+                                        <a href="faq.html">Politique de Confidentialité</a>
+                                        <a href="faq.html">Aide</a>
+                                        <a href="faq.html">Suivi de Commande</a>
+                                        <a href="contact.html">Nous Contacter</a>
+                                        <a href="faq.html">FAQ</a>
                                     </p>
+
                                 </div>
                                 <div class="payment-image text-center mb-25">
                                     <a href="#"><img src="{{asset('frontend/assets/img/payment/payment.png')}}" alt=""></a>
                                 </div>
                                 <div class="copy-right-area copy-right-area-2 text-center">
-                                    <p>Copyright © <span>DukaMarket.</span> All Rights Reserved. Powered by <a href="#"><span class="main-color">Theme_Pure.</span></a></p>
+                                    <p>Copyright © <span>SUGUBA.</span> Tous droits réservés. Propulsé par <a href="#"><span class="main-color">Theme_Pure.</span></a></p>
                                 </div>
                             </div>
                         </div>
