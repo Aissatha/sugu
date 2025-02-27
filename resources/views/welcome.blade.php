@@ -2116,23 +2116,23 @@
                         <div class="col-xxl-3 col-xl-4 col-lg-5 col-md-8">
                             <div class="footer__widget">
                                 <div class="footer__widget-title mb-20">
-                                    <h4>About The Store</h4>
+                                    <h4>À propos de SUGUBA</h4>
                                 </div>
                                 <div class="footer__widget-content">
-                                    <p class="footer-text mb-25">Our mission statement is to provide the absolute best customer experience available in the Electronic industry without exception.</p>
+                                    <p class="footer-text mb-25">Notre mission est d'offrir la meilleure expérience client possible dans l'industrie du e-commerce, sans exception.</p>
                                     <div class="footer__hotline d-flex align-items-center mb-10">
                                         <div class="icon icon-2 mr-15">
                                             <i class="fal fa-headset"></i>
                                         </div>
                                         <div class="text text-2">
-                                            <h4>Got Question? Call us 24/7!</h4>
-                                            <span><a href="tel:100-123-456-7890">(+100) 123 456 7890</a></span>
+                                            <h4>Une question ? Appelez-nous 24h/24 et 7j/7 !</h4>
+                                            <span><a href="tel:100-123-456-7890">(+216) 52 267 901</a></span>
                                         </div>
                                     </div>
                                     <div class="footer__info">
                                         <ul>
                                             <li>
-                                                <span>Add:  <a target="_blank" href="https://goo.gl/maps/c82DDZ8ALvL878Bv8">Walls Street 68, Mahattan, New York, USA</a></span>
+                                                <span>Adresse:  <a target="_blank" href="https://goo.gl/maps/c82DDZ8ALvL878Bv8">Walls Street 68, Mahattan, New York, USA</a></span>
                                             </li>
                                         </ul>
                                     </div>
@@ -2142,17 +2142,17 @@
                         <div class="col-xxl-2 col-xl-3 col-lg-3 col-md-4 col-sm-6">
                             <div class="footer__widget footer-col-2">
                                 <div class="footer__widget-title">
-                                    <h4>My Account</h4>
+                                    <h4>Mon compte</h4>
                                 </div>
                                 <div class="footer__widget-content">
                                     <div class="footer__link footer__link-2">
                                         <ul>
-                                            <li><a href="contact.html">Product Support</a></li>
-                                            <li><a href="checkout.html">Checkout</a></li>
-                                            <li><a href="cart.html">Shopping Cart</a></li>
-                                            <li><a href="wishlist.html">Wishlist</a></li>
-                                            <li><a href="faq.html">Terms &amp; Conditions &amp;</a></li>
-                                            <li><a href="faq.html">Redeem Voucher</a></li>
+                                            <li><a href="contact.html">Support Produit</a></li>
+                                            <li><a href="checkout.html">Paiement</a></li>
+                                            <li><a href="cart.html">Panier</a></li>
+                                            <li><a href="wishlist.html">Liste de souhaits</a></li>
+                                            <li><a href="faq.html">Conditions générales</a></li>
+                                            <li><a href="faq.html">Utiliser un bon de réduction</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -2161,17 +2161,17 @@
                         <div class="col-xxl-2 col-xl-3 col-lg-3 col-md-4 col-sm-6">
                             <div class="footer__widget footer-col-2">
                                 <div class="footer__widget-title">
-                                    <h4>Customer Care</h4>
+                                    <h4>Service Client</h4>
                                 </div>
                                 <div class="footer__widget-content">
                                     <div class="footer__link footer__link-2">
                                         <ul>
-                                            <li><a href="faq.html">New Customers</a></li>
-                                            <li><a href="faq.html">How to use Account</a></li>
-                                            <li><a href="faq.html">Placing an Order</a></li>
-                                            <li><a href="faq.html">Payment Methods</a></li>
-                                            <li><a href="faq.html">Delivery &amp; Dispatch</a></li>
-                                            <li><a href="faq.html">Problems with Order</a></li>
+                                            <li><a href="faq.html">Nouveaux Clients</a></li>
+                                            <li><a href="faq.html">Comment utiliser mon compte</a></li>
+                                            <li><a href="faq.html">Passer une commande</a></li>
+                                            <li><a href="faq.html">Moyens de paiement</a></li>
+                                            <li><a href="faq.html">Livraison & Expédition</a></li>
+                                            <li><a href="faq.html">Problèmes avec une commande</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -2180,16 +2180,16 @@
                         <div class="col-xxl-2 col-xl-2 col-lg-3 col-md-4 col-sm-6">
                             <div class="footer__widget footer-col-2">
                                 <div class="footer__widget-title">
-                                    <h4>Customer Service</h4>
+                                    <h4>Assistance Client</h4>
                                 </div>
                                 <div class="footer__widget-content">
                                     <div class="footer__link footer__link-2">
                                         <ul>
-                                            <li><a href="faq.html">Help Center</a></li>
-                                            <li><a href="contact.html">Contact Us</a></li>
-                                            <li><a href="faq.html">Report Abuse</a></li>
-                                            <li><a href="faq.html">Submit a Dispute</a></li>
-                                            <li><a href="faq.html">Policies &amp; Rules</a></li>
+                                            <li><a href="faq.html">Centre d'Aide</a></li>
+                                            <li><a href="contact.html">Nous Contacter</a></li>
+                                            <li><a href="faq.html">Signaler un Abus</a></li>
+                                            <li><a href="faq.html">Soumettre un Litige</a></li>
+                                            <li><a href="faq.html">Politiques & Règlements</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -2198,17 +2198,17 @@
                         <div class="col-xxl-3 col-xl-4 col-lg-5 col-md-6">
                             <div class="footer__widget">
                                 <div class="footer__widget-title mb-20">
-                                    <h4>Sign Up To Newsletter</h4>
+                                    <h4>Inscrivez-vous à la Newsletter</h4>
                                 </div>
                                 <div class="footer__widget-content">
-                                    <p class="footer-text mb-25">Join 60.000+ subscribers and get a new discount coupon  on every Saturday.</p>
+                                    <p class="footer-text mb-25">Rejoignez plus de 60 000 abonnés et recevez un nouveau coupon de réduction chaque samedi.</p>
                                     <div class="footer__newsletter-form">
                                         <form action="#">
                                             <input class="ft-newsl b-radius" type="email" placeholder="Enter your email ...">
-                                            <button class="ft-newsl-btn" type="submit">subscribe</button>
+                                            <button class="ft-newsl-btn" type="submit">S'abonner</button>
                                         </form>
                                         </div>
-                                    <p class="provide-text mt-20">By providing your email address, you agree to our <br> <a href="#">Privacy Policy</a> and <a href="#">Terms of Service</a> .</p>
+                                    <p class="provide-text mt-20">En fournissant votre adresse e-mail, vous acceptez notre <br> <a href="#">Politique de confidentialité</a> et nos <a href="#">Conditions d'utilisation</a> .</p>
                                 </div>
                             </div>
                         </div>
@@ -2222,12 +2222,12 @@
                             <div class="col-xl-12">
                                 <div class="footer__links footer__links-d text-center mb-25">
                                     <p>
-                                        <a href="about.html">About Us</a>
-                                        <a href="contact.html">Delivery & Return</a>
-                                        <a href="faq.html">Privacy Policy</a>
-                                        <a href="faq.html">Help</a>
-                                        <a href="faq.html">Order Tracking</a>
-                                        <a href="contact.html">Contact Us</a>
+                                        <a href="about.html">À Propos</a>
+                                        <a href="contact.html">Livraison & Retours</a>
+                                        <a href="faq.html">Politique de Confidentialité</a>
+                                        <a href="faq.html">Aide</a>
+                                        <a href="faq.html">Suivi de Commande</a>
+                                        <a href="contact.html">Nous Contacter</a>
                                         <a href="faq.html">FAQs </a>
                                     </p>
                                 </div>
@@ -2235,7 +2235,7 @@
                                     <a href="#"><img src="{{asset('frontend/assets/img/payment/payment.png')}}" alt=""></a>
                                 </div>
                                 <div class="copy-right-area copy-right-area-2 text-center">
-                                    <p>Copyright © <span>DukaMarket.</span> All Rights Reserved. Powered by <a href="#"><span class="main-color">Theme_Pure.</span></a></p>
+                                    <p>Copyright © <span>SUGUBA.</span>  Tous droits réservés. Propulsé par <a href="#"><span class="main-color">Theme_Pure.</span></a></p>
                                 </div>
                             </div>
                         </div>
