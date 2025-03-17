@@ -26,8 +26,12 @@ Route::middleware([
     })->name('dashboard');
 });
 
-Route::middleware(['auth', 'role:admin'])->group(function () {
-    Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
+Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->group(function () {
+    Route::get('/vendors', [VendorController::class, 'index'])->name('vendors.list');
+});
+
+Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->group(function () {
+    Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
 });
 
 Route::middleware(['auth', 'role:vendor'])->group(function () {
