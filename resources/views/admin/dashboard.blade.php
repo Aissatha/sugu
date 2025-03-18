@@ -16,7 +16,7 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>Dashboard - Analytics | Vuexy - Bootstrap Admin Template</title>
+    <title>Dashboard - Analytics | SUGUBA - Bootstrap Admin Template</title>
 
     <meta name="description" content="" />
 
@@ -102,7 +102,7 @@
                   />
                 </svg>
               </span>
-              <span class="app-brand-text demo menu-text fw-bold">Vuexy</span>
+              <span class="app-brand-text demo menu-text fw-bold">SUGUBA</span>
             </a>
 
             <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
@@ -117,79 +117,11 @@
 
             <li class="menu-item">
                 <a href="app-chat.html" class="menu-link">
-                    <i class="menu-icon tf-icons ti ti-smart-home"></i>
+                    <i class="menu-icon tf-icons ti ti-home"></i>
                     <div data-i18n="Dashboards">Dashboards</div>
                 </a>
               </li>
 
-
-
-            <!-- Layouts >
-            <li class="menu-item">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons ti ti-layout-sidebar"></i>
-                <div data-i18n="Layouts">Layouts</div>
-              </a>
-
-              <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="layouts-collapsed-menu.html" class="menu-link">
-                    <div data-i18n="Collapsed menu">Collapsed menu</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="layouts-content-navbar.html" class="menu-link">
-                    <div data-i18n="Content navbar">Content navbar</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="layouts-content-navbar-with-sidebar.html" class="menu-link">
-                    <div data-i18n="Content nav + Sidebar">Content nav + Sidebar</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="../horizontal-menu-template" class="menu-link" target="_blank">
-                    <div data-i18n="Horizontal">Horizontal</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="layouts-without-menu.html" class="menu-link">
-                    <div data-i18n="Without menu">Without menu</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="layouts-without-navbar.html" class="menu-link">
-                    <div data-i18n="Without navbar">Without navbar</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="layouts-fluid.html" class="menu-link">
-                    <div data-i18n="Fluid">Fluid</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="layouts-container.html" class="menu-link">
-                    <div data-i18n="Container">Container</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="layouts-blank.html" class="menu-link">
-                    <div data-i18n="Blank">Blank</div>
-                  </a>
-                </li>
-              </ul>
-            </li>
-
-            <Apps & Pages -->
-            <!--li class="menu-header small text-uppercase">
-              <span class="menu-header-text">Apps &amp; Pages</span>
-            </!--li>
-            <li class="menu-item">
-              <a href="app-email.html" class="menu-link">
-                <i class="menu-icon tf-icons ti ti-mail"></i>
-                <div data-i18n="Email">Email</div>
-              </a>
-            </li-->
             <li class="menu-item">
                 <a href="javascript:void(0);" class="menu-link menu-toggle">
                     <i class="menu-icon tf-icons ti ti-message-circle"></i>
@@ -294,7 +226,7 @@
             </li>
             <li class="menu-item">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons ti ti-shop"></i>
+                <i class="menu-icon tf-icons fa fa-store"></i>
                 <div data-i18n="Boutiques">Boutiques</div>
               </a>
               <ul class="menu-sub">
@@ -374,8 +306,8 @@
 
             <li class="menu-item">
                 <a href="javascript:void(0);" class="menu-link menu-toggle">
-                  <i class="menu-icon tf-icons ti ti-truck"></i>
-                  <div data-i18n="Rapports & Statistiques">Rapports & Statistiques</div>
+                    <i class="menu-icon tf-icons fa fa-chart-line"></i>
+                    <div data-i18n="Rapports & Statistiques">Rapports & Statistiques</div>
                 </a>
                 <ul class="menu-sub">
                   <li class="menu-item">
@@ -416,8 +348,8 @@
             </li>
             <li class="menu-item">
                 <a href="javascript:void(0)" class="menu-link menu-toggle">
-                  <i class="menu-icon tf-icons ti ti-brand-tabler"></i>
-                  <div data-i18n="Logs & Historique">Logs & Historique</div>
+                    <i class="menu-icon tf-icons fa fa-history"></i>
+                    <div data-i18n="Logs & Historique">Logs & Historique</div>
                 </a>
                 <ul class="menu-sub">
                   <li class="menu-item">
@@ -433,7 +365,7 @@
                 </ul>
               </li>
 
-           
+
           </ul>
         </aside>
         <!-- / Menu -->
