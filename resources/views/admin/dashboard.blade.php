@@ -152,6 +152,12 @@
 
                 </ul>
               </li>
+              <li class="menu-item">
+                <a href="app-chat.html" class="menu-link ">
+                    <i class="menu-icon tf-icons fa fa-tasks"></i>
+                    <div data-i18n="Suivi des activités ">Suivi des activités </div>
+                </a>
+              </li>
 
             <li class="menu-item">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
@@ -191,6 +197,29 @@
                   </li>
               </ul>
             </li>
+            <li class="menu-item">
+                <a href="javascript:void(0);" class="menu-link menu-toggle">
+                    <i class="menu-icon tf-icons fa fa-bullhorn"></i>
+                    <div data-i18n="Marketing et Publicité">Marketing et Publicité</div>
+                </a>
+                <ul class="menu-sub">
+                  <li class="menu-item">
+                    <a href="app-user-list.html" class="menu-link">
+                      <div data-i18n="Publicité en ligne">Publicité en ligne</div>
+                    </a>
+                  </li>
+                  <li class="menu-item">
+                      <a href="app-user-list.html" class="menu-link">
+                        <div data-i18n="Partenariats et affiliations">Partenariats et affiliations</div>
+                      </a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="app-user-list.html" class="menu-link">
+                        <div data-i18n="Email marketing ">Email marketing </div>
+                      </a>
+                    </li>
+                </ul>
+              </li>
             <li class="menu-item">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons ti ti-settings"></i>
