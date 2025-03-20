@@ -10,6 +10,20 @@ class RolesSeeder extends Seeder
 {
     public function run()
     {
+        //Rôles
+        Role::create(['name' => 'admin']);
+        Role::create(['name' => 'vendor']);
+        Role::create(['name' => 'client']);
+        Role::create(['name' => 'user']);
+        //Permissions
+
+        Permission::create(['name' => 'list-users']);
+        Permission::create(['name' => 'add-user']);
+        Permission::create(['name' => 'edit-user']);
+        Permission::create(['name' => 'view-historique']);
+        Permission::create(['name' => 'block-user']);
+        Permission::create(['name' => 'delete-user']);
+
         // Liste des permissions pour la plateforme
         $permissions = [
             // Gestion des utilisateurs
@@ -52,9 +66,11 @@ class RolesSeeder extends Seeder
         }
 
         // Création des rôles avec le guard "web"
-        $adminRole = Role::firstOrCreate(['name' => 'admin', 'guard_name' => 'web']);
-        $vendorRole = Role::firstOrCreate(['name' => 'vendor', 'guard_name' => 'web']);
-        $userRole = Role::firstOrCreate(['name' => 'user', 'guard_name' => 'web']);
+        //$adminRole = Role::firstOrCreate(['name' => 'admin', 'guard_name' => 'web']);
+        //$vendorRole = Role::firstOrCreate(['name' => 'vendor', 'guard_name' => 'web']);
+        //$userRole = Role::firstOrCreate(['name' => 'user', 'guard_name' => 'web']);
+        $adminRole = Role::findByName('admin');
+
 
         // Attribution des permissions aux rôles
         $adminRole->givePermissionTo([
@@ -62,8 +78,10 @@ class RolesSeeder extends Seeder
             'approve vendors', 'manage vendors', 'view vendors',
             'manage orders', 'view orders',
             'manage payments', 'view payments',
-            'respond to support tickets'
+            'respond to support tickets',
+            'list-users', 'add-user', 'edit-user', 'view-historique', 'block-user', 'delete-user'
         ]);
+
 
         $vendorRole->givePermissionTo([
             'create products', 'edit products', 'delete products', 'view products',

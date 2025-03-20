@@ -3,11 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller; // Utiliser cette classe
 
 class AdminController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('role:admin'); // Ajoute le middleware ici
+    }
+
     public function index()
     {
-        return view('admin.dashboard'); // Assurez-vous que la vue existe
+        // Logique de ton action
+        return view('admin.dashboard');
     }
 }

@@ -15,8 +15,11 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->alias([
             'role' => RoleMiddleware::class, // Enregistrement du middleware
+            'isAdmin' => \App\Http\Middleware\IsAdmin::class, // Ajoute cette ligne
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
     })->create();
+
+

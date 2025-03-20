@@ -159,19 +159,19 @@
                 </a>
               </li>
 
-            <li class="menu-item">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons ti ti-users"></i>
-                <div data-i18n="Utilisateurs">Utilisateurs</div>
-              </a>
-              <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="app-user-list.html" class="menu-link">
-                    <div data-i18n="List">List</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                    <a href="app-user-list.html" class="menu-link">
+              <li class="menu-item">
+                <a href="javascript:void(0);" class="menu-link menu-toggle">
+                  <i class="menu-icon tf-icons ti ti-users"></i>
+                  <div data-i18n="Utilisateurs">Utilisateurs</div>
+                </a>
+                <ul class="menu-sub">
+                  <li class="menu-item">
+                    <a href="{{ route('admin.index') }}" class="menu-link">
+                      <div data-i18n="List">List</div>
+                    </a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="{{ route('admin.create') }}" class="menu-link">
                       <div data-i18n="Ajout">Ajout</div>
                     </a>
                   </li>
@@ -195,8 +195,9 @@
                       <div data-i18n="Suppression">Suppression</div>
                     </a>
                   </li>
-              </ul>
-            </li>
+                </ul>
+              </li>
+
             <li class="menu-item">
                 <a href="javascript:void(0);" class="menu-link menu-toggle">
                     <i class="menu-icon tf-icons fa fa-bullhorn"></i>
