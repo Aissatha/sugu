@@ -56,7 +56,7 @@ class UserController extends Controller
             'action' => 'Création du compte',
         ]);
 
-        return redirect()->route('admin.users.index');
+        return redirect()->route('admin.index'); // Redirection vers la page d'admin
     }
 
     // Modifier un utilisateur

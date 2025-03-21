@@ -1,6 +1,4 @@
-@extends('layouts.admin')
 
-@section('content')
     <h1>Ajouter un utilisateur</h1>
     <form action="{{ route('admin.users.store') }}" method="POST">
         @csrf
@@ -15,4 +13,4 @@
         </select>
         <button type="submit">Ajouter</button>
     </form>
-@endsection
+

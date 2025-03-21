@@ -52,12 +52,19 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:admin'])->grou
 });
 
 
-//Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
+Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
     Route::resource('users', UserController::class)->middleware('isAdmin'); // Applique le middleware à la ressource
-//});
+});
 
 Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
+});
+
+
+Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:admin'])->group(function () {
+    Route::get('/dashboard', [AdminController::class, 'index'])->name('index'); // Définir la route admin.index
+    Route::get('/create', [AdminController::class, 'create'])->name('create'); // Route admin.create
+
 });
 
 

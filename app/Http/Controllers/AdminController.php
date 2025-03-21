@@ -17,4 +17,10 @@ class AdminController extends Controller
         // Logique de ton action
         return view('admin.dashboard');
     }
+
+        // Formulaire de création
+        public function create()
+        {
+            return view('admin.create'); // Assure-toi que la vue 'admin.create' existe
+        }
 }
