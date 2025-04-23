@@ -6,6 +6,8 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\VendorController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Admin\UserController as AdminUserController; // Renommer l'import pour éviter le conflit
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
+
 
 
 
@@ -80,4 +82,6 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:admin'])->grou
 });*/
 
 
-
+Route::post('/login', [AuthenticatedSessionController::class, 'store'])
+    ->middleware(['web', 'guest'])
+    ->name('login');
