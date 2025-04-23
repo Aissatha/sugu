@@ -49,23 +49,35 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:admin'])->grou
     Route::get('users/historique', [UserController::class, 'historique'])->name('users.historique');
     Route::post('users/block/{user}', [UserController::class, 'block'])->name('users.block');
     Route::delete('users/delete/{user}', [UserController::class, 'delete'])->name('users.delete');
+    Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
+    Route::get('/create', [AdminController::class, 'create'])->name('create');
+    //Route::get('/dashboard', [AdminController::class, 'index'])->name('index');
+    //Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
+    //Route::get('/dashboard', [AdminController::class, 'index'])->name('admin.index');
+    Route::get('/', [UserController::class, 'index'])->name('index');
+
+
+
+
+
+
 });
 
 
-Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
+/*Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
     Route::resource('users', UserController::class)->middleware('isAdmin'); // Applique le middleware à la ressource
-});
+});*/
 
-Route::middleware(['auth', 'role:admin'])->group(function () {
-    Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
-});
+//Route::middleware(['auth', 'role:admin'])->group(function () {
+    //Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
+//});
 
 
-Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:admin'])->group(function () {
+/*Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/dashboard', [AdminController::class, 'index'])->name('index'); // Définir la route admin.index
     Route::get('/create', [AdminController::class, 'create'])->name('create'); // Route admin.create
 
-});
+});*/
 
 
 
