@@ -10,67 +10,36 @@ class RolesSeeder extends Seeder
 {
     public function run()
     {
-        //Rôles
-        Role::create(['name' => 'admin']);
-        Role::create(['name' => 'vendor']);
-        Role::create(['name' => 'client']);
-        Role::create(['name' => 'user']);
-        //Permissions
+        // Créer les rôles si non existants
+        $adminRole  = Role::firstOrCreate(['name' => 'admin', 'guard_name' => 'web']);
+        $vendorRole = Role::firstOrCreate(['name' => 'vendor', 'guard_name' => 'web']);
+        $clientRole = Role::firstOrCreate(['name' => 'client', 'guard_name' => 'web']);
+        $userRole   = Role::firstOrCreate(['name' => 'user', 'guard_name' => 'web']);
 
-        Permission::create(['name' => 'list-users']);
-        Permission::create(['name' => 'add-user']);
-        Permission::create(['name' => 'edit-user']);
-        Permission::create(['name' => 'view-historique']);
-        Permission::create(['name' => 'block-user']);
-        Permission::create(['name' => 'delete-user']);
+        // Permissions spécifiques
+        Permission::firstOrCreate(['name' => 'list-users']);
+        Permission::firstOrCreate(['name' => 'add-user']);
+        Permission::firstOrCreate(['name' => 'edit-user']);
+        Permission::firstOrCreate(['name' => 'view-historique']);
+        Permission::firstOrCreate(['name' => 'block-user']);
+        Permission::firstOrCreate(['name' => 'delete-user']);
 
-        // Liste des permissions pour la plateforme
+        // Liste des permissions générales
         $permissions = [
-            // Gestion des utilisateurs
-            'manage users',  // Gérer les utilisateurs (Admin)
-            'view users',    // Voir la liste des utilisateurs (Admin)
-            'delete users',  // Supprimer un utilisateur (Admin)
-
-            // Gestion des vendeurs
-            'approve vendors',  // Approuver les vendeurs (Admin)
-            'manage vendors',   // Gérer les vendeurs (Admin)
-            'view vendors',     // Voir les vendeurs (Admin)
-
-            // Gestion des produits
-            'create products',  // Ajouter des produits (Vendor)
-            'edit products',    // Modifier ses produits (Vendor)
-            'delete products',  // Supprimer ses produits (Vendor)
-            'view products',    // Voir les produits (Tous)
-
-            // Gestion des commandes
-            'manage orders',    // Gérer toutes les commandes (Admin)
-            'view orders',      // Voir ses commandes (Vendor & User)
-            'process orders',   // Gérer les commandes en attente (Vendor)
-
-            // Gestion des paiements
-            'manage payments',  // Gérer les paiements (Admin)
-            'view payments',    // Voir l'historique des paiements (Admin & Vendor)
-
-            // Gestion du support client
-            'respond to support tickets',  // Répondre aux tickets (Admin)
-            'create support tickets',      // Ouvrir un ticket (User & Vendor)
-            'view support tickets',        // Voir ses tickets (User & Vendor)
+            'manage users', 'view users', 'delete users',
+            'approve vendors', 'manage vendors', 'view vendors',
+            'create products', 'edit products', 'delete products', 'view products',
+            'manage orders', 'view orders', 'process orders',
+            'manage payments', 'view payments',
+            'respond to support tickets', 'create support tickets', 'view support tickets',
         ];
 
-        // Création des permissions si elles n'existent pas encore
         foreach ($permissions as $permission) {
             Permission::firstOrCreate([
                 'name' => $permission,
-                'guard_name' => 'web' // Ajout du guard
+                'guard_name' => 'web',
             ]);
         }
-
-        // Création des rôles avec le guard "web"
-        //$adminRole = Role::firstOrCreate(['name' => 'admin', 'guard_name' => 'web']);
-        //$vendorRole = Role::firstOrCreate(['name' => 'vendor', 'guard_name' => 'web']);
-        //$userRole = Role::firstOrCreate(['name' => 'user', 'guard_name' => 'web']);
-        $adminRole = Role::findByName('admin');
-
 
         // Attribution des permissions aux rôles
         $adminRole->givePermissionTo([
@@ -81,7 +50,6 @@ class RolesSeeder extends Seeder
             'respond to support tickets',
             'list-users', 'add-user', 'edit-user', 'view-historique', 'block-user', 'delete-user'
         ]);
-
 
         $vendorRole->givePermissionTo([
             'create products', 'edit products', 'delete products', 'view products',

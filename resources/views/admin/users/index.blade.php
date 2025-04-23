@@ -33,37 +33,42 @@
                     </tr>
                 </thead>
                 <tbody>
-                @forelse($users as $user)
-                    <tr>
-                        <td>{{ $user->name }}</td>
-                        <td>{{ $user->email }}</td>
-                        <td>{{ implode(', ', $user->getRoleNames()->toArray()) }}</td>
-                        <td>
-                            @if($user->is_blocked)
-                                <span class="badge bg-danger">Bloqué</span>
-                            @else
-                                <span class="badge bg-success">Actif</span>
-                            @endif
-                        </td>
-                        <td class="text-center">
-                            <a href="{{ route('admin.users.edit', $user->id) }}" class="btn btn-sm btn-warning">✏️</a>
+                    @forelse($users as $user)
+                        <tr>
+                            <td>{{ $user->name }}</td>
+                            <td>{{ $user->email }}</td>
+                            <td>{{ implode(', ', $user->getRoleNames()->toArray()) }}</td>
+                            <td>
+                                @if($user->is_blocked)
+                                    <span class="badge bg-danger">Bloqué</span>
+                                @else
+                                    <span class="badge bg-success">Actif</span>
+                                @endif
+                            </td>
+                            <td class="text-center">
+                                <a href="{{ route('admin.users.edit', $user->id) }}" class="btn btn-sm btn-warning">✏️</a>
 
-                            <a href="{{ route('admin.users.block', $user->id) }}" class="btn btn-sm btn-secondary">
-                                {{ $user->is_blocked ? 'Débloquer' : 'Bloquer' }}
-                            </a>
+                                <form action="{{ route('admin.users.block', $user->id) }}" method="POST" class="d-inline-block"
+                                      onsubmit="return confirm('Confirmer le {{ $user->is_blocked ? 'déblocage' : 'blocage' }} ?')">
+                                    @csrf
+                                    <button type="submit" class="btn btn-sm {{ $user->is_blocked ? 'btn-success' : 'btn-secondary' }}">
+                                        {{ $user->is_blocked ? 'Débloquer' : 'Bloquer' }}
+                                    </button>
+                                </form>
 
-                            <form action="{{ route('admin.users.delete', $user->id) }}" method="POST" class="d-inline-block" onsubmit="return confirm('Confirmer la suppression ?')">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-sm btn-danger">🗑️</button>
-                            </form>
-                        </td>
-                    </tr>
-                @empty
-                    <tr>
-                        <td colspan="5" class="text-center text-muted">Aucun utilisateur trouvé.</td>
-                    </tr>
-                @endforelse
+                                <form action="{{ route('admin.users.delete', $user->id) }}" method="POST" class="d-inline-block"
+                                      onsubmit="return confirm('Confirmer la suppression ?')">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-sm btn-danger">🗑️</button>
+                                </form>
+                            </td>
+                        </tr>
+                    @empty
+                        <tr>
+                            <td colspan="5" class="text-center text-muted">Aucun utilisateur trouvé.</td>
+                        </tr>
+                    @endforelse
                 </tbody>
             </table>
 
