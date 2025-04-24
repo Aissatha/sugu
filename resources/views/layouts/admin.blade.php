@@ -175,26 +175,7 @@
                       <div data-i18n="Ajout">Ajout</div>
                     </a>
                   </li>
-                  <li class="menu-item">
-                    <a href="app-user-list.html" class="menu-link">
-                      <div data-i18n="Modification">Modification</div>
-                    </a>
-                  </li>
-                  <li class="menu-item">
-                    <a href="app-user-list.html" class="menu-link">
-                      <div data-i18n="Historiques">Historiques</div>
-                    </a>
-                  </li>
-                  <li class="menu-item">
-                    <a href="app-user-view-account.html" class="menu-link">
-                      <div data-i18n="Blocage">Blocage</div>
-                    </a>
-                  </li>
-                  <li class="menu-item">
-                    <a href="app-user-view-security.html" class="menu-link">
-                      <div data-i18n="Suppression">Suppression</div>
-                    </a>
-                  </li>
+                  
                 </ul>
               </li>
 

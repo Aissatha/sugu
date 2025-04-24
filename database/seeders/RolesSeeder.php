@@ -40,6 +40,9 @@ class RolesSeeder extends Seeder
                 'guard_name' => 'web',
             ]);
         }
+        foreach (['admin', 'vendeur', 'client'] as $role) {
+            Role::firstOrCreate(['name' => $role]);
+        }
 
         // Attribution des permissions aux rôles
         $adminRole->givePermissionTo([

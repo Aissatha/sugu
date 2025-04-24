@@ -49,5 +49,10 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('password'),
         ]);
         $user->assignRole($userRole);
+
+        $this->call([
+            UserSeeder::class,
+            BoutiqueSeeder::class,
+        ]);
     }
 }

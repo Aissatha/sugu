@@ -71,4 +71,12 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+        /**
+     * Relation avec la boutique du vendeur.
+     */
+    public function boutique()
+    {
+        return $this->hasOne(Boutique::class);
+    }
+
 }

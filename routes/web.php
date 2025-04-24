@@ -7,6 +7,8 @@ use App\Http\Controllers\VendorController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Admin\UserController as AdminUserController; // Renommer l'import pour éviter le conflit
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\Admin\BoutiqueController;
+
 
 
 
@@ -85,3 +87,16 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:admin'])->grou
 Route::post('/login', [AuthenticatedSessionController::class, 'store'])
     ->middleware(['web', 'guest'])
     ->name('login');
+
+Route::middleware(['auth', 'role:admin'])->prefix('admin/boutiques')->name('admin.boutiques.')->group(function () {
+    Route::get('/', [BoutiqueController::class, 'index'])->name('index'); // liste boutiques
+    Route::get('/demandes', [BoutiqueController::class, 'demandes'])->name('demandes'); // demandes en attente
+    Route::get('/{id}', [BoutiqueController::class, 'show'])->name('show'); // détail boutique
+    Route::post('/{id}/approve', [BoutiqueController::class, 'approve'])->name('approve');
+    Route::post('/{id}/reject', [BoutiqueController::class, 'reject'])->name('reject');
+    Route::post('/{id}/disable', [BoutiqueController::class, 'disable'])->name('disable');
+    Route::post('/{id}/enable', [BoutiqueController::class, 'enable'])->name('enable');
+    Route::post('/{id}/alert', [BoutiqueController::class, 'alert'])->name('alert');
+    Route::delete('/{id}', [BoutiqueController::class, 'destroy'])->name('destroy');
+});
+
