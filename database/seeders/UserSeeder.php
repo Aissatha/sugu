@@ -25,7 +25,7 @@ class UserSeeder extends Seeder
 
         // Vendeurs
         User::factory(5)->create()->each(function ($user) {
-            $user->assignRole('vendeur'); // ou un rôle générique si tu n'as pas encore créé "vendeur"
+            $user->assignRole('vendor'); // ou un rôle générique si tu n'as pas encore créé "vendeur"
         });
     }
 }

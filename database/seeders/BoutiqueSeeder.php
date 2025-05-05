@@ -15,7 +15,7 @@ class BoutiqueSeeder extends Seeder
     public function run(): void
     {
             // On prend tous les vendeurs
-    $vendeurs = User::role('vendeur')->get();
+    $vendeurs = User::role('vendor')->get();
 
     foreach ($vendeurs as $user) {
         Boutique::create([

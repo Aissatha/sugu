@@ -17,7 +17,7 @@ class ShopController extends Controller
 
     public function create()
     {
-        $vendors = Vendor::all();
+        $vendors = \App\Models\User::where('role', 'vendeur')->get();
         return view('admin.shops.create', compact('vendors'));
     }
 
@@ -47,7 +47,7 @@ class ShopController extends Controller
 
     public function edit(Shop $shop)
     {
-        $vendors = Vendor::all();
+        $vendors = \App\Models\User::where('role', 'vendeur')->get();
         return view('admin.shops.edit', compact('shop', 'vendors'));
     }
 

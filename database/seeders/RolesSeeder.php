@@ -12,7 +12,7 @@ class RolesSeeder extends Seeder
     {
         // Créer les rôles si non existants
         $adminRole  = Role::firstOrCreate(['name' => 'admin', 'guard_name' => 'web']);
-        $vendorRole = Role::firstOrCreate(['name' => 'vendor', 'guard_name' => 'web']);
+        $vendorRole = Role::firstOrCreate(['name' => 'vendor', 'guard_name' => 'web']); // 🟢 le seul utilisé
         $clientRole = Role::firstOrCreate(['name' => 'client', 'guard_name' => 'web']);
         $userRole   = Role::firstOrCreate(['name' => 'user', 'guard_name' => 'web']);
 
@@ -24,7 +24,7 @@ class RolesSeeder extends Seeder
         Permission::firstOrCreate(['name' => 'block-user']);
         Permission::firstOrCreate(['name' => 'delete-user']);
 
-        // Liste des permissions générales
+        // Permissions générales
         $permissions = [
             'manage users', 'view users', 'delete users',
             'approve vendors', 'manage vendors', 'view vendors',
@@ -40,11 +40,13 @@ class RolesSeeder extends Seeder
                 'guard_name' => 'web',
             ]);
         }
-        foreach (['admin', 'vendeur', 'client'] as $role) {
-            Role::firstOrCreate(['name' => $role]);
+
+        // Ne créer QUE les rôles utiles
+        foreach (['admin', 'vendor', 'client'] as $role) {
+            Role::firstOrCreate(['name' => $role, 'guard_name' => 'web']);
         }
 
-        // Attribution des permissions aux rôles
+        // Attribution des permissions
         $adminRole->givePermissionTo([
             'manage users', 'view users', 'delete users',
             'approve vendors', 'manage vendors', 'view vendors',

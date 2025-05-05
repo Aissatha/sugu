@@ -17,9 +17,10 @@
             <select name="vendor_id" class="w-full border rounded px-3 py-2" required>
                 <option value="">-- Choisir un vendeur --</option>
                 @foreach ($vendors as $vendor)
-                    <option value="{{ $vendor->id }}">{{ $vendor->nom }} ({{ $vendor->email }})</option>
+                    <option value="{{ $vendor->id }}">{{ $vendor->name }} ({{ $vendor->email }})</option>
                 @endforeach
             </select>
+
         </div>
 
         <div class="mb-4">
