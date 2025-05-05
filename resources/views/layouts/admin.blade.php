@@ -175,7 +175,7 @@
                       <div data-i18n="Ajout">Ajout</div>
                     </a>
                   </li>
-                  
+
                 </ul>
               </li>
 
@@ -242,7 +242,7 @@
               </a>
               <ul class="menu-sub">
                 <li class="menu-item">
-                  <a href="app-access-roles.html" class="menu-link">
+                  <a href="{{ route('shops.index') }}" class="menu-link">
                     <div data-i18n="Liste">Liste</div>
                   </a>
                 </li>

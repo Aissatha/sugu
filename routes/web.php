@@ -105,10 +105,9 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin/boutiques')->name('admi
 });
 
 
-Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
+Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::resource('shops', ShopController::class);
-});
-Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
+
     Route::get('shop-requests', [ShopRequestController::class, 'index'])->name('shop-requests.index');
     Route::get('shop-requests/{shopRequest}', [ShopRequestController::class, 'show'])->name('shop-requests.show');
     Route::post('shop-requests/{shopRequest}/approve', [ShopRequestController::class, 'approve'])->name('shop-requests.approve');
