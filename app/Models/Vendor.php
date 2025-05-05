@@ -9,5 +9,14 @@ class Vendor extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'email', 'phone', 'status']; // Ajoutez les colonnes nécessaires
+    protected $fillable = ['user_id', 'nom', 'email', 'statut', 'justificatifs'];
+    public function shops()
+    {
+        return $this->hasMany(Shop::class);
+    }
+
+    public function shopRequests()
+    {
+        return $this->hasMany(ShopRequest::class);
+    }
 }

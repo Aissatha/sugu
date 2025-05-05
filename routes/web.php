@@ -8,6 +8,10 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\Admin\UserController as AdminUserController; // Renommer l'import pour éviter le conflit
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Admin\BoutiqueController;
+use App\Http\Controllers\ShopController;
+use App\Http\Controllers\ShopRequestController;
+
+
 
 
 
@@ -100,3 +104,14 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin/boutiques')->name('admi
     Route::delete('/{id}', [BoutiqueController::class, 'destroy'])->name('destroy');
 });
 
+
+Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
+    Route::resource('shops', ShopController::class);
+});
+Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
+    Route::get('shop-requests', [ShopRequestController::class, 'index'])->name('shop-requests.index');
+    Route::get('shop-requests/{shopRequest}', [ShopRequestController::class, 'show'])->name('shop-requests.show');
+    Route::post('shop-requests/{shopRequest}/approve', [ShopRequestController::class, 'approve'])->name('shop-requests.approve');
+    Route::post('shop-requests/{shopRequest}/reject', [ShopRequestController::class, 'reject'])->name('shop-requests.reject');
+    Route::delete('shop-requests/{shopRequest}', [ShopRequestController::class, 'destroy'])->name('shop-requests.destroy');
+});
