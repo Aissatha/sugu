@@ -114,3 +114,10 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::post('shop-requests/{shopRequest}/reject', [ShopRequestController::class, 'reject'])->name('shop-requests.reject');
     Route::delete('shop-requests/{shopRequest}', [ShopRequestController::class, 'destroy'])->name('shop-requests.destroy');
 });
+
+Route::middleware(['auth', 'role:vendor'])->prefix('vendor')->name('vendor.')->group(function () {
+    Route::resource('products', \App\Http\Controllers\Vendor\ProductController::class);
+    Route::get('products/stock', [ProductController::class, 'stock'])->name('products.stock');
+    Route::put('products/{id}/stock', [ProductController::class, 'updateStock'])->name('products.updateStock');
+
+});

@@ -13,13 +13,17 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('shop_id')->constrained('shops')->onDelete('cascade');
-            $table->string('nom');
-            $table->decimal('prix', 10, 2);
-            $table->string('image_url')->nullable();
-            $table->enum('statut', ['actif', 'désactivé'])->default('actif');
+            $table->unsignedBigInteger('vendor_id');
+            $table->string('name');
             $table->text('description')->nullable();
+            $table->decimal('price', 10, 2);
+            $table->integer('stock')->default(0);
+            $table->string('image_url')->nullable();
+            $table->enum('status', ['actif', 'inactif'])->default('actif');
             $table->timestamps();
+
+            $table->foreign('vendor_id')->references('id')->on('users')->onDelete('cascade');
+
         });
     }
 
