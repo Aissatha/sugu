@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\Tag;
+
+
 use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
@@ -19,7 +22,8 @@ class ProductController extends Controller
     public function create()
     {
         $categories = Category::all();
-        return view('vendor.products.create', compact('categories'));
+        $tags = Tag::all();
+        return view('vendor.products.create', compact('categories', 'tags'));
     }
 
     public function store(Request $request)
@@ -31,9 +35,11 @@ class ProductController extends Controller
             'stock'       => 'required|integer|min:0',
             'image_url'   => 'nullable|url',
             'category_id' => 'required|exists:categories,id',
+            'tags'        => 'nullable|array',
+            'tags.*'      => 'exists:tags,id',
         ]);
 
-        Product::create([
+        $product = Product::create([
             'vendor_id'   => Auth::id(),
             'name'        => $request->name,
             'description' => $request->description,
@@ -43,6 +49,10 @@ class ProductController extends Controller
             'status'      => 'actif',
             'category_id' => $request->category_id,
         ]);
+
+        if ($request->filled('tags')) {
+            $product->tags()->attach($request->tags);
+        }
 
         return redirect()->route('vendor.products.index')->with('success', 'Produit ajouté avec succès.');
     }
@@ -56,7 +66,8 @@ class ProductController extends Controller
     {
         $product = Product::where('vendor_id', Auth::id())->findOrFail($id);
         $categories = Category::all();
-        return view('vendor.products.edit', compact('product', 'categories'));
+        $tags = Tag::all();
+    return view('vendor.products.edit', compact('product', 'categories', 'tags'));
     }
 
     public function update(Request $request, string $id)
@@ -80,6 +91,9 @@ class ProductController extends Controller
             'image_url'   => $request->image_url,
             'category_id' => $request->category_id,
         ]);
+
+        $product->tags()->sync($request->tags ?? []);
+
 
         return redirect()->route('vendor.products.index')->with('success', 'Produit mis à jour avec succès.');
     }

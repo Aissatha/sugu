@@ -5,8 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-
-class Tag extends Model
+class Category extends Model
 {
     use HasFactory;
 
@@ -14,6 +13,8 @@ class Tag extends Model
 
     public function products()
     {
-        return $this->belongsToMany(Product::class);
+        return $this->hasMany(Product::class);
     }
+
+
 }
