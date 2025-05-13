@@ -7,8 +7,6 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Category;
 use App\Models\Tag;
-
-
 use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
@@ -46,7 +44,7 @@ class ProductController extends Controller
             'price'       => $request->price,
             'stock'       => $request->stock,
             'image_url'   => $request->image_url,
-            'status'      => 'actif',
+            'status'      => $request->stock > 0, // booléen
             'category_id' => $request->category_id,
         ]);
 
@@ -67,7 +65,7 @@ class ProductController extends Controller
         $product = Product::where('vendor_id', Auth::id())->findOrFail($id);
         $categories = Category::all();
         $tags = Tag::all();
-    return view('vendor.products.edit', compact('product', 'categories', 'tags'));
+        return view('vendor.products.edit', compact('product', 'categories', 'tags'));
     }
 
     public function update(Request $request, string $id)
@@ -88,12 +86,12 @@ class ProductController extends Controller
             'description' => $request->description,
             'price'       => $request->price,
             'stock'       => $request->stock,
+            'status'      => $request->stock > 0, // mise à jour du statut actif/inactif
             'image_url'   => $request->image_url,
             'category_id' => $request->category_id,
         ]);
 
         $product->tags()->sync($request->tags ?? []);
-
 
         return redirect()->route('vendor.products.index')->with('success', 'Produit mis à jour avec succès.');
     }
@@ -106,12 +104,14 @@ class ProductController extends Controller
         return redirect()->route('vendor.products.index')->with('success', 'Produit supprimé.');
     }
 
+    // Affichage des stocks
     public function stock()
     {
         $products = Product::where('vendor_id', Auth::id())->get();
         return view('vendor.products.stock', compact('products'));
     }
 
+    // Mise à jour du stock
     public function updateStock(Request $request, $id)
     {
         $product = Product::where('vendor_id', Auth::id())->findOrFail($id);
@@ -121,6 +121,7 @@ class ProductController extends Controller
         ]);
 
         $product->stock = $request->stock;
+        $product->status = $request->stock > 0;
         $product->save();
 
         return redirect()->route('vendor.products.stock')->with('success', 'Stock mis à jour.');

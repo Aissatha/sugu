@@ -36,5 +36,9 @@ class Product extends Model
 {
     return $this->belongsToMany(Tag::class);
 }
+     public function scopeLowStock($query, $threshold = 5)
+{
+        return $query->where('stock', '<', $threshold);
+}
 
 }
