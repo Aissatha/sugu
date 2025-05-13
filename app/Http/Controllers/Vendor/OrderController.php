@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Order;
 use Barryvdh\DomPDF\Facade\Pdf;
 
-
 class OrderController extends Controller
 {
     /**
@@ -52,13 +51,11 @@ class OrderController extends Controller
         return redirect()->back()->with('success', 'Statut de la commande mis à jour.');
     }
 
+    public function downloadInvoice($id)
+    {
+        $order = Order::where('vendor_id', Auth::id())->findOrFail($id);
 
-public function downloadInvoice($id)
-{
-    $order = Order::where('vendor_id', Auth::id())->findOrFail($id);
-
-    $pdf = Pdf::loadView('vendor.orders.invoice', compact('order'));
-    return $pdf->download('facture-commande-' . $order->id . '.pdf');
-}
-
+        $pdf = Pdf::loadView('vendor.orders.invoice', compact('order'));
+        return $pdf->download('facture-commande-' . $order->id . '.pdf');
+    }
 }
