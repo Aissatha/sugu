@@ -13,12 +13,20 @@ return new class extends Migration
     {
         Schema::create('shops', function (Blueprint $table) {
             $table->id();
+
             $table->foreignId('vendor_id')->constrained('users')->onDelete('cascade');
+
             $table->string('nom');
             $table->string('slug')->unique();
+
             $table->text('description')->nullable();
             $table->string('localisation')->nullable();
-            $table->enum('statut', ['actif', 'suspendu', 'fermé'])->default('actif');
+
+            $table->string('logo')->nullable(); // ✅ logo de la boutique
+            $table->string('justificatif')->nullable(); // ✅ justificatif d'identité (uploadé)
+
+            $table->enum('statut', ['en_attente', 'valide', 'refuse'])->default('en_attente');
+
             $table->timestamps();
         });
     }

@@ -256,11 +256,43 @@
                       <div data-i18n="Informations ">Informations </div>
                     </a>
                   </li>
-                  <li class="menu-item">
+
+              </ul>
+            </li>
+
+             <li class="menu-item">
+              <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons fa fa-box"></i>
+                <div data-i18n="Produits">Produits</div>
+              </a>
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="{{ route('shops.index') }}" class="menu-link">
+                    <div data-i18n="Liste">Liste</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="app-access-permission.html" class="menu-link">
+                    <div data-i18n="Statut">Statut</div>
+                  </a>
+                </li>
+                <li class="menu-item">
                     <a href="app-access-permission.html" class="menu-link">
-                      <div data-i18n="Produits ">Produits </div>
+                      <div data-i18n="Informations ">Informations </div>
                     </a>
                   </li>
+                  <li class="menu-item">
+  <a href="{{ route('categories.index') }}" class="menu-link">
+    <div data-i18n="Catégories">Catégories</div>
+  </a>
+</li>
+<li class="menu-item">
+  <a href="{{ route('sub-categories.index') }}" class="menu-link">
+    <div data-i18n="Sous-catégories">Sous-catégories</div>
+  </a>
+</li>
+
+
               </ul>
             </li>
             <li class="menu-item">

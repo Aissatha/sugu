@@ -15,11 +15,15 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('slug')->unique();
-            $table->unsignedBigInteger('vendor_id')->nullable(); // Pour les catégories propres à un vendeur
+            $table->string('image_url')->nullable(); // ✅ Ajout image
+            $table->boolean('is_active')->default(true); // ✅ Ajout statut actif/inactif
+            $table->unsignedBigInteger('vendor_id')->nullable(); // Si la catégorie est liée à un vendeur
             $table->timestamps();
-            
-            $table->foreign('vendor_id')->references('id')->on('users')->nullOnDelete();
 
+            $table->foreign('vendor_id')
+                ->references('id')
+                ->on('users')
+                ->nullOnDelete();
         });
     }
 

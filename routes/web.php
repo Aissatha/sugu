@@ -17,6 +17,9 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\Vendor\ChatController;
 use App\Http\Controllers\Vendor\OrderController;
 
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\SubCategoryController;
+
 
 
 Route::get('/', function () {
@@ -115,6 +118,9 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::post('shop-requests/{shopRequest}/approve', [ShopRequestController::class, 'approve'])->name('shop-requests.approve');
     Route::post('shop-requests/{shopRequest}/reject', [ShopRequestController::class, 'reject'])->name('shop-requests.reject');
     Route::delete('shop-requests/{shopRequest}', [ShopRequestController::class, 'destroy'])->name('shop-requests.destroy');
+
+    Route::resource('categories', CategoryController::class);
+    Route::resource('sub-categories', SubCategoryController::class);
 });
 
 Route::middleware(['auth', 'role:vendor'])->prefix('vendor')->name('vendor.')->group(function () {
