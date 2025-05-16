@@ -13,13 +13,15 @@ class Shop extends Model
         'vendor_id', 'nom', 'slug', 'description', 'localisation', 'statut'
     ];
 
-    public function vendor()
-    {
-        return $this->belongsTo(Vendor::class);
-    }
-
+ 
     public function products()
     {
         return $this->hasMany(Product::class);
     }
+
+    public function vendor()
+{
+    return $this->belongsTo(\App\Models\User::class, 'vendor_id');
+}
+
 }
