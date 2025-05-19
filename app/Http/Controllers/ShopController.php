@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use App\Models\User;
+
 
 class ShopController extends Controller
 {
@@ -49,6 +51,13 @@ class ShopController extends Controller
         $shops = Shop::with('vendor')->latest()->paginate(10);
         return view('admin.shops.index', compact('shops'));
     }
+
+    public function create()
+    {
+       $vendors = User::whereHas('roles', fn($q) => $q->where('name', 'vendor'))->get();
+        return view('admin.shops.create', compact('vendors'));
+    }
+
 
     /**
      * Admin : voir les détails d'une demande

@@ -16,9 +16,11 @@ use App\Http\Controllers\Vendor\ProductController as VendorProductController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Vendor\ChatController;
 use App\Http\Controllers\Vendor\OrderController;
-
+use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\SubCategoryController;
+use App\Http\Controllers\Admin\VariantController;
+
 
 
 
@@ -57,23 +59,36 @@ Route::middleware(['auth', 'role:user'])->group(function () {
     Route::get('/user/dashboard', [UserController::class, 'index'])->name('user.dashboard');
 });
 
-Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:admin'])->group(function () {
+Route::prefix('admin')->middleware(['auth', 'role:admin'])->name('admin.')->group(function () {
+
+    // Tableau de bord
+    Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
+
+    // Utilisateurs
     Route::resource('users', UserController::class);
     Route::get('users/historique', [UserController::class, 'historique'])->name('users.historique');
     Route::post('users/block/{user}', [UserController::class, 'block'])->name('users.block');
     Route::delete('users/delete/{user}', [UserController::class, 'delete'])->name('users.delete');
-    Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
-    Route::get('/create', [AdminController::class, 'create'])->name('create');
-    //Route::get('/dashboard', [AdminController::class, 'index'])->name('index');
-    //Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
-    //Route::get('/dashboard', [AdminController::class, 'index'])->name('admin.index');
+
+    // Produits
+    Route::resource('products', ProductController::class)->names('products');
+
+    // Variantes
+    Route::get('products/{product}/variants', [VariantController::class, 'index'])->name('variants.index');
+    Route::get('products/{product}/variants/create', [VariantController::class, 'create'])->name('variants.create');
+    Route::post('products/{product}/variants', [VariantController::class, 'store'])->name('variants.store');
+    Route::get('products/{product}/variants/{variant}/edit', [VariantController::class, 'edit'])->name('variants.edit');
+    Route::put('products/{product}/variants/{variant}', [VariantController::class, 'update'])->name('variants.update');
+    Route::delete('products/{product}/variants/{variant}', [VariantController::class, 'destroy'])->name('variants.destroy');
+
+    // Page d'accueil admin
     Route::get('/', [UserController::class, 'index'])->name('index');
 
+    // Page de création spéciale admin
+    Route::get('/create', [AdminController::class, 'create'])->name('create');
 
-
-
-
-
+    Route::put('products/{product}/toggle-status', [ProductController::class, 'toggleStatus'])
+    ->name('products.toggleStatus');
 });
 
 
@@ -96,8 +111,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:admin'])->grou
 Route::post('/login', [AuthenticatedSessionController::class, 'store'])
     ->middleware(['web', 'guest'])
     ->name('login');
-
-Route::middleware(['auth', 'role:admin'])->prefix('admin/boutiques')->name('admin.boutiques.')->group(function () {
+/*Route::middleware(['auth', 'role:admin'])->prefix('admin/boutiques')->name('admin.boutiques.')->group(function () {
     Route::get('/', [BoutiqueController::class, 'index'])->name('index'); // liste boutiques
     Route::get('/demandes', [BoutiqueController::class, 'demandes'])->name('demandes'); // demandes en attente
     Route::get('/{id}', [BoutiqueController::class, 'show'])->name('show'); // détail boutique
@@ -107,7 +121,7 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin/boutiques')->name('admi
     Route::post('/{id}/enable', [BoutiqueController::class, 'enable'])->name('enable');
     Route::post('/{id}/alert', [BoutiqueController::class, 'alert'])->name('alert');
     Route::delete('/{id}', [BoutiqueController::class, 'destroy'])->name('destroy');
-});
+});*/
 
 
 Route::middleware(['auth'])->prefix('admin')->group(function () {

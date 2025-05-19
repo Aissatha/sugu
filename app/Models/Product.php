@@ -17,28 +17,48 @@ class Product extends Model
         'stock',
         'image_url',
         'status',
-        'category_id', // ← Ajout ici
+        'category_id',
+    ];
 
-     ];
+    protected $casts = [
+        'price' => 'float',
+        'stock' => 'integer',
+        'status' => 'boolean',
+    ];
 
-
-    public function shop()
+    // 🔁 Relation avec le vendeur (User avec rôle vendeur)
+    public function vendor()
     {
         return $this->belongsTo(User::class, 'vendor_id');
     }
 
+    // 🔁 Alias backward-compatible (optionnel)
+    public function shop()
+    {
+        return $this->vendor();
+    }
+
+    // 🔁 Catégorie du produit
     public function category()
     {
         return $this->belongsTo(Category::class);
     }
 
+    // 🔁 Tags liés au produit (many-to-many)
     public function tags()
-{
-    return $this->belongsToMany(Tag::class);
-}
-     public function scopeLowStock($query, $threshold = 5)
-{
+    {
+        return $this->belongsToMany(Tag::class);
+    }
+
+    // 🔎 Scope : produits avec faible stock
+    public function scopeLowStock($query, $threshold = 5)
+    {
         return $query->where('stock', '<', $threshold);
-}
+    }
+
+    public function variants()
+    {
+        return $this->hasMany(Variant::class);
+    }
 
 }
