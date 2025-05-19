@@ -134,13 +134,34 @@ class ProductController extends Controller
         return redirect()->route('admin.products.index')->with('success', 'Produit supprimé.');
     }
 
-    public function toggleStatus($id)
+    public function toggleStatus(Product $product)
     {
-        $product = Product::findOrFail($id);
-        $product->status = !$product->status;
+        $product->status = $product->status === 'actif' ? 'inactif' : 'actif';
         $product->save();
 
-        return redirect()->route('admin.products.index')->with('success', 'Statut du produit mis à jour.');
+        return redirect()->back()->with('success', 'Statut du produit mis à jour.');
     }
+
+    public function updateStatus(Product $product, string $status)
+{
+    // Liste des statuts autorisés
+    $allowedStatuses = ['actif', 'inactif', 'en_attente'];
+
+    // Validation
+    if (!in_array($status, $allowedStatuses)) {
+        return redirect()->back()->with('error', "Le statut \"$status\" n'est pas autorisé.");
+    }
+
+    // Si aucun changement, ne pas faire de requête inutile
+    if ($product->status === $status) {
+        return redirect()->back()->with('info', "Le produit est déjà marqué comme \"$status\".");
+    }
+
+    // Mise à jour
+    $product->update(['status' => $status]);
+
+    return redirect()->back()->with('success', "Le statut du produit a été mis à jour en \"$status\".");
+}
+
 
 }

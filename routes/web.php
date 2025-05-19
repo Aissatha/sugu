@@ -87,9 +87,21 @@ Route::prefix('admin')->middleware(['auth', 'role:admin'])->name('admin.')->grou
     // Page de création spéciale admin
     Route::get('/create', [AdminController::class, 'create'])->name('create');
 
-    Route::put('products/{product}/toggle-status', [ProductController::class, 'toggleStatus'])
-    ->name('products.toggleStatus');
+    Route::put('/admin/products/{product}/toggle-status', [ProductController::class, 'toggleStatus'])->name('admin.products.toggleStatus');
+
+     // ✅ Route personnalisée pour mettre à jour le statut d’un produit
+    Route::put('products/{product}/status/{status}', [ProductController::class, 'updateStatus'])
+        ->name('products.updateStatus');
+
 });
+
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::resource('products', ProductController::class);
+
+    // ✅ Ajoute ceci :
+    Route::put('products/{product}/toggle-status', [ProductController::class, 'toggleStatus'])->name('products.toggleStatus');
+});
+
 
 
 /*Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {

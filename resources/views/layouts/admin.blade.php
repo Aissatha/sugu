@@ -271,21 +271,12 @@
                     <div data-i18n="Liste">Liste</div>
                   </a>
                 </li>
+
                 <li class="menu-item">
-                  <a href="app-access-permission.html" class="menu-link">
-                    <div data-i18n="Statut">Statut</div>
-                  </a>
+                <a href="{{ route('categories.index') }}" class="menu-link">
+                <div data-i18n="Catégories">Catégories</div>
+                </a>
                 </li>
-                <li class="menu-item">
-                    <a href="app-access-permission.html" class="menu-link">
-                      <div data-i18n="Informations ">Informations </div>
-                    </a>
-                  </li>
-                  <li class="menu-item">
-  <a href="{{ route('categories.index') }}" class="menu-link">
-    <div data-i18n="Catégories">Catégories</div>
-  </a>
-</li>
 <li class="menu-item">
   <a href="{{ route('sub-categories.index') }}" class="menu-link">
     <div data-i18n="Sous-catégories">Sous-catégories</div>

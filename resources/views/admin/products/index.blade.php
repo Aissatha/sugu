@@ -8,6 +8,10 @@
         <div class="alert alert-success">{{ session('success') }}</div>
     @endif
 
+    @if(session('error'))
+        <div class="alert alert-danger">{{ session('error') }}</div>
+    @endif
+
     <a href="{{ route('admin.products.create') }}" class="btn btn-primary mb-3">
         ➕ Ajouter un Produit
     </a>
@@ -36,21 +40,43 @@
                     <td>{{ number_format($product->price, 0, ',', ' ') }} FCFA</td>
                     <td>{{ $product->stock }}</td>
                     <td>
-                        <span class="badge bg-{{ $product->status ? 'success' : 'secondary' }}">
-                            {{ $product->status ? 'Actif' : 'Inactif' }}
+                        @php
+                            $statusColors = [
+                                'actif' => 'success',
+                                'inactif' => 'danger',
+                                'en_attente' => 'secondary'
+                            ];
+                        @endphp
+                        <span class="badge bg-{{ $statusColors[$product->status] ?? 'secondary' }}">
+                            {{ ucfirst($product->status) }}
                         </span>
                     </td>
                     <td>
                         <a href="{{ route('admin.products.edit', $product->id) }}" class="btn btn-sm btn-warning">✏️</a>
+
                         <form action="{{ route('admin.products.destroy', $product->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Supprimer ce produit ?')">
                             @csrf
                             @method('DELETE')
                             <button class="btn btn-sm btn-danger">🗑️</button>
                         </form>
-                        <form action="{{ route('admin.products.toggleStatus', $product->id) }}" method="POST" class="d-inline">
+
+                        {{-- Boutons de mise à jour du statut --}}
+                        <form action="{{ route('admin.products.updateStatus', [$product->id, 'actif']) }}" method="POST" class="d-inline">
                             @csrf
-                            @method('PATCH')
-                            <button class="btn btn-sm btn-info">{{ $product->status ? 'Désactiver' : 'Activer' }}</button>
+                            @method('PUT')
+                            <button class="btn btn-sm btn-success">Valider</button>
+                        </form>
+
+                        <form action="{{ route('admin.products.updateStatus', [$product->id, 'inactif']) }}" method="POST" class="d-inline">
+                            @csrf
+                            @method('PUT')
+                            <button class="btn btn-sm btn-danger">Refuser</button>
+                        </form>
+
+                        <form action="{{ route('admin.products.updateStatus', [$product->id, 'en_attente']) }}" method="POST" class="d-inline">
+                            @csrf
+                            @method('PUT')
+                            <button class="btn btn-sm btn-secondary">En attente</button>
                         </form>
                     </td>
                 </tr>
