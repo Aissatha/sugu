@@ -165,3 +165,7 @@ Route::middleware(['auth', 'role:vendor'])->prefix('vendor')->name('vendor.')->g
     Route::get('/chat/client/{clientId}/messages', [ChatController::class, 'fetchMessages'])->name('chat.fetchMessages');
 
 });
+
+Route::put('/admin/products/{product}/{status}', [ProductController::class, 'updateStatus'])
+    ->name('admin.products.updateStatus');
+

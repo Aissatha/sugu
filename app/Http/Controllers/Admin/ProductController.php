@@ -11,18 +11,12 @@ use App\Models\User;
 
 class ProductController extends Controller
 {
-    /**
-     * Liste des produits
-     */
     public function index()
     {
         $products = Product::with(['vendor', 'category', 'tags'])->latest()->paginate(20);
         return view('admin.products.index', compact('products'));
     }
 
-    /**
-     * Formulaire de création
-     */
     public function create()
     {
         $categories = Category::all();
@@ -32,9 +26,6 @@ class ProductController extends Controller
         return view('admin.products.create', compact('categories', 'vendors', 'tags'));
     }
 
-    /**
-     * Enregistrement d’un nouveau produit
-     */
     public function store(Request $request)
     {
         $request->validate([
@@ -55,7 +46,7 @@ class ProductController extends Controller
             'price'       => $request->price,
             'stock'       => $request->stock,
             'image_url'   => $request->image_url,
-            'status'      => $request->stock > 0,
+            'status'      => 'en_attente', // ✅ valeur textuelle au lieu de booléen
             'category_id' => $request->category_id,
             'vendor_id'   => $request->vendor_id,
         ]);
@@ -67,18 +58,12 @@ class ProductController extends Controller
         return redirect()->route('admin.products.index')->with('success', 'Produit créé avec succès.');
     }
 
-    /**
-     * Détail d’un produit
-     */
     public function show($id)
     {
         $product = Product::with(['vendor', 'category', 'tags', 'variants'])->findOrFail($id);
         return view('admin.products.show', compact('product'));
     }
 
-    /**
-     * Formulaire de modification
-     */
     public function edit($id)
     {
         $product = Product::with('tags')->findOrFail($id);
@@ -89,9 +74,6 @@ class ProductController extends Controller
         return view('admin.products.edit', compact('product', 'categories', 'vendors', 'tags'));
     }
 
-    /**
-     * Mise à jour
-     */
     public function update(Request $request, $id)
     {
         $product = Product::findOrFail($id);
@@ -112,7 +94,7 @@ class ProductController extends Controller
             'price'       => $request->price,
             'stock'       => $request->stock,
             'image_url'   => $request->image_url,
-            'status'      => $request->stock > 0,
+            // ❌ Ne modifie pas le statut ici
             'category_id' => $request->category_id,
             'vendor_id'   => $request->vendor_id,
         ]);
@@ -122,9 +104,6 @@ class ProductController extends Controller
         return redirect()->route('admin.products.index')->with('success', 'Produit mis à jour avec succès.');
     }
 
-    /**
-     * Suppression
-     */
     public function destroy($id)
     {
         $product = Product::findOrFail($id);
@@ -139,29 +118,23 @@ class ProductController extends Controller
         $product->status = $product->status === 'actif' ? 'inactif' : 'actif';
         $product->save();
 
-        return redirect()->back()->with('success', 'Statut du produit mis à jour.');
+        return redirect()->route('admin.products.index')->with('success', 'Statut du produit mis à jour.');
     }
 
     public function updateStatus(Product $product, string $status)
-{
-    // Liste des statuts autorisés
-    $allowedStatuses = ['actif', 'inactif', 'en_attente'];
+    {
+        $allowedStatuses = ['actif', 'inactif', 'en_attente'];
 
-    // Validation
-    if (!in_array($status, $allowedStatuses)) {
-        return redirect()->back()->with('error', "Le statut \"$status\" n'est pas autorisé.");
+        if (!in_array($status, $allowedStatuses)) {
+            return redirect()->route('admin.products.index')->with('error', "Le statut \"$status\" n'est pas autorisé.");
+        }
+
+        if ($product->status === $status) {
+            return redirect()->route('admin.products.index')->with('info', "Le produit est déjà marqué comme \"$status\".");
+        }
+
+        $product->update(['status' => $status]);
+
+        return redirect()->route('admin.products.index')->with('success', "Le statut du produit a été mis à jour en \"$status\".");
     }
-
-    // Si aucun changement, ne pas faire de requête inutile
-    if ($product->status === $status) {
-        return redirect()->back()->with('info', "Le produit est déjà marqué comme \"$status\".");
-    }
-
-    // Mise à jour
-    $product->update(['status' => $status]);
-
-    return redirect()->back()->with('success', "Le statut du produit a été mis à jour en \"$status\".");
-}
-
-
 }

@@ -23,7 +23,7 @@ class Product extends Model
     protected $casts = [
         'price' => 'float',
         'stock' => 'integer',
-        'status' => 'boolean',
+      
     ];
 
     // 🔁 Relation avec le vendeur (User avec rôle vendeur)

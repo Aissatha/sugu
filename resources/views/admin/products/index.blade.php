@@ -37,18 +37,18 @@
                     <td>{{ $product->name }}</td>
                     <td>{{ $product->vendor->name ?? 'N/A' }}</td>
                     <td>{{ $product->category->name ?? '-' }}</td>
-                    <td>{{ number_format($product->price, 0, ',', ' ') }} FCFA</td>
+                    <td>{{ number_format($product->price, 0, ',', ' ') }} EURO</td>
                     <td>{{ $product->stock }}</td>
                     <td>
                         @php
                             $statusColors = [
                                 'actif' => 'success',
                                 'inactif' => 'danger',
-                                'en_attente' => 'secondary'
+                                'en_attente' => 'secondary',
                             ];
                         @endphp
                         <span class="badge bg-{{ $statusColors[$product->status] ?? 'secondary' }}">
-                            {{ ucfirst($product->status) }}
+                            {{ ucfirst(str_replace('_', ' ', $product->status)) }}
                         </span>
                     </td>
                     <td>
@@ -60,24 +60,25 @@
                             <button class="btn btn-sm btn-danger">🗑️</button>
                         </form>
 
-                        {{-- Boutons de mise à jour du statut --}}
-                        <form action="{{ route('admin.products.updateStatus', [$product->id, 'actif']) }}" method="POST" class="d-inline">
-                            @csrf
-                            @method('PUT')
-                            <button class="btn btn-sm btn-success">Valider</button>
-                        </form>
+                        {{-- Boutons de changement de statut --}}
+                        @php
+                            $statusLabels = [
+                                'actif' => 'Valider',
+                                'inactif' => 'Refuser',
+                                'en_attente' => 'En attente',
+                            ];
+                        @endphp
 
-                        <form action="{{ route('admin.products.updateStatus', [$product->id, 'inactif']) }}" method="POST" class="d-inline">
-                            @csrf
-                            @method('PUT')
-                            <button class="btn btn-sm btn-danger">Refuser</button>
-                        </form>
-
-                        <form action="{{ route('admin.products.updateStatus', [$product->id, 'en_attente']) }}" method="POST" class="d-inline">
-                            @csrf
-                            @method('PUT')
-                            <button class="btn btn-sm btn-secondary">En attente</button>
-                        </form>
+                        @foreach(['actif', 'inactif', 'en_attente'] as $state)
+                            <form action="{{ route('admin.products.updateStatus', [$product->id, $state]) }}" method="POST" class="d-inline">
+                                @csrf
+                                @method('PUT')
+                                <button class="btn btn-sm btn-{{ $statusColors[$state] }}"
+                                        {{ $product->status === $state ? 'disabled' : '' }}>
+                                    {{ $statusLabels[$state] }}
+                                </button>
+                            </form>
+                        @endforeach
                     </td>
                 </tr>
                 @empty
