@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.vendor')
 
 @section('content')
 <div class="container py-4">
@@ -12,7 +12,7 @@
         <div class="alert alert-danger">{{ session('error') }}</div>
     @endif
 
-    <a href="{{ route('admin.products.create') }}" class="btn btn-primary mb-3">
+    <a href="{{ route('vendor.products.create') }}" class="btn btn-primary mb-3">
         ➕ Ajouter un Produit
     </a>
 
@@ -54,9 +54,9 @@
                         </span>
                     </td>
                     <td>
-                        <a href="{{ route('admin.products.edit', $product->id) }}" class="btn btn-sm btn-warning">✏️</a>
+                        <a href="{{ route('vendor.products.edit', $product->id) }}" class="btn btn-sm btn-warning">✏️</a>
 
-                        <form action="{{ route('admin.products.destroy', $product->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Supprimer ce produit ?')">
+                        <form action="{{ route('vendor.products.destroy', $product->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Supprimer ce produit ?')">
                             @csrf
                             @method('DELETE')
                             <button class="btn btn-sm btn-danger">🗑️</button>

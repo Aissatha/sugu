@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.vendor')
 
 @section('content')
 <div class="container py-4">
@@ -15,7 +15,7 @@
         </div>
     @endif
 
-    <form action="{{ route('admin.products.store') }}" method="POST">
+    <form action="{{ route('vendor.products.store') }}" method="POST">
         @csrf
 
         <div class="mb-3">
@@ -68,19 +68,6 @@
                 @endforeach
             </select>
         </div>
-
-        <div class="mb-3">
-            <label class="form-label">Vendeur *</label>
-            <select name="vendor_id" class="form-select" required>
-                <option value="">-- Sélectionnez un vendeur --</option>
-                @foreach ($vendors as $vendor)
-                    <option value="{{ $vendor->id }}" @selected(old('vendor_id') == $vendor->id)>
-                        {{ $vendor->name }} ({{ $vendor->email }})
-                    </option>
-                @endforeach
-            </select>
-        </div>
-
         <div class="mb-3">
             <label class="form-label">Tags</label>
             <select name="tags[]" class="form-select" multiple>
@@ -98,14 +85,10 @@
 
         <div class="mt-4">
             <button type="submit" class="btn btn-success">✅ Enregistrer</button>
-            <a href="{{ route('admin.products.index') }}" class="btn btn-secondary">↩️ Retour</a>
+            <a href="{{ route('vendor.products.index') }}" class="btn btn-secondary">↩️ Retour</a>
         </div>
     </form>
-</div>
-    <div class="mt-4">
-        <button type="submit" class="btn btn-success">✅ Enregistrer</button>
-        <a href="{{ route('admin.products.index') }}" class="btn btn-secondary">↩️ Retour</a>
-    </div>
+
 </form>
 </div> <!-- Fin du container -->
 

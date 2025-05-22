@@ -13,15 +13,18 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $products = Product::where('vendor_id', Auth::id())->latest()->get();
+        //$products = Product::where('vendor_id', Auth::id())->latest()->get();
+        $products = Product::where('vendor_id', auth()->id())->latest()->paginate(10); // ✅ pagination
         return view('vendor.products.index', compact('products'));
     }
 
     public function create()
     {
-        $categories = Category::all();
-        $tags = Tag::all();
-        return view('vendor.products.create', compact('categories', 'tags'));
+         $categories = \App\Models\Category::where('is_active', true)->get();
+        $subcategories = \App\Models\SubCategory::with('category')->get(); // ✅ important
+        $tags = \App\Models\Tag::all();
+
+    return view('vendor.products.create', compact('categories', 'subcategories', 'tags'));
     }
 
     public function store(Request $request)
@@ -107,8 +110,12 @@ class ProductController extends Controller
     // Affichage des stocks
     public function stock()
     {
-        $products = Product::where('vendor_id', Auth::id())->get();
-        return view('vendor.products.stock', compact('products'));
+
+    \Log::info('Stock page reached for user ID: ' . auth()->id());
+    $products = Product::where('vendor_id', auth()->id())->get();
+
+    return view('vendor.products.stock', compact('products'));
+
     }
 
     // Mise à jour du stock

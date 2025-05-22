@@ -156,8 +156,9 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
 
 Route::middleware(['auth', 'role:vendor'])->prefix('vendor')->name('vendor.')->group(function () {
     Route::resource('products', \App\Http\Controllers\Vendor\ProductController::class);
-    Route::get('products/stock', [ProductController::class, 'stock'])->name('products.stock');
-    Route::put('products/{id}/stock', [ProductController::class, 'updateStock'])->name('products.updateStock');
+    Route::get('/products/stock', [\App\Http\Controllers\Vendor\ProductController::class, 'stock'])->name('vendor.products.stock');
+    Route::put('/products/{product}/stock', [\App\Http\Controllers\Vendor\ProductController::class, 'updateStock'])->name('vendor.products.updateStock');
+
     // Commandes
     Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
     Route::get('orders/{id}', [OrderController::class, 'show'])->name('orders.show');
