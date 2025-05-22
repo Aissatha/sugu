@@ -116,6 +116,7 @@ class ProductController extends Controller
 
     return view('vendor.products.stock', compact('products'));
 
+
     }
 
     // Mise à jour du stock

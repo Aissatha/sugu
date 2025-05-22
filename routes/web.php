@@ -151,6 +151,12 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
     // ✅ Route AJAX correcte pour charger les sous-catégories d'une catégorie
     Route::get('categories/{category}/subcategories', [ProductController::class, 'getSubcategories'])
         ->name('admin.categories.subcategories');
+
+    Route::get('/shops', [\App\Http\Controllers\Admin\ShopController::class, 'index'])->name('admin.shops.index');
+    Route::get('/shops/{shop}', [\App\Http\Controllers\Admin\ShopController::class, 'show'])->name('admin.shops.show');
+    Route::post('/shops/{shop}/validate', [\App\Http\Controllers\Admin\ShopController::class, 'validateShop'])->name('admin.shops.validate');
+    Route::post('/shops/{shop}/refuse', [\App\Http\Controllers\Admin\ShopController::class, 'refuseShop'])->name('admin.shops.refuse');
+
 });
 
 
@@ -169,6 +175,29 @@ Route::middleware(['auth', 'role:vendor'])->prefix('vendor')->name('vendor.')->g
     Route::get('chat/client/{clientId}', [ChatController::class, 'chatWithClient'])->name('chat.withClient');
     Route::post('/chat/client/{clientId}/send', [ChatController::class, 'sendMessage'])->name('chat.sendMessage');
     Route::get('/chat/client/{clientId}/messages', [ChatController::class, 'fetchMessages'])->name('chat.fetchMessages');
+
+    //Route::get('/shop', [ShopController::class, 'index'])->name('vendor.shop.index');
+    //Route::get('/shop/create', [ShopController::class, 'create'])->name('vendor.shop.create');
+    //Route::post('/shop', [ShopController::class, 'store'])->name('vendor.shop.store');
+    //Route::get('products/stock', [ProductController::class, 'stock'])->name('products.stock');
+    //Route::resource('shops', ShopController::class)->only(['index', 'create', 'store']);
+    //Route::get('/shops', [ShopController::class, 'vendorIndex'])->name('shops.index');
+    //Route::get('/shops/create', [ShopController::class, 'vendorCreate'])->name('shops.create');
+    //Route::post('/shops', [ShopController::class, 'store'])->name('shops.store');
+
+     // Produits
+    Route::resource('products', ProductController::class);
+    Route::get('/products/stock', [ProductController::class, 'stock'])->name('vendor.products.stock');
+    Route::put('/products/{product}/stock', [ProductController::class, 'updateStock'])->name('vendor.products.updateStock');
+
+    // Shops
+    Route::get('/shops/create', [ShopController::class, 'vendorCreate'])->name('vendor.shops.create');
+    Route::get('/shops', [ShopController::class, 'vendorIndex'])->name('vendor.shops.index');
+    Route::post('/shops', [ShopController::class, 'store'])->name('vendor.shops.store');
+    Route::get('/vendor/shops', [ShopController::class, 'vendorIndex'])->name('shops.index');
+
+
+
 
 });
 

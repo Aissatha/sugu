@@ -242,7 +242,7 @@
               </a>
               <ul class="menu-sub">
                 <li class="menu-item">
-                  <a href="{{ route('shops.index') }}" class="menu-link">
+                  <a href="{{ route('vendor.shops.index') }}" class="menu-link">
                     <div data-i18n="Liste">Liste</div>
                   </a>
                 </li>

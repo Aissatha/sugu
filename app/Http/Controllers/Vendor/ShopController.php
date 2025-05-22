@@ -89,4 +89,28 @@ class ShopController extends Controller
 
         return redirect()->back()->with('success', 'Boutique refusée.');
     }
+
+        /**
+     * Vendeur : afficher sa boutique (si elle existe)
+     */
+    public function vendorIndex()
+    {
+        $shop = Shop::where('vendor_id', Auth::id())->first();
+        return view('vendor.shops.index', compact('shop'));
+    }
+
+    /**
+     * Vendeur : formulaire de création de la boutique
+     */
+    public function vendorCreate()
+    {
+        // Vérifie s’il a déjà une boutique
+        $shop = Shop::where('vendor_id', Auth::id())->first();
+        if ($shop) {
+            return redirect()->route('vendor.shops.index');
+        }
+
+        return view('vendor.shops.create');
+    }
+
 }

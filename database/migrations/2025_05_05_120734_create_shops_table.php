@@ -14,17 +14,22 @@ return new class extends Migration
         Schema::create('shops', function (Blueprint $table) {
             $table->id();
 
+            // Lien vers le vendeur
             $table->foreignId('vendor_id')->constrained('users')->onDelete('cascade');
 
+            // Informations principales
             $table->string('nom');
             $table->string('slug')->unique();
 
+            // Informations additionnelles
             $table->text('description')->nullable();
             $table->string('localisation')->nullable();
 
-            $table->string('logo')->nullable(); // ✅ logo de la boutique
-            $table->string('justificatif')->nullable(); // ✅ justificatif d'identité (uploadé)
+            // Fichiers uploadés
+            $table->string('logo')->nullable();
+            $table->string('justificatif')->nullable();
 
+            // Statut de validation
             $table->enum('statut', ['en_attente', 'valide', 'refuse'])->default('en_attente');
 
             $table->timestamps();
