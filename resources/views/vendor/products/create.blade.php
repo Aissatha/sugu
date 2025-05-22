@@ -1,12 +1,12 @@
-@extends('layouts.vendor')
+@extends('layouts.admin')
 
 @section('content')
 <div class="container py-4">
-    <h2 class="mb-4">Ajouter un nouveau produit</h2>
+    <h1 class="h3 fw-bold mb-4">➕ Ajouter un Produit</h1>
 
     @if ($errors->any())
         <div class="alert alert-danger">
-            <strong>Erreurs :</strong>
+            <strong>Erreurs détectées :</strong>
             <ul class="mb-0">
                 @foreach ($errors->all() as $error)
                     <li>{{ $error }}</li>
@@ -15,46 +15,134 @@
         </div>
     @endif
 
-    <form action="{{ route('vendor.products.store') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('admin.products.store') }}" method="POST">
         @csrf
 
         <div class="mb-3">
-            <label for="name" class="form-label">Nom du produit</label>
-            <input type="text" class="form-control" id="name" name="name" placeholder="Ex: Chemise en coton" required>
+            <label class="form-label">Nom du produit *</label>
+            <input type="text" name="name" class="form-control" required value="{{ old('name') }}">
         </div>
 
         <div class="mb-3">
-            <label for="description" class="form-label">Description</label>
-            <textarea class="form-control" id="description" name="description" rows="4" placeholder="Description complète..."></textarea>
+            <label class="form-label">Description</label>
+            <textarea name="description" class="form-control" rows="4">{{ old('description') }}</textarea>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <label class="form-label">Prix (FCFA) *</label>
+                <input type="number" name="price" class="form-control" required step="0.01" value="{{ old('price') }}">
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <label class="form-label">Stock *</label>
+                <input type="number" name="stock" class="form-control" required value="{{ old('stock') }}">
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <label class="form-label">Image (URL)</label>
+                <input type="url" name="image_url" class="form-control" value="{{ old('image_url') }}">
+            </div>
         </div>
 
         <div class="mb-3">
-            <label for="price" class="form-label">Prix (FCFA)</label>
-            <input type="number" class="form-control" id="price" name="price" placeholder="Ex: 10000" step="0.01" required>
-        </div>
-
-        <div class="mb-3">
-            <label for="stock" class="form-label">Quantité en stock</label>
-            <input type="number" class="form-control" id="stock" name="stock" placeholder="Ex: 50" required>
-        </div>
-
-        <div class="mb-3">
-            <label for="category_id" class="form-label">Catégorie</label>
-            <select name="category_id" class="form-control" required>
-                <option value="">-- Sélectionner une catégorie --</option>
-                @foreach($categories as $cat)
-                    <option value="{{ $cat->id }}">{{ $cat->name }}</option>
+            <label class="form-label">Catégorie *</label>
+            <select name="category_id" class="form-select" required>
+                <option value="">-- Sélectionnez --</option>
+                @foreach ($categories as $category)
+                    <option value="{{ $category->id }}" @selected(old('category_id') == $category->id)>
+                        {{ $category->name }}
+                    </option>
                 @endforeach
             </select>
         </div>
 
         <div class="mb-3">
-            <label for="image" class="form-label">Image principale</label>
-            <input type="file" class="form-control" id="image" name="image" accept="image/*">
+            <label class="form-label">Sous-catégorie *</label>
+            <select name="subcategory_id" class="form-select" required>
+                <option value="">-- Sélectionnez --</option>
+                @foreach ($subcategories as $subcategory)
+                    <option value="{{ $subcategory->id }}" @selected(old('subcategory_id') == $subcategory->id)>
+                        {{ $subcategory->name }} ({{ $subcategory->category->name }})
+                    </option>
+                @endforeach
+            </select>
         </div>
 
-        <button type="submit" class="btn btn-primary">Enregistrer</button>
-        <a href="{{ route('vendor.products.index') }}" class="btn btn-secondary">Annuler</a>
+        <div class="mb-3">
+            <label class="form-label">Vendeur *</label>
+            <select name="vendor_id" class="form-select" required>
+                <option value="">-- Sélectionnez un vendeur --</option>
+                @foreach ($vendors as $vendor)
+                    <option value="{{ $vendor->id }}" @selected(old('vendor_id') == $vendor->id)>
+                        {{ $vendor->name }} ({{ $vendor->email }})
+                    </option>
+                @endforeach
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Tags</label>
+            <select name="tags[]" class="form-select" multiple>
+                @foreach ($tags as $tag)
+                    <option value="{{ $tag->id }}" @selected(collect(old('tags'))->contains($tag->id))>
+                        {{ $tag->name }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
+
+        <div class="alert alert-info mt-4">
+            <strong>ℹ️ Astuce :</strong> Une fois le produit enregistré, vous pourrez gérer les <strong>variantes</strong> (tailles, couleurs, etc.) depuis la page de détails.
+        </div>
+
+        <div class="mt-4">
+            <button type="submit" class="btn btn-success">✅ Enregistrer</button>
+            <a href="{{ route('admin.products.index') }}" class="btn btn-secondary">↩️ Retour</a>
+        </div>
     </form>
 </div>
+    <div class="mt-4">
+        <button type="submit" class="btn btn-success">✅ Enregistrer</button>
+        <a href="{{ route('admin.products.index') }}" class="btn btn-secondary">↩️ Retour</a>
+    </div>
+</form>
+</div> <!-- Fin du container -->
+
+{{-- 👉 Place ce bloc ici --}}
+@section('scripts')
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const categorySelect = document.getElementById('categorySelect');
+        const subcategorySelect = document.getElementById('subcategorySelect');
+
+        categorySelect.addEventListener('change', function () {
+            const categoryId = this.value;
+
+            subcategorySelect.innerHTML = '<option value="">Chargement...</option>';
+
+            if (categoryId) {
+                fetch("{{ url('/admin/categories') }}/" + categoryId + "/subcategories")
+                    .then(response => response.json())
+                    .then(data => {
+                        subcategorySelect.innerHTML = '<option value="">-- Sélectionnez --</option>';
+                        data.forEach(subcat => {
+                            const option = document.createElement('option');
+                            option.value = subcat.id;
+                            option.textContent = subcat.name;
+                            subcategorySelect.appendChild(option);
+                        });
+                    })
+                    .catch(error => {
+                        console.error(error);
+                        subcategorySelect.innerHTML = '<option value="">Erreur de chargement</option>';
+                    });
+            } else {
+                subcategorySelect.innerHTML = '<option value="">-- Sélectionnez une catégorie d\'abord --</option>';
+            }
+        });
+    });
+</script>
+@endsection
+
 @endsection

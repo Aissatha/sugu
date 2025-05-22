@@ -24,6 +24,7 @@
                     <th>Nom</th>
                     <th>Vendeur</th>
                     <th>Catégorie</th>
+                    <th>Sous-catégorie</th> {{-- ✅ Nouvelle colonne --}}
                     <th>Prix</th>
                     <th>Stock</th>
                     <th>Statut</th>
@@ -37,6 +38,7 @@
                     <td>{{ $product->name }}</td>
                     <td>{{ $product->vendor->name ?? 'N/A' }}</td>
                     <td>{{ $product->category->name ?? '-' }}</td>
+                    <td>{{ $product->subcategory->name ?? '—' }}</td> {{-- ✅ Ici --}}
                     <td>{{ number_format($product->price, 0, ',', ' ') }} EURO</td>
                     <td>{{ $product->stock }}</td>
                     <td>

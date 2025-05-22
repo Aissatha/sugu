@@ -995,6 +995,8 @@
 
               <!-- Page JS -->
               <script src="../../assets/js/dashboards-analytics.js"></script>
+              @yield('scripts')
+
             </body>
           </html>
 

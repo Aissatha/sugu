@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\SubCategory;
 use App\Models\Tag;
 use App\Models\User;
 
@@ -13,42 +14,45 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $products = Product::with(['vendor', 'category', 'tags'])->latest()->paginate(20);
+        $products = Product::with(['vendor', 'category', 'subcategory', 'tags'])->latest()->paginate(20);
         return view('admin.products.index', compact('products'));
     }
 
     public function create()
     {
         $categories = Category::all();
+        $subcategories = SubCategory::with('category')->get();
         $vendors = User::whereHas('roles', fn($q) => $q->where('name', 'vendor'))->get();
         $tags = Tag::all();
 
-        return view('admin.products.create', compact('categories', 'vendors', 'tags'));
+        return view('admin.products.create', compact('categories', 'subcategories', 'vendors', 'tags'));
     }
 
     public function store(Request $request)
     {
         $request->validate([
-            'name'        => 'required|string|max:255',
-            'description' => 'nullable|string',
-            'price'       => 'required|numeric|min:0',
-            'stock'       => 'required|integer|min:0',
-            'image_url'   => 'nullable|url',
-            'category_id' => 'required|exists:categories,id',
-            'vendor_id'   => 'required|exists:users,id',
-            'tags'        => 'nullable|array',
-            'tags.*'      => 'exists:tags,id',
+            'name'            => 'required|string|max:255',
+            'description'     => 'nullable|string',
+            'price'           => 'required|numeric|min:0',
+            'stock'           => 'required|integer|min:0',
+            'image_url'       => 'nullable|url',
+            'category_id'     => 'required|exists:categories,id',
+            'subcategory_id'  => 'required|exists:sub_categories,id',
+            'vendor_id'       => 'required|exists:users,id',
+            'tags'            => 'nullable|array',
+            'tags.*'          => 'exists:tags,id',
         ]);
 
         $product = Product::create([
-            'name'        => $request->name,
-            'description' => $request->description,
-            'price'       => $request->price,
-            'stock'       => $request->stock,
-            'image_url'   => $request->image_url,
-            'status'      => 'en_attente', // ✅ valeur textuelle au lieu de booléen
-            'category_id' => $request->category_id,
-            'vendor_id'   => $request->vendor_id,
+            'name'            => $request->name,
+            'description'     => $request->description,
+            'price'           => $request->price,
+            'stock'           => $request->stock,
+            'image_url'       => $request->image_url,
+            'status'          => 'en_attente',
+            'category_id'     => $request->category_id,
+            'subcategory_id'  => $request->subcategory_id,
+            'vendor_id'       => $request->vendor_id,
         ]);
 
         if ($request->filled('tags')) {
@@ -60,7 +64,7 @@ class ProductController extends Controller
 
     public function show($id)
     {
-        $product = Product::with(['vendor', 'category', 'tags', 'variants'])->findOrFail($id);
+        $product = Product::with(['vendor', 'category', 'subcategory', 'tags', 'variants'])->findOrFail($id);
         return view('admin.products.show', compact('product'));
     }
 
@@ -68,10 +72,11 @@ class ProductController extends Controller
     {
         $product = Product::with('tags')->findOrFail($id);
         $categories = Category::all();
+        $subcategories = SubCategory::with('category')->get();
         $vendors = User::whereHas('roles', fn($q) => $q->where('name', 'vendor'))->get();
         $tags = Tag::all();
 
-        return view('admin.products.edit', compact('product', 'categories', 'vendors', 'tags'));
+        return view('admin.products.edit', compact('product', 'categories', 'subcategories', 'vendors', 'tags'));
     }
 
     public function update(Request $request, $id)
@@ -79,24 +84,27 @@ class ProductController extends Controller
         $product = Product::findOrFail($id);
 
         $request->validate([
-            'name'        => 'required|string|max:255',
-            'description' => 'nullable|string',
-            'price'       => 'required|numeric|min:0',
-            'stock'       => 'required|integer|min:0',
-            'image_url'   => 'nullable|url',
-            'category_id' => 'required|exists:categories,id',
-            'vendor_id'   => 'required|exists:users,id',
+            'name'            => 'required|string|max:255',
+            'description'     => 'nullable|string',
+            'price'           => 'required|numeric|min:0',
+            'stock'           => 'required|integer|min:0',
+            'image_url'       => 'nullable|url',
+            'category_id'     => 'required|exists:categories,id',
+            'subcategory_id'  => 'required|exists:sub_categories,id',
+            'vendor_id'       => 'required|exists:users,id',
+            'tags'            => 'nullable|array',
+            'tags.*'          => 'exists:tags,id',
         ]);
 
         $product->update([
-            'name'        => $request->name,
-            'description' => $request->description,
-            'price'       => $request->price,
-            'stock'       => $request->stock,
-            'image_url'   => $request->image_url,
-            // ❌ Ne modifie pas le statut ici
-            'category_id' => $request->category_id,
-            'vendor_id'   => $request->vendor_id,
+            'name'            => $request->name,
+            'description'     => $request->description,
+            'price'           => $request->price,
+            'stock'           => $request->stock,
+            'image_url'       => $request->image_url,
+            'category_id'     => $request->category_id,
+            'subcategory_id'  => $request->subcategory_id,
+            'vendor_id'       => $request->vendor_id,
         ]);
 
         $product->tags()->sync($request->tags ?? []);
@@ -137,4 +145,10 @@ class ProductController extends Controller
 
         return redirect()->route('admin.products.index')->with('success', "Le statut du produit a été mis à jour en \"$status\".");
     }
+    public function getSubcategories($categoryId)
+    {
+        $subcategories = \App\Models\SubCategory::where('category_id', $categoryId)->get();
+        return response()->json($subcategories);
+    }
+
 }

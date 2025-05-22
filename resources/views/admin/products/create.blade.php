@@ -47,13 +47,20 @@
 
         <div class="mb-3">
             <label class="form-label">Catégorie *</label>
-            <select name="category_id" class="form-select" required>
+            <select name="category_id" id="categorySelect" class="form-select" required>
                 <option value="">-- Sélectionnez --</option>
                 @foreach ($categories as $category)
                     <option value="{{ $category->id }}" @selected(old('category_id') == $category->id)>
                         {{ $category->name }}
                     </option>
                 @endforeach
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Sous-catégorie *</label>
+            <select name="subcategory_id" id="subcategorySelect" class="form-select" required>
+                <option value="">-- Sélectionnez une catégorie d'abord --</option>
             </select>
         </div>
 
@@ -80,7 +87,6 @@
             </select>
         </div>
 
-        {{-- ✅ Encart d'information sur les variantes --}}
         <div class="alert alert-info mt-4">
             <strong>ℹ️ Astuce :</strong> Une fois le produit enregistré, vous pourrez gérer les <strong>variantes</strong> (tailles, couleurs, etc.) depuis la page de détails.
         </div>
@@ -91,4 +97,39 @@
         </div>
     </form>
 </div>
+@endsection
+
+@section('scripts')
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const categorySelect = document.getElementById('categorySelect');
+        const subcategorySelect = document.getElementById('subcategorySelect');
+
+        categorySelect.addEventListener('change', function () {
+            const categoryId = this.value;
+
+            subcategorySelect.innerHTML = '<option value="">Chargement...</option>';
+
+            if (categoryId) {
+                fetch(`/admin/categories/${categoryId}/subcategories`)
+                    .then(response => response.json())
+                    .then(data => {
+                        subcategorySelect.innerHTML = '<option value="">-- Sélectionnez --</option>';
+                        data.forEach(subcat => {
+                            const option = document.createElement('option');
+                            option.value = subcat.id;
+                            option.textContent = subcat.name;
+                            subcategorySelect.appendChild(option);
+                        });
+                    })
+                    .catch(error => {
+                        console.error(error);
+                        subcategorySelect.innerHTML = '<option value="">Erreur de chargement</option>';
+                    });
+            } else {
+                subcategorySelect.innerHTML = '<option value="">-- Sélectionnez une catégorie d\'abord --</option>';
+            }
+        });
+    });
+</script>
 @endsection

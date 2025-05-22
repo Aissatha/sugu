@@ -147,7 +147,12 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
 
     Route::resource('categories', CategoryController::class);
     Route::resource('sub-categories', SubCategoryController::class);
+
+    // ✅ Route AJAX correcte pour charger les sous-catégories d'une catégorie
+    Route::get('categories/{category}/subcategories', [ProductController::class, 'getSubcategories'])
+        ->name('admin.categories.subcategories');
 });
+
 
 Route::middleware(['auth', 'role:vendor'])->prefix('vendor')->name('vendor.')->group(function () {
     Route::resource('products', \App\Http\Controllers\Vendor\ProductController::class);

@@ -23,7 +23,7 @@ class Product extends Model
     protected $casts = [
         'price' => 'float',
         'stock' => 'integer',
-      
+
     ];
 
     // 🔁 Relation avec le vendeur (User avec rôle vendeur)
@@ -42,6 +42,12 @@ class Product extends Model
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function subcategory()
+    {
+        return $this->belongsTo(\App\Models\SubCategory::class, 'subcategory_id');
+
     }
 
     // 🔁 Tags liés au produit (many-to-many)
