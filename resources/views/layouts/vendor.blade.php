@@ -61,7 +61,7 @@
     <div class="alert alert-info d-flex align-items-center" role="alert">
         <i class="ti ti-info-circle me-2"></i>
         Vous n'avez pas encore créé votre boutique.
-        <a href="{{ route('vendor.shop.create') }}" class="ms-1 fw-bold">Créer maintenant</a>
+        <a href="{{ route('vendor.shops.create') }}" class="ms-1 fw-bold">Créer maintenant</a>
     </div>
 @elseif ($shop->statut === 'en_attente')
     <div class="alert alert-warning d-flex align-items-center" role="alert">
@@ -72,7 +72,7 @@
     <div class="alert alert-danger d-flex align-items-center" role="alert">
         <i class="ti ti-alert-triangle me-2"></i>
         Votre boutique a été refusée.
-        <a href="{{ route('vendor.shop.index') }}" class="ms-1 fw-bold">Voir les détails</a>
+        <a href="{{ route('vendor.shops.index') }}" class="ms-1 fw-bold">Voir les détails</a>
     </div>
 @endif
 

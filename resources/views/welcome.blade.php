@@ -126,56 +126,40 @@
 
     <!-- header-start -->
      <header class="header d-blue-bg">
-        <div class="header-top">
-            <div class="container 0">
-                <div class="header-inner">
-                    <div class="row align-items-center">
-                        <div class="col-xl-6 col-lg-7">
-                            <div class="header-inner-start">
-                                <div class="header__currency border-right">
-                                    <div class="s-name">
-                                        <span>Langue: </span>
-                                    </div>
-                                    <select>
-                                        <option>Anglais</option>
-                                        <option>Allemand</option>
-                                        <option>Français</option>
-                                        <option>Espagnol</option>
-                                    </select>
-                                </div>
-                                <div class="header__lang border-right">
-                                    <div class="s-name">
-                                        <span>Devise: </span>
-                                    </div>
-                                    <select>
-                                        <option> USD</option>
-                                        <option>EUR</option>
-                                        <option>INR</option>
-                                        <option>BDT</option>
-                                        <option>BGD</option>
-                                    </select>
-                                </div>
-                                <div class="support d-none d-sm-block">
-                                    <p>Besoin d'aide? <a href="tel:+001123456789">+001 123 456 789</a></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-5 d-none d-lg-block">
-                            <div class="header-inner-end text-md-end">
-                                <div class="ovic-menu-wrapper ovic-menu-wrapper-2">
-                                    <ul>
-                                        <li><a href="about.html">À propos de nous</a></li>
-                                        <li><a href="contact.html">Suivi de commandes</a></li>
-                                        <li><a href="contact.html">Contactez-nous</a></li>
-                                        <li><a href="faq.html">FAQs</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+       <div class="col-xl-6 col-lg-7">
+    <div class="header-inner-start d-flex align-items-center gap-3 flex-wrap">
+        <div class="header__currency border-right">
+            <div class="s-name"><span>Langue: </span></div>
+            <select>
+                <option>Anglais</option>
+                <option>Allemand</option>
+                <option>Français</option>
+                <option>Espagnol</option>
+            </select>
         </div>
+        <div class="header__lang border-right">
+            <div class="s-name"><span>Devise: </span></div>
+            <select>
+                <option>USD</option>
+                <option>EUR</option>
+                <option>INR</option>
+                <option>BDT</option>
+                <option>BGD</option>
+            </select>
+        </div>
+        <div>
+           <!-- Bouton d'ouverture du popup -->
+<button type="button" class="btn btn-sm btn-primary text-white" data-bs-toggle="modal" data-bs-target="#boutiqueModal">
+    Demander une boutique
+</button>
+
+        </div>
+        <div class="support d-none d-sm-block">
+            <p>Besoin d'aide? <a href="tel:+001123456789">+001 123 456 789</a></p>
+        </div>
+    </div>
+</div>
+
         <div class="header-mid">
             <div class="container">
                 <div class="heade-mid-inner">
@@ -183,7 +167,7 @@
                         <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
                             <div class="header__info header__info-2">
                                 <div class="logo logo-3">
-                                    <a href="index.html" class="logo-image"><img src="{{asset('frontend/assets/img/logo/logo1.svg')}}" alt="logo"></a>
+                                    <a href="index.html" class="logo-image"><img src="{{asset('frontend/assets/img/logo/suguba.png')}}" alt="logo"></a>
                                 </div>
                                 <div class="side-menu mr-20">
                                     <button type="button" class="side-menu-btn offcanvas-toggle-btn"><i class="fas fa-bars"></i></button>
@@ -2265,5 +2249,47 @@
       <script src="{{asset('frontend/assets/js/imagesloaded-pkgd.js')}}"></script>
       <script src="{{asset('frontend/assets/js/ajax-form.js')}}"></script>
       <script src="{{asset('frontend/assets/js/main.js')}}"></script>
+
+      <!-- Modal de demande de boutique -->
+<div class="modal fade" id="boutiqueModal" tabindex="-1" aria-labelledby="boutiqueModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <form method="POST" action="{{ route('vendor.shops.store') }}" enctype="multipart/form-data">
+                @csrf
+                <div class="modal-header">
+                    <h5 class="modal-title" id="boutiqueModalLabel">Demande de boutique</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label>Nom de la boutique *</label>
+                        <input type="text" name="nom" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label>Description</label>
+                        <textarea name="description" class="form-control"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label>Adresse / Localisation</label>
+                        <input type="text" name="localisation" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label>Logo (optionnel)</label>
+                        <input type="file" name="logo" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label>Justificatif (PDF ou image)</label>
+                        <input type="file" name="justificatif" class="form-control">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                    <button type="submit" class="btn btn-primary">Envoyer la demande</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
    </body>
 </html>
