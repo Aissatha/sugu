@@ -50,7 +50,7 @@ class AuthenticatedSessionController extends Controller
         } elseif ($user->hasRole('vendor')) {
             return redirect()->intended('/vendor/dashboard');
         } else {
-            return redirect()->intended('/user/dashboard');
+            return redirect()->intended('/users/dashboard');
         }
     }
 

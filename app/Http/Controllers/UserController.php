@@ -14,13 +14,13 @@ class UserController extends Controller
     public function index()
     {
         $users = User::with('roles')->orderBy('created_at', 'desc')->paginate(10);
-        return view('admin.users.index', compact('users'));
+        return view('users.index', compact('users'));
     }
 
     public function create()
     {
         $roles = Role::pluck('name', 'name');
-        return view('admin.users.create', compact('roles'));
+        return view('users.create', compact('roles'));
     }
 
     public function store(Request $request)
@@ -46,7 +46,7 @@ class UserController extends Controller
     public function edit(User $user)
     {
         $roles = Role::pluck('name', 'name');
-        return view('admin.users.edit', compact('user', 'roles'));
+        return view('users.edit', compact('user', 'roles'));
     }
 
     public function update(Request $request, User $user)
@@ -64,13 +64,13 @@ class UserController extends Controller
 
         $user->syncRoles([$request->role]);
 
-        return redirect()->route('admin.users.index')->with('success', 'Utilisateur modifié avec succès.');
+        return redirect()->route('users.index')->with('success', 'Utilisateur modifié avec succès.');
     }
 
     public function destroy(User $user)
     {
         $user->delete();
-        return redirect()->route('admin.users.index')->with('success', 'Utilisateur supprimé.');
+        return redirect()->route('users.index')->with('success', 'Utilisateur supprimé.');
     }
 
     public function block(User $user)
@@ -79,19 +79,19 @@ class UserController extends Controller
         $user->save();
 
         $status = $user->is_blocked ? 'bloqué' : 'débloqué';
-        return redirect()->route('admin.users.index')->with('success', "Utilisateur $status avec succès.");
+        return redirect()->route('users.index')->with('success', "Utilisateur $status avec succès.");
     }
 
     public function delete(User $user)
     {
         $user->delete();
-        return redirect()->route('admin.users.index')->with('success', 'Utilisateur définitivement supprimé.');
+        return redirect()->route('users.index')->with('success', 'Utilisateur définitivement supprimé.');
     }
 
     public function historique()
     {
         // À implémenter selon ton modèle d’historique
-        return view('admin.users.historique');
+        return view('users.historique');
     }
 
 }

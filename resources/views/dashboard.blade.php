@@ -1556,7 +1556,7 @@
                       <div class="swiper-slide">
                         <div class="row">
                           <div class="col-12">
-                            <h5 class="text-white mb-0 mt-2">Website Analytics</h5>
+                            <h5 class="text-white mb-0 mt-2">fomba Analytics</h5>
                             <small>Total 28.5% Conversion Rate</small>
                           </div>
                           <div class="row">

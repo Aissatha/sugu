@@ -109,10 +109,21 @@ Route::middleware(['auth', 'role:vendor'])->prefix('vendor')->name('vendor.')->g
     Route::get('/shops', [ShopController::class, 'vendorIndex'])->name('shops.index');
     Route::get('/shops/create', [ShopController::class, 'vendorCreate'])->name('shops.create');
     Route::post('/shops', [ShopController::class, 'store'])->name('shops.store');
+     // Shops
+    Route::get('/shops', [VendorShopController::class, 'index'])->name('shops.index');
+    Route::get('/shops/create', [VendorShopController::class, 'create'])->name('shops.create');
+    Route::post('/shops', [VendorShopController::class, 'store'])->name('shops.store');
+    Route::get('/shops/waiting', function () {
+    return view('vendor.shops.waiting');
+    })->name('vendor.shops.waiting')->middleware(['auth', 'role:vendor']);
+
+
+
 });
 
 Route::middleware(['auth', 'role:user'])->group(function () {
-    Route::get('/user/dashboard', [UserController::class, 'index'])->name('user.dashboard');
+    Route::get('/users/dashboard', [UserController::class, 'index'])->name('users.dashboard');
+
 });
 
 // Auth
