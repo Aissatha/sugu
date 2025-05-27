@@ -101,11 +101,27 @@ class ShopController extends Controller
         /**
      * Vendeur : afficher sa boutique (si elle existe)
      */
-    public function vendorIndex()
-    {
-        $shop = Shop::where('vendor_id', Auth::id())->first();
-        return view('vendor.shops.index', compact('shop'));
+ public function vendorIndex()
+{
+    $shop = Shop::where('vendor_id', Auth::id())->first();
+
+    if (!$shop) {
+        return redirect()->route('vendor.shops.create')
+            ->with('info', 'Vous n’avez pas encore soumis de demande de boutique.');
     }
+
+    if ($shop->statut === 'refuse') {
+        return view('vendor.shops.refused', compact('shop'));
+    }
+
+    if ($shop->statut === 'en_attente') {
+        return view('vendor.shops.waiting', compact('shop'));
+    }
+
+    // ✅ Validée : redirection vers dashboard vendeur (ou gestion produits, etc.)
+    return view('vendor.dashboard', compact('shop'));
+}
+
 
     /**
      * Vendeur : formulaire de création de la boutique

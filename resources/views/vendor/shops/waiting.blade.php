@@ -3,8 +3,10 @@
 @section('title', 'Boutique en attente')
 
 @section('content')
-<div class="alert alert-warning">
-    <h4 class="alert-heading">En attente de validation</h4>
-    <p>Votre boutique est en attente de validation par un administrateur.</p>
+<div class="container py-5">
+    <div class="alert alert-warning text-center shadow-sm rounded">
+        <h4 class="alert-heading mb-3">⏳ Votre demande est en attente</h4>
+        <p class="mb-0">Votre boutique est en cours d'examen. Vous serez notifié dès qu’un administrateur l’aura validée ou refusée.</p>
+    </div>
 </div>
 @endsection

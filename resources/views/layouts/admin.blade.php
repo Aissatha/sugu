@@ -336,21 +336,31 @@
                   </li>
                 </ul>
               </li>
-            <!-- Notifications -->
+            <!-- Demandes & Validation -->
             <li class="menu-item">
               <a href="javascript:void(0)" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons ti ti-brand-tabler"></i>
-                <div data-i18n="Notifications">Notifications</div>
+                <i class="menu-icon tf-icons ti ti-checklist"></i>
+                <div data-i18n="Demandes & Validation">Demandes & Validation</div>
               </a>
               <ul class="menu-sub">
                 <li class="menu-item">
                   <a href="icons-tabler.html" class="menu-link">
-                    <div data-i18n="Générales">Générales</div>
+                    <div data-i18n="Demandes de boutiques">Demandes de boutiques</div>
                   </a>
                 </li>
                 <li class="menu-item">
                   <a href="icons-font-awesome.html" class="menu-link">
-                    <div data-i18n="Personnalisées">Personnalisées</div>
+                    <div data-i18n="Demandes de partenariats">Demandes de partenariats</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="icons-font-awesome.html" class="menu-link">
+                    <div data-i18n="Demandes de partenariats">Demandes de retrait</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="icons-font-awesome.html" class="menu-link">
+                    <div data-i18n="Demandes de partenariats">Contenus à valider</div>
                   </a>
                 </li>
               </ul>

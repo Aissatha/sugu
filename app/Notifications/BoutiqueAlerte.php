@@ -3,9 +3,8 @@
 namespace App\Notifications;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
+use Illuminate\Notifications\Messages\MailMessage;
 
 class BoutiqueAlerte extends Notification
 {
@@ -14,52 +13,35 @@ class BoutiqueAlerte extends Notification
     public string $message;
     public string $boutique;
 
-    /**
-     * Create a new notification instance.
-     */
-    public function __construct()
+    public function __construct(string $message, string $boutique)
     {
         $this->message = $message;
         $this->boutique = $boutique;
     }
 
-    /**
-     * Get the notification's delivery channels.
-     *
-     * @return array<int, string>
-     */
     public function via(object $notifiable): array
     {
-        return ['mail'];
+        return ['mail', 'database']; // Tu peux ajouter 'database' ici
     }
 
-    /**
-     * Get the mail representation of the notification.
-     */
     public function toMail(object $notifiable): MailMessage
     {
         return (new MailMessage)
-                    //->line('The introduction to the notification.')
-                    //->action('Notification Action', url('/'))
-                    //->line('Thank you for using our application!');
-                    ->subject('⚠️ Alerte concernant votre boutique')
-                    ->greeting("Bonjour {$notifiable->name},")
-                    ->line("Vous avez reçu une alerte concernant votre boutique **{$this->boutique}**.")
-                    ->line("💬 Message de l'administration :")
-                    ->line("\"{$this->message}\"")
-                    ->line('Merci de prendre les mesures nécessaires.')
-                    ->salutation('— L’équipe SUGUBA');
+            ->subject('⚠️ Alerte concernant votre boutique')
+            ->greeting("Bonjour {$notifiable->name},")
+            ->line("Vous avez reçu une alerte concernant votre boutique **{$this->boutique}**.")
+            ->line("💬 Message de l'administration :")
+            ->line("\"{$this->message}\"")
+            ->line('Merci de prendre les mesures nécessaires.')
+            ->salutation('— L’équipe SUGUBA');
     }
 
-    /**
-     * Get the array representation of the notification.
-     *
-     * @return array<string, mixed>
-     */
     public function toArray(object $notifiable): array
     {
         return [
-            //
+            'title' => 'Alerte boutique',
+            'message' => $this->message,
+            'boutique' => $this->boutique,
         ];
     }
 }
