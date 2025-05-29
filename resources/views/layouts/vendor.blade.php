@@ -53,28 +53,28 @@
 
           <div class="content-wrapper">
             <div class="container-xxl flex-grow-1 container-p-y">
-                @php
-    $shop = \App\Models\Shop::where('vendor_id', Auth::id())->first();
-@endphp
+              @php
+                  $shop = Auth::user()->shop;
+              @endphp
 
-@if (!$shop)
-    <div class="alert alert-info d-flex align-items-center" role="alert">
-        <i class="ti ti-info-circle me-2"></i>
-        Vous n'avez pas encore créé votre boutique.
-        <a href="{{ route('vendor.shops.create') }}" class="ms-1 fw-bold">Créer maintenant</a>
-    </div>
-@elseif ($shop->statut === 'en_attente')
-    <div class="alert alert-warning d-flex align-items-center" role="alert">
-        <i class="ti ti-clock me-2"></i>
-        Votre boutique est en attente de validation par l’équipe admin.
-    </div>
-@elseif ($shop->statut === 'refuse')
-    <div class="alert alert-danger d-flex align-items-center" role="alert">
-        <i class="ti ti-alert-triangle me-2"></i>
-        Votre boutique a été refusée.
-        <a href="{{ route('vendor.shops.index') }}" class="ms-1 fw-bold">Voir les détails</a>
-    </div>
-@endif
+              @if (!$shop)
+                <div class="alert alert-info d-flex align-items-center" role="alert">
+                  <i class="ti ti-info-circle me-2"></i>
+                  Vous n'avez pas encore créé votre boutique.
+                  <a href="{{ route('vendor.shops.create') }}" class="ms-1 fw-bold">Créer maintenant</a>
+                </div>
+              @elseif ($shop->statut === 'en_attente')
+                <div class="alert alert-warning d-flex align-items-center" role="alert">
+                  <i class="ti ti-clock me-2"></i>
+                  Votre boutique est en attente de validation par l’équipe admin.
+                </div>
+              @elseif ($shop->statut === 'refuse')
+                <div class="alert alert-danger d-flex align-items-center" role="alert">
+                  <i class="ti ti-alert-triangle me-2"></i>
+                  Votre boutique a été refusée.
+                  <a href="{{ route('vendor.shops.index') }}" class="ms-1 fw-bold">Voir les détails</a>
+                </div>
+              @endif
 
               @yield('content')
             </div>

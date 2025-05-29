@@ -110,6 +110,8 @@ Route::middleware(['auth', 'role:vendor'])->prefix('vendor')->name('vendor.')->g
     Route::get('/shops', [ShopController::class, 'vendorIndex'])->name('shops.index');
     Route::get('/shops/create', [ShopController::class, 'vendorCreate'])->name('shops.create');
     Route::post('/shops', [ShopController::class, 'store'])->name('shops.store');
+    Route::resource('shops', \App\Http\Controllers\Vendor\ShopController::class);
+
      // Shops
     Route::get('/shops', [VendorShopController::class, 'index'])->name('shops.index');
     Route::get('/shops/create', [VendorShopController::class, 'create'])->name('shops.create');
