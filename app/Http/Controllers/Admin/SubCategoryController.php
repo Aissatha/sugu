@@ -27,7 +27,7 @@ class SubCategoryController extends Controller
     public function create()
     {
         $categories = Category::where('is_active', true)->get();
-        return view('admin.sub_categories.create', compact('categories'));
+    return redirect()->route('admin.sub-categories.index')->with('success', 'Sous-catégorie ajoutée avec succès');
     }
 
     /**

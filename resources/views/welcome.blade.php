@@ -278,57 +278,24 @@
         </div>
         <div class="header__bottom d-none d-lg-block">
             <div class="container">
-                <div class="box-items-inner pt-10 pb-10">
-                    <div class="box-item">
-                        <a href="shop.html">
-                            <i class="fal fa-desktop"></i>
-                        Laptop <br> & Computer
-                        </a>
-                    </div>
-                    <div class="box-item">
-                        <a href="shop.html">
-                            <i class="fal fa-mobile"></i>
-                        Tablets <br> & Mobile Phones
-                        </a>
-                    </div>
-                    <div class="box-item">
-                        <a href="shop.html">
-                            <i class="fal fa-router"></i>
-                        Digitals <br> & Electronics
-                        </a>
-                    </div>
-                    <div class="box-item">
-                        <a href="shop.html">
-                            <i class="fal fa-webcam"></i>
-                        Camera <br> & Accesories
-                        </a>
-                    </div>
-                    <div class="box-item">
-                        <a href="shop.html">
-                            <i class="fal fa-bed-alt"></i>
-                        Decor <br> & Furniture
-                        </a>
-                    </div>
-                    <div class="box-item">
-                        <a href="shop.html">
-                            <i class="fal fa-tshirt"></i>
-                        Fashion <br> & Clotheing
-                        </a>
-                    </div>
-                    <div class="box-item d-lg-none">
-                        <a href="shop.html">
-                            <i class="fal fa-hat-chef"></i>
-                        Garden <br> & Home Kitchen
-                        </a>
-                    </div>
-                    <div class="box-item d-lg-none d-xl-block">
-                        <a href="shop.html">
-                            <i class="fal fa-speaker"></i>
-                        Audio <br> & Headphones
-                        </a>
-                    </div>
-                </div>
+    <div class="container">
+    <div class="box-items-inner pt-10 pb-10">
+        @forelse($categories as $category)
+            <div class="box-item">
+                <a href="{{ route('shop.category', $category->slug) }}">
+                    <i class="{{ $category->icon ?? 'fal fa-box' }}"></i>
+                    {{ $category->name }} <br>
+                    {{ $category->description ?? '' }}
+                </a>
             </div>
+        @empty
+            <div class="text-center text-muted">Aucune catégorie disponible pour le moment.</div>
+        @endforelse
+    </div>
+</div>
+
+</div>
+
         </div>
      </header>
      <!-- header-end -->

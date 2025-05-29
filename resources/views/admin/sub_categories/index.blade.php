@@ -4,7 +4,7 @@
 <div class="container py-4">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h1 class="h3 text-dark fw-bold">📁 Sous-catégories</h1>
-        <a href="{{ route('sub-categories.create') }}" class="btn btn-primary">
+        <a href="{{ route('admin.sub-categories.create') }}" class="btn btn-primary">
             ➕ Nouvelle Sous-catégorie
         </a>
     </div>
@@ -46,8 +46,8 @@
                             </td>
                             <td>{{ $subCategory->created_at->format('d/m/Y') }}</td>
                             <td>
-                                <a href="{{ route('sub-categories.edit', $subCategory) }}" class="btn btn-sm btn-warning">✏️ Modifier</a>
-                                <form action="{{ route('sub-categories.destroy', $subCategory) }}" method="POST" class="d-inline" onsubmit="return confirm('Supprimer cette sous-catégorie ?')">
+                                <a href="{{ route('admin.sub-categories.edit', $subCategory) }}" class="btn btn-sm btn-warning">✏️ Modifier</a>
+                                <form action="{{ route('admin.sub-categories.destroy', $subCategory) }}" method="POST" class="d-inline" onsubmit="return confirm('Supprimer cette sous-catégorie ?')">
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn btn-sm btn-danger">🗑 Supprimer</button>

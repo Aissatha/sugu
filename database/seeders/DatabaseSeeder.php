@@ -52,7 +52,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             UserSeeder::class,
-            BoutiqueSeeder::class,
+            ShopSeeder::class,
         ]);
     }
 }

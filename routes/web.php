@@ -18,6 +18,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\SubCategoryController;
 use App\Http\Controllers\Admin\VariantController;
 use App\Http\Controllers\Vendor\ShopController as VendorShopController; // Pour vendeur
+use App\Models\Category;
 
 
 Route::get('/', function () {
@@ -131,3 +132,14 @@ Route::post('/login', [AuthenticatedSessionController::class, 'store'])->middlew
 
 // Route personnalisée statut produit admin
 Route::put('/admin/products/{product}/{status}', [ProductController::class, 'updateStatus'])->name('admin.products.updateStatus');
+
+Route::get('/', function () {
+    $categories = Category::all();
+    return view('welcome', compact('categories'));
+});
+
+Route::get('/shop/category/{slug}', function ($slug) {
+    $category = \App\Models\Category::where('slug', $slug)->firstOrFail();
+    $products = $category->products; // ou toute logique adaptée
+    return view('shop.category', compact('category', 'products'));
+})->name('shop.category');

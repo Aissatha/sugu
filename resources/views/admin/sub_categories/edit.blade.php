@@ -14,7 +14,7 @@
         </div>
     @endif
 
-    <form action="{{ route('sub-categories.update', $subCategory) }}" method="POST" enctype="multipart/form-data" class="card p-4 shadow-sm">
+    <form action="{{ route('admin.sub-categories.update', $subCategory) }}" method="POST" enctype="multipart/form-data" class="card p-4 shadow-sm">
         @csrf
         @method('PUT')
 
@@ -54,7 +54,7 @@
         </div>
 
         <button type="submit" class="btn btn-success">💾 Mettre à jour</button>
-        <a href="{{ route('sub-categories.index') }}" class="btn btn-secondary">↩️ Retour</a>
+        <a href="{{ route('admin.sub-categories.index') }}" class="btn btn-secondary">↩️ Retour</a>
     </form>
 </div>
 @endsection

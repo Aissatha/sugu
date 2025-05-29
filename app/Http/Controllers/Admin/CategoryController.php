@@ -51,7 +51,7 @@ class CategoryController extends Controller
         $category->is_active = $request->boolean('is_active');
         $category->save();
 
-        return redirect()->route('categories.index')->with('success', 'Catégorie ajoutée avec succès.');
+return redirect()->route('admin.categories.index')->with('success', 'Catégorie ajoutée avec succès');
 
     }
 

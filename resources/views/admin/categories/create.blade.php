@@ -14,7 +14,7 @@
         </div>
     @endif
 
-    <form action="{{ route('categories.store') }}" method="POST" enctype="multipart/form-data" class="card p-4 shadow-sm">
+    <form action="{{ route('admin.categories.store') }}" method="POST" enctype="multipart/form-data" class="card p-4 shadow-sm">
         @csrf
 
         <div class="mb-3">
@@ -34,7 +34,7 @@
         </div>
 
         <button type="submit" class="btn btn-success">✅ Enregistrer</button>
-        <a href="{{ route('categories.index') }}" class="btn btn-secondary">↩️ Retour</a>
+        <a href="{{ route('admin.categories.index') }}" class="btn btn-secondary">↩️ Retour</a>
     </form>
 </div>
 @endsection
