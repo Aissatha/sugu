@@ -10,14 +10,24 @@ class ShopSeeder extends Seeder
 {
     public function run(): void
     {
-        $user = \App\Models\User::first(); // ou un ID précis
+        // Prend un utilisateur ayant le rôle vendor
+        $vendor = User::role('vendor')->first();
+
+        // Si aucun vendeur trouvé, on crée un utilisateur vendor fictif
+        if (!$vendor) {
+            $vendor = User::create([
+                'nom' => 'Vendeur Test',
+                'email' => 'vendor@example.com',
+                'password' => bcrypt('password'),
+            ]);
+            $vendor->assignRole('vendor');
+        }
+
+        // Crée la boutique
         Shop::create([
-            'user_id' => $user->id,
+            'vendor_id' => $vendor->id,
             'nom' => 'La Boutique Test',
-            'adresse' => 'Quartier Commerce',
-            'phone' => '670000000',
-            'email' => 'boutique@example.com',
-            'logo' => null,
+            'description' => 'Ceci est une boutique de test',
             'statut' => 'valide',
         ]);
     }

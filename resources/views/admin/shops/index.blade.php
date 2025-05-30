@@ -4,7 +4,7 @@
 <div class="container py-4">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h1 class="h3 text-dark fw-bold">📦 Gestion des Boutiques</h1>
-        <a href="{{ route('shops.create') }}" class="btn btn-primary">
+        <a href="{{ route('admin.shops.create') }}" class="btn btn-primary">
             ➕ Nouvelle Boutique
         </a>
     </div>
@@ -43,21 +43,21 @@
 </td>
 
                                <td class="text-center">
-    <a href="{{ route('shops.show', $shop) }}" class="btn btn-sm btn-outline-primary me-1">Voir</a>
+    <a href="{{ route('admin.shops.show', $shop) }}" class="btn btn-sm btn-outline-primary me-1">Voir</a>
 
     @if($shop->statut === 'en_attente')
-        <form action="{{ route('shops.validate', $shop) }}" method="POST" class="d-inline">
+        <form action="{{ route('admin.shops.validate', $shop) }}" method="POST" class="d-inline">
             @csrf
             <button type="submit" class="btn btn-sm btn-outline-success me-1">Valider</button>
         </form>
 
-        <form action="{{ route('shops.refuse', $shop) }}" method="POST" class="d-inline">
+        <form action="{{ route('admin.shops.refuse', $shop) }}" method="POST" class="d-inline">
             @csrf
             <button type="submit" class="btn btn-sm btn-outline-danger me-1">Refuser</button>
         </form>
     @else
-        <a href="{{ route('shops.edit', $shop) }}" class="btn btn-sm btn-outline-warning me-1">Modifier</a>
-        <form action="{{ route('shops.destroy', $shop) }}" method="POST" class="d-inline" onsubmit="return confirm('Supprimer cette boutique ?')">
+        <a href="{{ route('admin.shops.edit', $shop) }}" class="btn btn-sm btn-outline-warning me-1">Modifier</a>
+        <form action="{{ route('admin.shops.destroy', $shop) }}" method="POST" class="d-inline" onsubmit="return confirm('Supprimer cette boutique ?')">
             @csrf
             @method('DELETE')
             <button type="submit" class="btn btn-sm btn-outline-danger">Supprimer</button>

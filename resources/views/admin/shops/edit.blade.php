@@ -4,7 +4,7 @@
 <div class="container mx-auto py-8">
     <h1 class="text-2xl font-bold mb-6">✏️ Modifier la boutique</h1>
 
-    <form action="{{ route('shops.update', $shop) }}" method="POST">
+    <form action="{{ route('admin.shops.update', $shop) }}" method="POST">
         @csrf @method('PUT')
 
         <div class="mb-4">

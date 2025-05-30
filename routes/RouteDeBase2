@@ -8,7 +8,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\Admin\UserController as AdminUserController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Admin\ShopController as AdminShopController;
-use App\Http\Controllers\Vendor\ShopController as VendorShopController;
+use App\Http\Controllers\Vendor\ShopController;
 use App\Http\Controllers\ShopRequestController;
 use App\Http\Controllers\Vendor\ProductController as VendorProductController;
 use App\Http\Controllers\Vendor\ChatController;
@@ -17,21 +17,18 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\SubCategoryController;
 use App\Http\Controllers\Admin\VariantController;
+use App\Http\Controllers\Vendor\ShopController as VendorShopController; // Pour vendeur
 use App\Models\Category;
 
+
 Route::get('/', function () {
-    $categories = Category::all();
-    return view('welcome', compact('categories'));
-})->name('home');
+    return view('welcome');
+});
 
 Route::get('/stores', function () {
     return view('stores.store');
 });
 
-// Auth
-Route::post('/login', [AuthenticatedSessionController::class, 'store'])->middleware(['web', 'guest'])->name('login');
-
-// Dashboard de base
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -42,7 +39,6 @@ Route::middleware([
     })->name('dashboard');
 });
 
-// ================= ADMIN =================
 Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/vendors', [VendorController::class, 'index'])->name('vendors.list');
     Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
@@ -70,23 +66,27 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->grou
     Route::get('/', [UserController::class, 'index'])->name('index');
     Route::get('/create', [AdminController::class, 'create'])->name('create');
 
-    // ✅ Gestion des boutiques (propre)
-    Route::resource('shops', AdminShopController::class)->names('shops');
-    Route::post('shops/{shop}/validate', [AdminShopController::class, 'validateShop'])->name('shops.validate');
-    Route::post('shops/{shop}/refuse', [AdminShopController::class, 'refuseShop'])->name('shops.refuse');
-    Route::get('/admin/shops/{shop}/edit', [ShopController::class, 'edit'])->name('admin.shops.edit');
+      // Gestion des boutiques
+    Route::get('/shops', [\App\Http\Controllers\Admin\ShopController::class, 'index'])->name('shops.index');
+    Route::get('/shops/{shop}', [\App\Http\Controllers\Admin\ShopController::class, 'show'])->name('shops.show');
+    Route::post('/shops/{shop}/validate', [\App\Http\Controllers\Admin\ShopController::class, 'validateShop'])->name('shops.validate');
+    Route::post('/shops/{shop}/refuse', [\App\Http\Controllers\Admin\ShopController::class, 'refuseShop'])->name('shops.refuse');
+    Route::get('/shops/create', [\App\Http\Controllers\Admin\ShopController::class, 'create'])->name('admin.shops.create');
+    Route::post('/shops', [\App\Http\Controllers\Admin\ShopController::class, 'store'])->name('shops.store');
+    // Gestion des boutiques côté admin
+    Route::get('/admin/shops/create', [\App\Http\Controllers\Admin\ShopController::class, 'create'])->name('shops.create');
+    Route::post('/admin/shops', [\App\Http\Controllers\Admin\ShopController::class, 'store'])->name('shops.store');
+
 
 
     // Catégories et sous-catégories
     Route::resource('categories', CategoryController::class);
     Route::resource('sub-categories', SubCategoryController::class);
     Route::get('categories/{category}/subcategories', [ProductController::class, 'getSubcategories'])->name('categories.subcategories');
-    Route::get('/shops/{shop}/validate', [ShopController::class, 'validateShop'])->name('shops.validate');
-
 });
 
-// ================= VENDEUR =================
 Route::middleware(['auth', 'role:vendor'])->prefix('vendor')->name('vendor.')->group(function () {
+    // Dashboard vendeur
     Route::get('/dashboard', [VendorController::class, 'index'])->name('dashboard');
 
     // Produits vendeur
@@ -94,33 +94,58 @@ Route::middleware(['auth', 'role:vendor'])->prefix('vendor')->name('vendor.')->g
     Route::get('/products/stock', [VendorProductController::class, 'stock'])->name('products.stock');
     Route::put('/products/{product}/stock', [VendorProductController::class, 'updateStock'])->name('products.updateStock');
 
-    // Commandes
+    // Commandes vendeur
     Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
     Route::get('/orders/{id}', [OrderController::class, 'show'])->name('orders.show');
     Route::post('/orders/{id}/update-status', [OrderController::class, 'updateStatus'])->name('orders.updateStatus');
     Route::get('/orders/{id}/invoice', [OrderController::class, 'downloadInvoice'])->name('orders.invoice');
 
-    // Messagerie
+    // Messagerie vendeur
     Route::get('/chat/client/{clientId}', [ChatController::class, 'chatWithClient'])->name('chat.withClient');
     Route::post('/chat/client/{clientId}/send', [ChatController::class, 'sendMessage'])->name('chat.sendMessage');
     Route::get('/chat/client/{clientId}/messages', [ChatController::class, 'fetchMessages'])->name('chat.fetchMessages');
 
     // Boutiques vendeur
-    Route::get('/shops/waiting', function () {
-        return view('vendor.shops.waiting');
-    })->name('shops.waiting');
+    Route::get('/shops', [ShopController::class, 'vendorIndex'])->name('shops.index');
+    Route::get('/shops/create', [ShopController::class, 'vendorCreate'])->name('shops.create');
+    Route::post('/shops', [ShopController::class, 'store'])->name('shops.store');
+    Route::resource('shops', \App\Http\Controllers\Vendor\ShopController::class);
 
-    Route::resource('shops', VendorShopController::class)->names('shops');
+     // Shops
+    Route::get('/shops', [VendorShopController::class, 'index'])->name('shops.index');
+    Route::get('/shops/create', [VendorShopController::class, 'create'])->name('shops.create');
+    Route::post('/shops', [VendorShopController::class, 'store'])->name('shops.store');
+    Route::get('/shops/waiting', function () {
+    return view('vendor.shops.waiting');
+    })->name('vendor.shops.waiting')->middleware(['auth', 'role:vendor']);
+
+
+
 });
 
-// ================= USER =================
 Route::middleware(['auth', 'role:user'])->group(function () {
     Route::get('/users/dashboard', [UserController::class, 'index'])->name('users.dashboard');
+
 });
 
-// ================= FRONT PUBLIC =================
+// Auth
+Route::post('/login', [AuthenticatedSessionController::class, 'store'])->middleware(['web', 'guest'])->name('login');
+
+// Route personnalisée statut produit admin
+Route::put('/admin/products/{product}/{status}', [ProductController::class, 'updateStatus'])->name('admin.products.updateStatus');
+
+Route::get('/', function () {
+    $categories = Category::all();
+    return view('welcome', compact('categories'));
+});
+
 Route::get('/shop/category/{slug}', function ($slug) {
-    $category = Category::where('slug', $slug)->firstOrFail();
-    $products = $category->products;
+    $category = \App\Models\Category::where('slug', $slug)->firstOrFail();
+    $products = $category->products; // ou toute logique adaptée
     return view('shop.category', compact('category', 'products'));
 })->name('shop.category');
+
+
+Route::prefix('admin')->middleware(['auth', 'role:admin'])->group(function () {
+    Route::resource('shops', App\Http\Controllers\Admin\ShopController::class);
+});

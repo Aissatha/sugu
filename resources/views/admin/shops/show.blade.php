@@ -15,8 +15,8 @@
     </div>
 
     <div class="mt-6">
-        <a href="{{ route('shops.edit', $shop) }}" class="text-blue-600 hover:underline">✏️ Modifier</a> |
-        <a href="{{ route('shops.index') }}" class="text-gray-600 hover:underline">⬅️ Retour</a>
+        <a href="{{ route('admin.shops.edit', $shop) }}" class="text-blue-600 hover:underline">✏️ Modifier</a> |
+        <a href="{{ route('admin.shops.index') }}" class="text-gray-600 hover:underline">⬅️ Retour</a>
     </div>
 </div>
 @endsection

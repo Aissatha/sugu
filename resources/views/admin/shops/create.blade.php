@@ -1,48 +1,66 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="container mx-auto py-8">
-    <h1 class="text-2xl font-bold mb-6">➕ Créer une nouvelle boutique</h1>
+<div class="container py-4">
+    <h1 class="h3 fw-bold mb-4">➕ Nouvelle Boutique</h1>
 
-    <form action="{{ route('shops.store') }}" method="POST">
+    {{-- Affichage des erreurs --}}
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <strong>Erreurs lors de la soumission :</strong>
+            <ul class="mb-0">
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
+    {{-- Formulaire --}}
+    <form action="{{ route('admin.shops.store') }}" method="POST">
         @csrf
 
-        <div class="mb-4">
-            <label class="block mb-1 font-medium">Nom</label>
-            <input name="nom" class="w-full border rounded px-3 py-2" value="{{ old('nom') }}" required>
+        {{-- Nom de la boutique --}}
+        <div class="mb-3">
+            <label for="nom" class="form-label">Nom de la boutique</label>
+            <input type="text" name="nom" id="nom" value="{{ old('nom') }}" class="form-control" required>
         </div>
 
-        <div class="mb-4">
-            <label class="block mb-1 font-medium">Vendeur</label>
-            <select name="vendor_id" class="w-full border rounded px-3 py-2" required>
-                <option value="">-- Choisir un vendeur --</option>
+        {{-- Vendeur --}}
+        <div class="mb-3">
+            <label for="vendor_id" class="form-label">Vendeur associé</label>
+            <select name="vendor_id" id="vendor_id" class="form-select" required>
+                <option value="">-- Sélectionner un vendeur --</option>
                 @foreach ($vendors as $vendor)
-                    <option value="{{ $vendor->id }}">{{ $vendor->name }} ({{ $vendor->email }})</option>
+                    <option value="{{ $vendor->id }}" {{ old('vendor_id') == $vendor->id ? 'selected' : '' }}>
+                        {{ $vendor->name }} ({{ $vendor->email }})
+                    </option>
                 @endforeach
             </select>
-
         </div>
 
-        <div class="mb-4">
-            <label class="block mb-1 font-medium">Description</label>
-            <textarea name="description" class="w-full border rounded px-3 py-2">{{ old('description') }}</textarea>
+        {{-- Localisation --}}
+        <div class="mb-3">
+            <label for="adresse" class="form-label">Localisation</label>
+            <input type="text" name="adresse" id="adresse" class="form-control" value="{{ old('adresse') }}">
         </div>
 
-        <div class="mb-4">
-            <label class="block mb-1 font-medium">Localisation</label>
-            <input name="localisation" class="w-full border rounded px-3 py-2" value="{{ old('localisation') }}">
+        {{-- Téléphone --}}
+        <div class="mb-3">
+            <label for="phone" class="form-label">Numéro de téléphone</label>
+            <input type="text" name="phone" id="phone" class="form-control" value="{{ old('phone') }}">
         </div>
 
-        <div class="mb-4">
-            <label class="block mb-1 font-medium">Statut</label>
-            <select name="statut" class="w-full border rounded px-3 py-2">
-                <option value="actif">Actif</option>
-                <option value="suspendu">Suspendu</option>
-                <option value="fermé">Fermé</option>
-            </select>
+        {{-- Description --}}
+        <div class="mb-3">
+            <label for="description" class="form-label">Description (optionnelle)</label>
+            <textarea name="description" id="description" class="form-control" rows="4">{{ old('description') }}</textarea>
         </div>
 
-        <button class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">Créer</button>
+        {{-- Bouton --}}
+        <button type="submit" class="btn btn-success">
+            <i class="fas fa-check-circle me-1"></i> Créer la boutique
+        </button>
     </form>
 </div>
 @endsection

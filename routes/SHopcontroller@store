@@ -1,0 +1,13 @@
+
+        $request->validate([
+            'nom' => 'required|string|max:255',
+            'vendor_id' => 'required|exists:users,id',
+            'description' => 'nullable|string|max:1000',
+        ]);
+
+        Shop::create([
+            'nom' => $request->nom,
+            'vendor_id' => $request->vendor_id,
+            'description' => $request->description,
+            'statut' => 'en_attente',
+        ]);
