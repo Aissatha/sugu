@@ -115,7 +115,7 @@ Route::middleware(['auth', 'role:vendor'])->prefix('vendor')->name('vendor.')->g
 
 // ================= USER =================
 Route::middleware(['auth', 'role:user'])->group(function () {
-    Route::get('/users/dashboard', [UserController::class, 'index'])->name('users.dashboard');
+    Route::get('/users/dashboard', [UserController::class, 'index'])->name('users.index');
 });
 
 // ================= FRONT PUBLIC =================

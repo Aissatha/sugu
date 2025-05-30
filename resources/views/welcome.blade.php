@@ -2221,13 +2221,16 @@
 <div class="modal fade" id="boutiqueModal" tabindex="-1" aria-labelledby="boutiqueModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
-            <form method="POST" action="{{ route('vendor.shops.store') }}" enctype="multipart/form-data">
+            <form id="boutiqueForm" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-header">
                     <h5 class="modal-title" id="boutiqueModalLabel">Demande de boutique</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
                 </div>
                 <div class="modal-body">
+
+                    <div id="successMsg" class="alert alert-success d-none"></div>
+
                     <div class="mb-3">
                         <label>Nom de la boutique *</label>
                         <input type="text" name="nom" class="form-control" required>
@@ -2257,6 +2260,63 @@
         </div>
     </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $('#boutiqueForm').on('submit', function (e) {
+        e.preventDefault();
+
+        var formData = new FormData(this);
+
+        // Nettoyer les anciens messages
+        $('#successMsg').addClass('d-none').text('');
+        $('#errorMsg').remove();
+
+        $.ajax({
+            url: "{{ route('vendor.shops.store') }}",
+            type: "POST",
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function (response) {
+                $('#successMsg').removeClass('d-none').text("✅ Votre demande a été envoyée avec succès.");
+                $('#boutiqueForm')[0].reset();
+
+                setTimeout(() => {
+                    $('#boutiqueModal').modal('hide');
+                    $('#successMsg').addClass('d-none').text('');
+                }, 3000);
+            },
+           error: function (xhr) {
+    $('#errorMsg').remove(); // On supprime l'ancien si existant
+
+    let errorHtml = '<div id="errorMsg" class="alert alert-danger"><ul>';
+
+    if (xhr.status === 422) {
+        // Erreurs de validation Laravel
+        let errors = xhr.responseJSON.errors;
+        $.each(errors, function (key, messages) {
+            messages.forEach(msg => {
+                errorHtml += '<li>' + msg + '</li>';
+            });
+        });
+    } else if (xhr.responseJSON && xhr.responseJSON.message) {
+        // Autre message du serveur
+        errorHtml += '<li>' + xhr.responseJSON.message + '</li>';
+    } else {
+        // Fallback inconnu
+        errorHtml += '<li>❌ Une erreur inattendue est survenue.</li>';
+    }
+
+    errorHtml += '</ul></div>';
+    $('#boutiqueForm .modal-body').prepend(errorHtml);
+}
+
+        });
+    });
+</script>
+
+
 
    </body>
 </html>
